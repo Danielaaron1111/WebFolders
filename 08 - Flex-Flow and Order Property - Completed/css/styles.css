@@ -1,0 +1,109 @@
+:root {
+    --heading: #1f2937;
+    --body: #4b5563;
+    --border: 1px solid #e5e7eb;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+    color: var(--body);
+    font-family: "Inter", sans-serif;
+}
+
+/* Utility Classes */
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1280px;
+    padding: 3rem 1rem;
+}
+
+/* Cards */
+
+/* We're turning our cards into flex containers, but not because we want to arrange things side-by-side. Instead, by using `flex-direction: column;`, we can keep things looking the same but now have access to other flex techniques, like gap and order. */
+
+.card {
+    border: var(--border);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    display: flex;
+    /* flex-wrap: nowrap;
+    flex-direction: column; */
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+img {
+    border-radius: 4px;
+}
+
+h1,
+h2 {
+    color: var(--heading);
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* 
+
+On a mobile device, if we're scrolling through these cards, the user might want some sort of heading first to know if they want to keep scrolling past it or not. Because the cards have flexbox turned on, we can use the order property. 
+
+ORDER PROPERTY
+
+By default, every flex item has a order value of 0. Flexbox will arrange things from the lowest order value to the highest; if they are all equal, it will arrange them according to the order in which they appear in the document. 
+
+If we want something to appear first, we can give it an order value less than 0 (the default value). If we want something to appear last, we can give it an order value greater than 0.
+
+*/
+
+h2 {
+    order: -1;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Media Queries */
+
+@media (min-width: 640px) {
+    .flex-container {
+        /* flex-wrap: wrap;
+        flex-direction: unset; */
+        flex-flow: row wrap;
+    }
+
+    .card {
+        /* width: calc(50% - 8px); */
+        width: calc((100% / 2) - (1rem / 2));
+    }
+
+    /* We use order: 0; here to put the heading back where it originally was. */
+    h2 {
+        margin-top: 1rem;
+        order: 0;
+        /* By default order is equal to 0, so you can unset. */
+        /* order: unset; */
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        width: calc((100% / 3) - (2rem / 3));
+    }
+}

@@ -1,0 +1,159 @@
+:root {
+    --foggy-white: #F5F5F5;
+    --mist: #c7c8ca;
+    --text: #19231b;
+    --text-hover: #314034;
+    --white: #fff;
+}
+
+/* We have on-page anchors in this demo and we may want our user's browser to smoothly scroll down the page rather than jumpimg */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--foggy-white);
+    color: var(--text);
+    font-family: "Mulish", sans-serif;
+    font-size: 1.125em;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+/* Typography */
+h1,
+h2 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+/* Hero Banner */
+/* background: [image] [position] / [size] [repeat] [attachment]; */
+.hero {
+    background: url('../img/hero-sm.webp') center / cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.hero .inner-container {
+    backdrop-filter: blur(2px) brightness(110%);
+    border-radius: 4px;
+    max-width: 70ch;
+    padding: 2rem 1rem;
+}
+
+.btn {
+    background-color: var(--text);
+    border-radius: 4px;
+    color: var(--mist);
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    background-color: var(--text-hover);
+}
+
+/* Cards */
+.latest-articles {
+    padding: 4rem 1rem;
+}
+
+.latest-articles .flex-container {
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    background-color: var(--white);
+    border: 1px solid var(--mist);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    max-width: 720px;
+}
+
+.card-header {
+    width: 50%;
+}
+
+.card-header img {
+    border-radius: 4px 0 0 4px;
+}
+
+.card-body {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 50%;
+}
+
+.card-body a {
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 720px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .hero {
+        background: url('../img/hero-md.webp') center / cover no-repeat fixed;
+    }
+
+    .latest-articles .flex-container {
+        align-items: stretch;
+        flex-flow: row wrap;
+    }
+
+    .latest-articles h2 {
+        width: 100%;
+    }
+
+    .card {
+        display: block;
+        width: calc((100% / 3) - (2rem / 3));
+    }
+
+    .card-header,
+    .card-body {
+        width: unset;
+    }
+
+    .card-header img {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .card-body {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .hero {
+        background: url('../img/hero-lg.webp') center / cover no-repeat fixed;
+    }
+}

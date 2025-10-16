@@ -1,0 +1,215 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-size: 1.125rem;
+	line-height: 1.5;
+}
+
+h2 {
+	font-size: calc(2rem + 1vw);
+	margin-bottom: 1.5rem;
+}
+@media (min-width: 750px) {
+    h2 { 
+        font-size: 3rem; 
+    }
+}
+section {
+	background: #f3eadb;
+    padding: 4.5rem 1rem;
+}
+
+section:nth-child(even) {
+    background: #fc9489;
+}
+
+
+.inner-container {
+	max-width: 90rem;
+	margin: auto;
+}
+
+img { max-width: 100%; }
+
+.lg-space {
+	padding: 4.5rem 1rem;
+}
+
+.flex {
+	display: flex;
+	flex-flow: wrap column;
+}
+
+.layered-swatches {
+    position: relative;
+    margin-bottom: 32rem;
+}
+
+.swatch{
+    width: 270px;
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    transition: all 0.5s ease;
+}
+.swatch:nth-child(2) {
+    left: 3.5%;
+}
+
+.swatch:nth-child(3) {
+    left: 7%;
+}
+
+.swatch:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+.layered-swatches .label {
+    background: #fff;
+	padding: 1rem;
+	border-radius: 0 0 0.25rem 0.25rem;
+}
+
+@media (min-width: 480px) {
+    .swatch:nth-child(2) {
+        left: 20%;
+    }
+    .swatch:nth-child(3) {
+        left: 40%;
+    }
+}
+
+@media (min-width: 550px) {
+    .swatch:nth-child(2) {
+        left: 30%;
+    }
+    .swatch:nth-child(3) {
+        left: 60%;
+    }
+}
+
+
+@media (min-width: 800px) {
+    .layered-swatches {
+        margin-bottom: 40.875rem;
+        max-width: 800px;
+    }
+    .swatch {
+        /* width: 35%; */
+    }
+    .swatch:nth-child(2) {
+        top: 4.5rem;
+    }
+
+    .swatch:nth-child(3) {
+        top: 9rem;
+    }
+}
+
+@media (min-width: 1160px) {
+    .flex {
+        flex-flow: nowrap;
+        gap: 3rem;
+        align-items: center;
+    }
+    .col {
+        width: calc(100% / 2);
+    }
+
+    .layered-swatches {
+        margin-bottom: 38rem;
+        max-width: 50%;
+    }
+    .swatch:nth-child(2) {
+        left: 25%;
+    }
+
+    .swatch:nth-child(3) {
+       left: 50%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .flex {
+        gap: 8.125rem;
+    }
+}
+
+
+/** style the card first **/
+.card {
+    background-color: #0B1A4D;
+    border-radius: 5px; /** note this doesn't add a border around the image - just the background colour **/
+    margin-bottom: 3rem; /** creates space between each card when stacked and when in a row allowing space between the view all button below **/
+    width: 100%;
+    position: relative;
+ }
+
+ 
+ .card img {
+     border-radius: 5px 5px 0 0; /** border radius on the image is only applied to the top-left and top-right corners. (border-radius follows the same flow as the box model **/
+     width: 100%;
+ }
+ 
+ .card .card-body {
+     padding: 1.5rem; /** creates space around the edge of the content, pushing out the background colour and pushing in the content. **/
+     color: #E7F5F7;
+ }
+
+ .card-body h3,
+ .card-body p {
+    margin-bottom: 1.5rem;
+ }
+
+
+ .card-body p:last-child {
+    margin-bottom: 0;
+ }
+ 
+ .btn {
+     color: #0B1A4D;
+     background-color: #E7F5F7;
+     padding: 0.5rem 1rem;
+     text-align: center;
+     display: block; /** this will allow the <a> to take up 100% of the space from left to right. With using this method, the size will conform to container spacing. Other methods would be to use padding-left and right or a specified width. **/
+     border-radius: 5px;
+     margin: 3rem auto;
+     text-decoration: none;
+ }
+ .card-body a:hover {
+     background-color: #198C8C;
+     color: #E7F5F7;
+ }
+
+ @media (min-width: 720px) {
+    .card-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .card-flex h2 { 
+        width: 100%;
+    }
+    .card {
+        width: calc(100% / 3 - 2%);
+        margin-bottom: 0;
+        height: 46.875rem;
+    }
+    .card:nth-child(2) {
+       height: 50rem;
+    }
+   
+    .card .btn {
+        position: absolute;
+        width: 70%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+ }

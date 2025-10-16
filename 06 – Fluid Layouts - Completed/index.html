@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | IanGitHub02 on GitHub">
+        <meta name="description" content="Fluid Layouts">
+
+        <title>06 - Fluid Layouts</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <article class="inner-container">
+            <!-- Introduction -->
+            <section>
+                <h1>What are fluid layouts?</h1>
+                <p>
+                    Fluid layouts are a design approach where the elements of a web page scale in size proportionally to the screen or browser window size. This type of layout ensures that content is flexible and adapts smoothly to different screen resolutions and device sizes, providing the best possible viewing experience on small mobile screens, large desktop monitors, and everything in between.
+                </p>
+            </section>
+
+            <!-- Characteristics of Fluid Layouts -->
+            <section class="flex-container">
+                <!-- Flex Item -->
+                <div>
+                    <img src="img/fluid.webp" alt="Image of paint pigments mingling in water.">
+                </div>
+                <!-- Flex Item -->
+                <div>
+                   <h2>What are their key characteristics?</h2>
+
+                    <ol>
+                        <li><strong>Widths</strong>: Instead of using fixed pixel values, fluid layouts use percentages for defining the widths of elements. This allows elements to adjust their size relative to the parent container, making the layout more adaptable.</li>
+
+                        <li><strong>Flexible Grid Systems</strong>: Many fluid layouts are built on grid systems that are designed to be flexible. These grids often use a combination of percentages and media queries to adapt the number of columns and the size of the columns based on the viewport size.</li>
+
+                        <li><strong>Responsive Images and Media</strong>: Fluid layouts often incorporate images and other media elements that scale with the container. Using properties like <code>max-width: 100%;</code> makes sure that images do not overflow their containers and scale down appropriately on smaller screens.</li>
+                    </ol> 
+                </div>
+            </section>
+
+            <section>
+                <h2>What are the benefits of using fluid layouts?</h2>
+
+                <h3>Improved User Experience</h3>
+                <p>
+                    By adapting to various screen sizes, fluid layouts ensure that users have a consistent experience, whether they are on a mobile device, tablet, or desktop computer. They can also help improve accessibility by ensuring that content remains readable and usable regardless of screen or viewport size.
+                </p>
+
+                <h3>Future-Proofing (Maintainability)</h3>
+                <p>
+                    As new devices with different screen sizes and resolutions emerge, fluid layouts are more likely to accommodate these changes without requiring significant layout or website redesigns.
+                </p>
+            </section>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required Meta Elements -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Additional Document Information -->
+      <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+      <meta name="description" content="This document is about Static, Relative, & Absolute Positioning.">
+      <title>Lesson 15 - Static, Relative, & Absolute Positioning</title>
+      <!-- Google Fonnts -->
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+   <body>
+      <section>
+         <div class="container">
+            <h1>It's all <span>relative.</span></h1>
+            <img src="https://res.cloudinary.com/eubhawatson/image/upload/v1637787772/aweethink_qyflpi.webp" src="A person sits on a wooden stool in a foggy meadow, reading.">
+            <img src="https://res.cloudinary.com/eubhawatson/image/upload/v1637787772/daisies_vfculq.webp" src="A hand holding a rustic jar, filled with wildflowers.">
+         </div>
+         <div class="text">
+            <h2>The Position Property</h2>
+            <p>The position property lets us break our layout and nudge elements around in ways that we normally couldn’t. Instead of letting everything follow the normal document flow, we can yank them out of their spot and put them somewhere else.</p>
+
+            <p>So, how do we get started?</p>
+            
+            <h2>The Container</h2>
+
+            <p>If you want to use absolute positioning, make sure that you have a relatively positioned container. This will act as a boundary for all of the absolutely positioned elements inside of it. </p>
+
+            <h2>Taking Up Space</h2>
+
+            <p>When you turn on absolute positioning, you are pulling an element out of the normal document flow. This means that it will no longer take up space within the layout. If the container that your element is in has no other content, the container will collapse. </p>
+
+            <p>In order to avoid container collapse and a jumble of elements stacking one on top of the other, make sure that you define the height and/or width of your container. </p>
+
+            <h2>Aligning Your Elements</h2>
+
+            <p>Finally, in order to nudge your absolutely positioned elements around, you will need to use one of the following 'helper' properties: top, right, bottom, left. The names of these properties correlate with each side of the relative container that your absolutely positioned elements are sitting inside of. </p>
+
+            <p>Next, assign a value. This value, like margins or padding, is how far away from that side of the container you’d like to place your absolutely positioned element. A positive value will push your element inwards; a negative value will pull it away from that side of the container.</p>
+
+            <h2>Stacking Order</h2>
+
+            <p>Don’t forget your z-index! If you would like to send an element to the front, remember to give it a higher z-index; if you would like to send an element to the back, give it a lower z-index. </p>
+
+            <p>By default, the z-index of each element is 0, with stacking order otherwise defined by the document flow.</p>
+         </div>      
+      </section>
+   </body>
+</html>

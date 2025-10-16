@@ -1,0 +1,150 @@
+:root {
+    --black: #201203;
+    --white: #f9f3ed;
+    --accent: #c94706;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Utility Classes */
+.inner-container {
+    margin: 4rem auto;
+    max-width: 1080px;
+    padding: 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2,
+h3 {
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+p,
+li {
+    font-size: 1.06rem;
+}
+
+ol {
+    /* Shorthand for list-style-type, list-style-position, and list-style-image */
+    /* list-style: decimal; */
+    list-style-type: decimal;
+}
+
+strong {
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+/* Layout */
+
+/* Our images have a ratio of 4:5. Each one will take up half of the available space. We can do some simple cross-multiplication to figure out what the minimum height needs to be, proportional to the width (== 62.5vw).
+
+We will add a little more to this so that we can offset them and give the photos an overlapping effect, plus maintain 1rem of padding. */
+.relative {
+    background-color: var(--black);
+    border-radius: 4px;
+    height: calc(70vw + 2rem);
+    margin: 2rem auto;
+    /* However, we have to keep in mind that we're using viewport width here. Since our viewport can extend past our .inner-container width, we need to also set a maximum height; otherwise, our relative container will keep growing beyond what we want it to be. */
+    max-height: 800px;
+    position: relative;
+    width: 100%;
+}
+
+/* Notice what happens as soon as we turn on absolute positioning. */
+.absolute {
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    position: absolute;
+    width: 55%;
+}
+
+/* We can have a little more control by using offset properties. These tell us how far from the top, right, bottom, or left bounds of the nearest relatively positioned container these absolutely positioned items should be. 
+
+So, for example, if we say `left: 1rem;`, we are offsetting this item 1rem from the left-hand side. */
+.absolute:first-of-type {
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+}
+/* We're introducing z-index here, which is a third dimension (or the z-axis) in our viewport. This determines the stacking order of elements. The higher the number, the further forward the element will appear; the smaller the number, the further back the element will apear. */
+
+.absolute:last-of-type {
+    bottom: 1rem;
+    right: 1rem;
+}
+
+/* Offset Practice
+
+One example isn't quite enough to get the hang of absolute positioning. This box down here is meant to be played around with, to see what different values do. */
+.offset-box {
+    background-color: var(--white);
+    border: 2px dotted var(--black);
+    border-radius: 4px;
+    height: 320px;
+    margin: 2rem auto 0 auto;
+    max-width: 640px;
+    position: relative;
+}
+
+.offset-box span {
+    background-color: var(--accent);
+    border-radius: 1rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: center;
+    width: 5rem;
+}
+
+.top {
+    left: calc(50% - 2.5rem);
+    top: 2rem;
+}
+
+.right {
+    right: 2rem;
+    top: calc(50% - 1rem);
+}
+
+.bottom {
+    bottom: 2rem;
+    right: calc(50% - 2.5rem);
+}
+
+.left {
+    bottom: calc(50% - 1rem);
+    left: 2rem;
+}

@@ -1,0 +1,126 @@
+/* 
+    Colour Palette
+
+    Darkest – #07182E
+    Columns – #132945
+    Accent  – #29D8BE
+    Text    – #CBD6F5
+    Grey    – #6E7997
+
+    Fonts
+
+    font-family: 'Oxanium', sans-serif;
+
+    Layout Grid
+
+    Row Height is 16px.
+    Column Width is 296px.
+    Vertical Gutters are 18px.
+*/
+
+body {
+    background-color: #f5f5f5;
+    color: #6E7997;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+/* Header */
+h1, 
+h2 {
+    font-family: "Oxanium", sans-serif;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Alternative way through a class name */
+/* .header-p {
+    font-size: 18px;
+} */
+
+header p span,
+/* Alternative way through parent-child element */
+/* a.btn */
+header a {
+    color: #29D8BE;
+}
+
+a.btn {
+    border: 3px solid #29D8BE;
+    background-color: #29D8BE;
+    color: #fff;
+    border-radius: 16px;
+    display: inline-block;
+    font-family: "Oxanium", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 64px;
+    padding: 16px 0;
+    text-decoration: none;
+    width: 296px;
+}
+
+a.btn:hover {
+    background-color: #fff;
+    border-color: #6E7997;
+    color: #29D8BE;
+    cursor: pointer;
+}
+
+
+/* Main */
+main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+main section {
+    background-color: #fff;
+    border: 2px solid #6E7997;
+    border-radius: 16px;
+    padding: 75px 23px;
+    /* The padding equivalent from the above values (top, right, bottom, left) */
+    /* padding: 75px 23px 75px 23px; */
+}
+
+main img {
+    height: 200px;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #29D8BE;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Footer */
+/* By default, images are inline, do we don't necessarily need to flex them.
+   This just makes it easier to pop in the gutter space.
+   To use gap, the container div must have display: flex (or display: grid). */
+footer div {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+footer p {
+    color: #6E7997;
+}

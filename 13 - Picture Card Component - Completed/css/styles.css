@@ -1,0 +1,143 @@
+:root {
+    --nunito: 2em/1.5 'Nunito', 'Helvetica Neue', sans-serif;
+    --open-sans: 1rem/1.5 'Open Sans', sans-serif;
+    --box-shadow: 0 0 10px 0 rgb(33 33 33 / 15%);
+    --black: #212121;
+    --red: #c0232a;
+    --white: #fff;
+}
+
+body {
+    color: var(--black);
+    font: var(--open-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2 {
+    font: var(--nunito);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: var(--red);
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+/* Utility Classes */
+.btn {
+    background-color: var(--black);
+    border-radius: 3px;
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto 0 auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    width: 12rem;
+}
+
+.btn:hover {
+    background-color: var(--red);
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner-container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.wide-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1.5rem;
+}
+
+/* Main Content */
+.info {
+    margin: auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.info p {
+    font-size: 1.2em;
+    margin: auto;
+    max-width: 60ch;
+}
+
+.card {
+    border: 1px solid rgb(33 33 33 / 15%);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.card picture {
+    max-width: 40%;
+}
+
+/* If we target the picture element to try to round the corners, it won't really affect anything. THe picture is just a fancy container for the source and img elements inside of it. */
+.card source,
+.card img {
+    border-radius: 5px 0 0 5px;
+}
+
+.card-body {
+    padding: 1rem;
+    max-width: 60%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 890px) {
+    .wide-flex {
+        flex-flow: row wrap;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .card.flex-container {
+        flex-direction: column;
+    }
+
+    /* There is a 1.5rem gap and three cards, so we're working with two gutters (1.5 * 2 = 3rem of space to distribute) */
+    .card {
+        width: calc((100% / 3) - (3rem / 3));
+    }
+
+    .card picture,
+    .card-body {
+        max-width: 100%;
+    }
+
+    /* Let's round just the upper corners now. */
+    .card source,
+    .card img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    /* And let's give everything a little more breathing room in this large view. */
+    .card-body {
+        padding: 2rem;
+    }
+
+    .btn {
+        margin-top: 2rem;
+    }
+}

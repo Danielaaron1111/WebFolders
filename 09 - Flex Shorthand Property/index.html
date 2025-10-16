@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Your Name | Username on GitHub">
+        <meta name="description" content="">
+
+        <title>09 - Flex Shorthand Property</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <h1>More Properties for Flex Items</h1>
+
+        <h2><code>flex-shrink</code>, <code>flex-grow</code>, and <code>flex-basis</code></h2>
+
+        <p><code>flex-shrink</code> determines how much a flex item will shrink relative to the other items in the flex container when there is not enough space. By default, <code>flex-shrink</code>flex-shrink is set to 1, which means that all items will shrink proportionally if necessary. If you set <code>flex-shrink</code> to 0, the item will not shrink at all, regardless of the available space. This property is particularly useful when you want to ensure that certain elements maintain their size, even if it means other elements have to shrink more significantly.</p>
+
+        <p><code>flex-grow</code> is used to define how much a flex item will grow relative to the other items in the flex container when there is extra space. The default value for <code>flex-grow</code> is 0, meaning items will not grow by default. However, by setting <code>flex-grow</code> to a positive integer, you can make items expand to fill the available space. For example, if you set <code>flex-grow</code> to 1, the item will grow to occupy the available space proportionally with other flex items. Setting <code>flex-grow</code> to a higher value will make the item grow more in relation to items with lower values.</p>
+
+        <p><code>flex-basis</code> specifies the initial main size of a flex item before any extra space is distributed according to the <code>flex-grow</code> and <code>flex-shrink</code> factors. The default value is auto, meaning the item's size is based on its content. However, you can set <code>flex-basis</code> to a specific length, such as 20% or 100px, to determine the item's initial size explicitly. This property is useful for establishing a baseline size for flex items before they are adjusted for space distribution.</p>
+
+        <h2>The <code>flex</code> Shorthand</h2>
+
+        <p>The flex shorthand property combines flex-grow, flex-shrink, and flex-basis into a single declaration, making it easier to set all three properties at once.</p>
+
+        <p>By default, flex is set to 0 1 auto, which means the item will not grow, will shrink if necessary, and its initial size is determined by its content. The shorthand can take one, two, or three values. When a single value is provided, it applies to flex-grow. If two values are provided, they apply to flex-grow and flex-shrink. Providing three values specifies all three properties explicitly.</p>
+
+    </body>
+
+</html>

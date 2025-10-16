@@ -1,0 +1,92 @@
+:root {
+    --dark: #291e1c;
+    --light: #c4d3d6;
+    --accent: #ebac4e;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: "Inter", sans-serif;
+}
+
+/* Utility Classes */
+
+/* 1rem = 16px */
+.inner-container {
+    margin: 0 auto;
+    /* max-width: 1080px; */
+    /* 1080 / 16 = rem */
+    /* max-width: calc(1080 / 16 * 1rem); */
+    max-width: 67.5rem;
+}
+
+.flex-container {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+p,
+li {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+    color: var(--accent);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;;
+}
+
+h3 {
+    font-size: 1.5625rem;
+    font-weight: 400;
+    margin: 2rem 0 1rem 0;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+/* Layout */
+
+section {
+    margin: 4rem 2rem;
+}
+
+/* 
+    Because Lines 67-71 in our reset code are commented out, our images are not fluid. This means that they're however wide they actually are (in pixels) and can easily overflow their parent containers or overlap other content.
+
+    By giving them a maximum width of 100%, we are essentially saying 'images can never be larger or greater than 100% of their parent container's width'.
+*/
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* 
+    In the mobile view (or smallest view), this layout does not look great because the image becomes a squished thumbnail and the list runs out of room. This is where we might introduce media queries, which would allow us to have an alternative layout based upon the viewport size.
+*/
+
+.flex-container div:first-of-type {
+    max-width: 40%;
+}
+
+.flex-container div:last-of-type {
+    max-width: 60%;
+}

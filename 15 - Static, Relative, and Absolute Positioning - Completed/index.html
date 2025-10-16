@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Paul Mendoza | IanGitHub02">
+        <meta name="description" content="The website demonstrates static, relative, and absolute positioning techniques, as well as offset properties.">
+
+        <title>15 - Static, Relative, &amp; Absolute Positioning</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <section>
+            <div class="inner-container">
+                <h1>CSS Positioning</h1>
+
+                <p>The <code>position</code> property is a layout technique that can let us change where and how elements appear on a page. More specifically, it allows us to arrange an element relative to:</p>
+
+                <ol>
+                    <li>its current position within the <strong>document flow</strong>;</li>
+                    <li>its <strong>containing</strong> element; or</li>
+                    <li>the browser <strong>viewport</strong>.</li>
+                </ol>
+
+                <p>There are five different position values and four offset properties to go along with them. Today, we'll cover three of these position values.</p>
+
+                <div class="md-flex">
+                    <!-- This is a relatively positioned container. When the images inside of it are absolutely positioned, they will not take up any space in the document flow. Therefore, we need to assign a height and width to this container. -->
+                    <div class="relative">
+                        <img src="img/charcuterie.webp" alt="An assortment of fruit and cheese atop a rustic serving board." class="absolute">
+                        <img src="img/camera.webp" alt="A camera, book, and bag, laid out neatly on bed lines." class="absolute">
+                    </div>
+
+                    <!-- Notes -->
+                    <div>
+                        <h2>Position Property Values</h2>
+
+                        <h3>Static Positioning</h3>
+
+                        <p><strong>Static</strong> is the default for all HTML elements. If an element is set to static, then it will follow the <strong>regular document flow</strong>.</p>
+
+                        <p>A static element cannot be nudged around by offset properties. However, it is helpful if you have an element that has another type of positioning in a mobile or smaller view and you want to return it to where it belongs in a desktop or larger view (using a rule in a media query).</p>
+
+                        <h3>Relative Positioning</h3>
+
+                        <p>Other than static, <strong>relative</strong> is the only position value that keeps the element in the normal document flow - that is, it still occupies its original space in the document.</p>
+
+                        <p>Although something relatively positioned will respond to offset properties, relatively positioned elements are usually used as <strong>containers</strong>, or boundaries for positioning other things within it.</p>
+
+                        <h3>Absolute Positioning</h3>
+
+                        <p><strong>Absolute</strong> positioning removes an element from the normal document flow. This means that the space it once occupied will <strong>collapse</strong>. If you want to create space for it, you will need to define the height and width of a container.</p>
+
+                        <p>Absolute positioning also positions an element relative to the <strong>nearest positioned ancestor</strong> (an ancestor element with a position other than static). This is why we usually put an absolutely positioned element inside of a <strong>relatively positioned container</strong>.</p>
+
+                        <p>If no such ancestor exists, it will be positioned relative to the initial containing block, usually the <code>&lt;html&gt;</code> element or the viewport.</p>
+
+                        <p>Absolute positioning is useful for precise placement of elements, such as tooltips, pop-ups, or elements that need to be placed in a specific location on the page. However, it should be used sparingly, as it disrupts regular document flow.</p>
+
+                        <h2>Offset Properties</h2>
+
+                        <p><strong>Offset</strong> properties help precisely place a non-static element, relative to its reference point. There are four offset properties in total.</p>
+
+                        <ol>
+                            <li><strong>Top</strong>: Moves the element down from the top of its reference point.</li>
+                            <li><strong>Right</strong>: Moves the element left from the right edge of its reference point.</li>
+                            <li><strong>Bottom</strong>: Moves the element up from the bottom of its reference point.</li>
+                            <li><strong>Left</strong>: Moves the element right from the left edge of its reference point.</li>
+                        </ol>
+
+                        <div class="offset-box">
+                            <span class="top">top</span>
+                            <span class="right">right</span>
+                            <span class="bottom">bottom</span>
+                            <span class="left">left</span>
+                        </div>
+                    </div> <!-- End of Notes -->
+                </div> <!-- End of .md-flex -->
+            </div>
+        </section>
+    </body>
+
+</html>

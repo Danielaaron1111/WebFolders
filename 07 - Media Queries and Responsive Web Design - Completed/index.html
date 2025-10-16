@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | IanGitHub02 on GitHub">
+        <meta name="description" content="Media Queries and Responsive Web Design">
+
+        <title>07 - Media Queries &amp; Responsive Web Design</title>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <article>
+            <h1>Media Queries &amp; Responsive Web Design</h1>
+            
+            <section class="md-flex inner-container">
+                <!-- Image -->
+                <div class="md-item">
+                    <img src="img/rect-shoreline.webp" alt="A hiker stands atop a cliff, overlooking a shoreline.">
+                </div>
+                <!-- Information -->
+                <div class="md-item">
+                    <h2>What makes a website responsive?</h2>
+
+                    <p>Responsive web design requires three things:</p>
+
+                    <ol>
+                        <li>It must have a <strong>fluid layout</strong>.</li>
+                        <li>It needs <strong>flexible images</strong>.</li>
+                        <li>It should use <strong>media queries</strong>.</li>
+                    </ol>
+
+                    <p>We've already introduced fluid layouts and flexible images, so let's dive right into media queries.</p>
+                </div>                
+            </section>
+        
+            <section>
+                <!-- Information -->
+                <div class="text-container">
+                    <h2>What are media queries?</h2>
+
+                    <p>Media queries allow us to apply different styles or use different layouts based upon whether or not a <strong>condition</strong> is met. This condition might be whether or not the screen is a certain size, if the user is printing the page, or if the user is holding their device in portrait or landscape orientation.</p>
+
+                    <p>The condition in a media query always resolves as <strong>true</strong> (i.e. yes, this thing is happening) or <strong>false</strong> (i.e. no, this thing is not happening).</p>
+
+                    <p>Most of the time, we're going to use media queries to check if the <strong>viewport</strong> is a <strong>certain size</strong>. If it is, we can change the layout and add additional rules; if not, all of the rules inside the media query will be ignored.</p>
+                </div>
+                <!-- Image Grid -->
+                <div class="img-grid">
+                    <div class="inner-container md-flex">
+                        <img src="img/square-tree.webp" alt="A figure in the distance approaches a large tree.">
+                        <img src="img/square-car.webp" alt="A small car parked in front of rolling plains, boot propped open">
+                        <img src="img/square-caribou.webp" alt="A male caribou rests in a field, hooves tucked under his body.">
+                        <img src="img/square-woods.webp" alt="Narrow conifers fill out a wooded area, padded with needle mulch.">
+                    </div>
+                </div>
+            </section>
+        
+            <section>
+                <div class="text-container">
+                    <h2>Taking a mobile-first design approach.</h2>
+
+                    <p>When building responsive websites, we need to take a <strong>mobile-first design approach</strong>. This means we must begin with creating an optimized experience for mobile devices before scaling up to larger screens such as tablets and desktop monitors.</p>
+
+                    <p>There are a few reasons why taking a mobile-first is extremely important.</p>
+
+                    <ol>
+                        <li>It's <strong>much easier</strong> to add a few additional rules at the bottom of your stylesheet in order to create wider layouts rather than try to undo what you've already done to create narrower layouts.</li>
+                        <li>Mobile-first design often leads to <strong>better performance</strong> because it prioritizes efficiency and speed on mobile devices, which typically have more limited resources than desktops.</li>
+                        <li>As the vast <strong>majority of users have a mobile device</strong>, a mobile-first approach ensures that your website remains relevant and accessible to the majority of users.</li>
+                        <li>Search engines like Google prioritize mobile-friendly websites in their rankings, so a mobile-first design can improve your site's visibility and <strong>search engine rankings</strong>.</li>
+                    </ol>
+                </div>
+            </section>
+        </article>
+    </body>
+</html>
