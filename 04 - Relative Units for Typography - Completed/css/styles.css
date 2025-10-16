@@ -1,0 +1,80 @@
+body {
+	background-color: #FAFAFA;
+	color: #13293D;
+}
+
+.flex-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* In most browsers, the default font size is 16px. */
+
+.absolute {
+	border: 4px double #13293D;
+	margin: 16px;
+	padding: 16px;
+}
+
+.absolute h2,
+.absolute p {
+	margin-bottom: 16px;
+}
+
+.absolute h2 {
+	font-size: 24px;
+}
+
+.absolute p {
+	font-size: 16px;
+}
+
+/* A rem is a root ephemeral unit. This means that it is based upon the font size of the root of the document (usually the <html> element). If most browsers have a default font size of 16px, then 1rem ~= 16px. */
+
+.relative {
+	/* 4px / 16 = 0.25rem */
+	border: 0.25rem double #13293D;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.relative h2,
+.relative p {
+	margin-bottom: 1rem;
+}
+
+.relative h2 {
+	/* 24px / 16 = 1.5rem */
+	font-size: 1.5rem;
+}
+
+.relative p {
+	font-size: 1rem;
+}
+
+/* 
+    Demonstrating Absolute vs. Relative Units
+    
+    At this point, both sides should look identical. But what happens if you go into your browser settings and change the default font size? You will see that the absolute side does not respond (it stays exactly as specified in the CSS), while the relative side does respond.
+
+    Because the internet is all about the dissemination of information – and one of the chief ways we do this is through text – it does no one any good if you user cannot read your text. As web designers, we must relinquish a little bit of control over the final look and feel of our layouts in order to accommodate our users. 
+*/
+
+
+/* 
+    Restricting Widths 
+
+    For ease of reading, we usually want to restrict the maximum number of characters the user has to read per line. 
+    
+    The CSS ch unit is the width of the character 0 (zero, or U+0030) of the font. Because this width changes with each font family, font size, and font weight, this is another relative unit.
+*/
+
+.absolute p {
+	max-width: 500px;
+}
+
+.relative p {
+	max-width: 65ch;
+}

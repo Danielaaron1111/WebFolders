@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Paul Mendoza | IanGitHub02">
+        <meta name="description" content="Advanced CSS Selectors">
+
+        <title>05 - Advanced CSS Selectors</title>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!-- Below is the formula to build the structure of the HTML
+        (main>div.flex-container>(section>h2+p*3)+(section*4>h2+p*2)+(section>h2+p+p.special+p))+footer>h3 -->
+        <main>
+            <div class="flex-container">
+                <section>
+                    <h2>1</h2>
+                    <p>
+                        One
+                    </p>
+                    <p>
+                        This is a middle paragraph.
+                    </p>
+                    <p>
+                        I'm the first section.
+                    </p>
+                </section>
+                <section>
+                    <h2>2</h2>
+                    <p>
+                        Two
+                    </p>
+                    <p>
+                        I'm the second section.
+                    </p>
+                </section>
+                <section>
+                    <h2>3</h2>
+                    <p>
+                        Three
+                    </p>
+                    <p>
+                        I'm the third section.
+                    </p>
+                </section>
+                <section>
+                    <h2>4</h2>
+                    <p>
+                        Four
+                    </p>
+                    <p>
+                        I'm the fourth section.
+                    </p>
+                </section>
+                <section>
+                    <h2>5</h2>
+                    <p>
+                        Five
+                    </p>
+                    <p>
+                        I'm the fifth section.
+                    </p>
+                </section>
+                <section>
+                    <h2>6</h2>
+                    <p>
+                        Six
+                    </p>
+                    <p class="special">
+                        This is a special paragraph.
+                    </p>
+                    <p>
+                        I'm the sixth section.
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <section>
+                <h3>Footer</h3>
+            </section>
+        </footer>        
+    </body>
+</html>

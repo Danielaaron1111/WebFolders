@@ -1,0 +1,86 @@
+/* 
+    COLOUR PALETTE
+
+    cyan-950:  #083344
+    cyan-900:  #164e63
+    cyan-800:  #155e75
+    body-copy: #f7ffff
+*/
+
+/* Typographic Styles */
+
+body {
+    background-color: #083344;
+    color: #f7ffff;
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+}
+
+h1 {
+    /* font-size: 36px; */
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+p {
+    background-color: #155e75;
+    border: 1px solid #083344;
+    border-radius: 4px;
+    /* padding: 16px; */
+    padding: 1rem;
+}
+
+/* Layout */
+
+main {
+    /* margin-top: 48px; */
+    margin-top: 3rem;
+}
+
+/* We're using a utility class here, which is a class that we can apply to certain area */
+
+.flex-container {
+    background-color: #164e63;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 16px; */
+    gap: 1rem;
+    justify-content: space-between;
+    /* padding: 32px 16px; */
+    padding: 2rem 1rem;
+}
+
+/* We want to flex all three paragraphs side-by-side. We'll start with a fixed-width solution, like we would have done in COMP1017. */
+
+* {
+    box-sizing: border-box;
+}
+
+/* The issue with fixed-width layouts is that it assumes the user's viewport is at least 960px wide or greater. If their browser window is smaller, or they are looking at our website on a mobile device, the layout will overflow the viewport. 
+
+But beyond that, it's a pain to do box model maths. It's a lot of bits and bobs to keep track of. Instead, we can use box-sizing, maximum widths, and the calc() function to do all of the heavy lifting for us. */
+
+/* .inner-container will have the total width below because of box-sizing: border-box;  */
+/* width: 960px - 32px padding - 4px borders */
+
+.inner-container {
+    /* max-width: 960px; */
+    max-width: 60rem;
+    margin: auto;
+}
+
+h1 {
+    width: 100%;
+}
+
+/* This takes 100% of the available space and divides it by 3, which is the amount of things we want to fit on this row. Then, we take the amount of space we want left over (the amount of space we need between our items) and also divide it by the amount of items we have. */
+/* width: (924px - 128px padding - 12px borders) / 3 items */
+/* p {
+    width: 261px;
+} */
+p {
+    /* width: calc((100% / 3) - (32px / 3)); */
+    width: calc((100% / 3) - (2rem / 3));
+}
