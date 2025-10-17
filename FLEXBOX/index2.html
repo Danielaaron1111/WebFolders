@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Flexbox Expert Guide</title>
+    <link rel="stylesheet" href="/second flexbox/style.css/style.css">
+</head>
+<body>
+    
+    <h1>Complete Flexbox Expert Guide with Media Queries</h1>
+    
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h2>What is Flexbox?</h2>
+        <p>Flexbox (Flexible Box Layout) is a CSS layout model that allows you to design flexible and responsive layouts efficiently. It consists of a <strong>flex container</strong> (parent) and <strong>flex items</strong> (children).</p>
+        <p><strong>Key Concept:</strong> Flexbox works on two axes - the <strong>main axis</strong> (direction items flow) and <strong>cross axis</strong> (perpendicular to main axis).</p>
+    </section>
+
+    <!-- CONTAINER PROPERTIES -->
+    <section class="section-header">
+        <h2>PART 1: FLEX CONTAINER PROPERTIES</h2>
+        <p>These properties are applied to the parent container.</p>
+    </section>
+
+    <!-- Display Flex -->
+    <section class="demo-section">
+        <h3>1. display: flex</h3>
+        <p>Turns an element into a flex container, making its children flex items.</p>
+        <div class="flex-container demo1">
+            <div class="box box-blue">1</div>
+            <div class="box box-green">2</div>
+            <div class="box box-purple">3</div>
+        </div>
+    </section>
+
+    <!-- Flex Direction -->
+    <section class="demo-section">
+        <h3>2. flex-direction</h3>
+        <p>Defines the main axis direction. Values: <code>row</code> (default), <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>.</p>
+        <div class="flex-container demo2">
+            <div class="box box-red">1</div>
+            <div class="box box-orange">2</div>
+            <div class="box box-yellow">3</div>
+        </div>
+    </section>
+
+    <!-- Flex Wrap -->
+    <section class="demo-section">
+        <h3>3. flex-wrap</h3>
+        <p>Controls whether items wrap to new lines. Values: <code>nowrap</code> (default), <code>wrap</code>, <code>wrap-reverse</code>.</p>
+        <div class="flex-container demo3">
+            <div class="box box-blue">1</div>
+            <div class="box box-green">2</div>
+            <div class="box box-purple">3</div>
+            <div class="box box-red">4</div>
+            <div class="box box-orange">5</div>
+        </div>
+    </section>
+
+    <!-- Flex Flow (Shorthand) -->
+    <section class="demo-section">
+        <h3>4. flex-flow (shorthand)</h3>
+        <p>Combines <code>flex-direction</code> and <code>flex-wrap</code>. Example: <code>flex-flow: row wrap;</code></p>
+        <div class="flex-container demo4">
+            <div class="box box-cyan">1</div>
+            <div class="box box-pink">2</div>
+            <div class="box box-lime">3</div>
+            <div class="box box-teal">4</div>
+        </div>
+    </section>
+
+    <!-- Justify Content -->
+    <section class="demo-section">
+        <h3>5. justify-content</h3>
+        <p>Aligns items along the <strong>main axis</strong>. Values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>.</p>
+        <div class="flex-container demo5">
+            <div class="box box-indigo">1</div>
+            <div class="box box-violet">2</div>
+            <div class="box box-brown">3</div>
+        </div>
+    </section>
+
+    <!-- Align Items -->
+    <section class="demo-section">
+        <h3>6. align-items</h3>
+        <p>Aligns items along the <strong>cross axis</strong>. Values: <code>stretch</code> (default), <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>.</p>
+        <div class="flex-container demo6">
+            <div class="box box-blue tall-small">1</div>
+            <div class="box box-green tall-large">2</div>
+            <div class="box box-purple tall-medium">3</div>
+        </div>
+    </section>
+
+    <!-- Align Content -->
+    <section class="demo-section">
+        <h3>7. align-content</h3>
+        <p>Aligns multiple lines along the cross axis (only works with <code>flex-wrap: wrap</code>). Values: <code>stretch</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>.</p>
+        <div class="flex-container demo7">
+            <div class="box box-red">1</div>
+            <div class="box box-orange">2</div>
+            <div class="box box-yellow">3</div>
+            <div class="box box-cyan">4</div>
+            <div class="box box-pink">5</div>
+            <div class="box box-lime">6</div>
+        </div>
+    </section>
+
+    <!-- Gap -->
+    <section class="demo-section">
+        <h3>8. gap (row-gap, column-gap)</h3>
+        <p>Creates spacing between flex items. <code>gap: 20px;</code> or <code>row-gap: 10px; column-gap: 20px;</code></p>
+        <div class="flex-container demo8">
+            <div class="box box-teal">1</div>
+            <div class="box box-indigo">2</div>
+            <div class="box box-violet">3</div>
+            <div class="box box-brown">4</div>
+        </div>
+    </section>
+
+    <!-- ITEM PROPERTIES -->
+    <section class="section-header">
+        <h2>PART 2: FLEX ITEM PROPERTIES</h2>
+        <p>These properties are applied to individual flex items (children).</p>
+    </section>
+
+    <!-- Flex Grow -->
+    <section class="demo-section">
+        <h3>9. flex-grow</h3>
+        <p>Defines how much an item should grow relative to others. Default: <code>0</code> (doesn't grow). Higher values take more space.</p>
+        <div class="flex-container demo9">
+            <div class="box box-blue">grow: 1</div>
+            <div class="box box-green grow-2">grow: 2</div>
+            <div class="box box-purple">grow: 1</div>
+        </div>
+    </section>
+
+    <!-- Flex Shrink -->
+    <section class="demo-section">
+        <h3>10. flex-shrink</h3>
+        <p>Defines how much an item should shrink when space is limited. Default: <code>1</code> (shrinks). <code>0</code> prevents shrinking.</p>
+        <div class="flex-container demo10">
+            <div class="box box-red shrink-0">No Shrink</div>
+            <div class="box box-orange">Shrinks</div>
+            <div class="box box-yellow">Shrinks</div>
+        </div>
+    </section>
+
+    <!-- Flex Basis -->
+    <section class="demo-section">
+        <h3>11. flex-basis</h3>
+        <p>Sets the initial size of an item before growing/shrinking. Default: <code>auto</code>. Can use px, %, em, etc.</p>
+        <div class="flex-container demo11">
+            <div class="box box-cyan basis-large">200px</div>
+            <div class="box box-pink">auto</div>
+            <div class="box box-lime">auto</div>
+        </div>
+    </section>
+
+    <!-- Flex (Shorthand) -->
+    <section class="demo-section">
+        <h3>12. flex (shorthand) - MOST IMPORTANT!</h3>
+        <p>Combines <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</p>
+        <p><strong>Syntax:</strong> <code>flex: [grow] [shrink] [basis]</code></p>
+        <p><strong>Common values:</strong></p>
+        <ul>
+            <li><code>flex: 1;</code> = <code>flex: 1 1 0;</code> (grow and shrink equally)</li>
+            <li><code>flex: 0 0 200px;</code> (fixed width, no grow/shrink)</li>
+            <li><code>flex: 2;</code> (grows twice as much as flex: 1)</li>
+        </ul>
+        <div class="flex-container demo12">
+            <div class="box box-teal flex-1">flex: 1</div>
+            <div class="box box-indigo flex-2">flex: 2</div>
+            <div class="box box-violet flex-1">flex: 1</div>
+        </div>
+    </section>
+
+    <!-- Order -->
+    <section class="demo-section">
+        <h3>13. order</h3>
+        <p>Changes the visual order of items without changing HTML. Default: <code>0</code>. Lower numbers appear first.</p>
+        <div class="flex-container demo13">
+            <div class="box box-blue order-3">Order: 3 (Last)</div>
+            <div class="box box-green order-1">Order: 1 (First)</div>
+            <div class="box box-purple order-2">Order: 2 (Middle)</div>
+        </div>
+    </section>
+
+    <!-- Align Self -->
+    <section class="demo-section">
+        <h3>14. align-self</h3>
+        <p>Overrides <code>align-items</code> for a single item. Values: <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>.</p>
+        <div class="flex-container demo14">
+            <div class="box box-red">Normal</div>
+            <div class="box box-orange align-self-start">flex-start</div>
+            <div class="box box-yellow align-self-end">flex-end</div>
+        </div>
+    </section>
+
+    <!-- MEDIA QUERIES SECTION -->
+    <section class="section-header media-section">
+        <h2>PART 3: MEDIA QUERIES EXPLAINED</h2>
+        <p><strong>What are Media Queries?</strong></p>
+        <p>Media queries allow you to apply different styles based on screen size, orientation, or device characteristics. They are essential for responsive design.</p>
+        
+        <p><strong>Basic Syntax:</strong></p>
+        <code>@media screen and (max-width: 768px) { /* styles */ }</code>
+        
+        <p><strong>Common Breakpoints:</strong></p>
+        <ul>
+            <li><strong>Mobile:</strong> max-width: 480px or 600px</li>
+            <li><strong>Tablet:</strong> 481px to 768px or 601px to 900px</li>
+            <li><strong>Desktop:</strong> 769px or 901px and above</li>
+        </ul>
+
+        <p><strong>How They Work:</strong></p>
+        <p>1. <code>max-width</code>: Styles apply when screen is SMALLER than specified value</p>
+        <p>2. <code>min-width</code>: Styles apply when screen is LARGER than specified value</p>
+        <p>3. Combine both for specific ranges: <code>@media (min-width: 601px) and (max-width: 900px)</code></p>
+        
+        <p><strong>Mobile-First vs Desktop-First:</strong></p>
+        <p><strong>Mobile-First:</strong> Write base styles for mobile, use <code>min-width</code> to add complexity for larger screens.</p>
+        <p><strong>Desktop-First:</strong> Write base styles for desktop, use <code>max-width</code> to simplify for smaller screens.</p>
+    </section>
+
+    <!-- Responsive Example -->
+    <section class="demo-section">
+        <h3>15. Responsive Card Layout (Using Media Queries)</h3>
+        <p>Desktop: 3 columns | Tablet: 2 columns | Mobile: 1 column</p>
+        <div class="flex-container demo15">
+            <div class="box box-gradient-1">Card 1</div>
+            <div class="box box-gradient-2">Card 2</div>
+            <div class="box box-gradient-3">Card 3</div>
+            <div class="box box-gradient-1">Card 4</div>
+            <div class="box box-gradient-2">Card 5</div>
+            <div class="box box-gradient-3">Card 6</div>
+        </div>
+    </section>
+
+    <!-- Screen Size Indicator -->
+    <div class="screen-indicator"></div>
+
+</body>
+</html>

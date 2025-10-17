@@ -1,0 +1,364 @@
+/* ===================================
+   CSS VARIABLES
+   =================================== */
+:root {
+    --color-primary: #3B82F6;
+    --color-primary-dark: #2563EB;
+    --color-dark-blue: #1E3A5F;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-background: #F9FAFB;
+    --color-white: #FFFFFF;
+    
+    --max-width: 1200px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark-blue);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   LAYOUT - CONTAINER
+   =================================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+header {
+    background-color: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-dark-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    display: inline-block;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.hero-image {
+    flex: 0 0 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.hero-content {
+    flex: 1 1 auto;
+}
+
+.hero-list {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.hero-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-list img {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ===================================
+   WHAT WE OFFER SECTION
+   =================================== */
+.what-we-offer {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.offer-intro {
+    display: flex;
+    gap: var(--spacing-md);
+    text-align: left;
+}
+
+.offer-intro p {
+    flex: 1;
+}
+
+/* ===================================
+   SERVICES GRID
+   =================================== */
+.services {
+    padding: var(--spacing-lg) 0;
+}
+
+.services .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    flex: 1 1 calc(33.333% - var(--spacing-md));
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 250px;
+}
+
+/* ===================================
+   TEAM GALLERY
+   =================================== */
+.team-gallery {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.team-gallery .container {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.team-gallery img {
+    flex: 1 1 calc(25% - var(--spacing-md));
+    min-width: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.footer-brand h2 a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer items with icons */
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ===================================
+   MEDIA QUERIES
+   =================================== */
+
+/* TABLET (768px and below) */
+@media screen and (max-width: 768px) {
+    /* Header adjustments */
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    /* Hero section stacks vertically */
+    .hero {
+        flex-direction: column;
+        padding: var(--spacing-md);
+    }
+    
+    .hero-image {
+        flex: 1 1 100%;
+    }
+    
+    /* Offer intro stacks */
+    .offer-intro {
+        flex-direction: column;
+    }
+    
+    /* Services become 2 columns */
+    .service-card {
+        flex: 1 1 calc(50% - var(--spacing-md));
+    }
+    
+    /* Gallery becomes 2 columns */
+    .team-gallery img {
+        flex: 1 1 calc(50% - var(--spacing-md));
+    }
+    
+    /* Footer stacks */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* MOBILE (480px and below) */
+@media screen and (max-width: 480px) {
+    /* Navigation becomes vertical */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    /* Services become 1 column */
+    .service-card {
+        flex: 1 1 100%;
+    }
+    
+    /* Gallery becomes 1 column */
+    .team-gallery img {
+        flex: 1 1 100%;
+    }
+    
+    /* Reduce spacing */
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

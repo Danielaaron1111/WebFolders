@@ -1,0 +1,185 @@
+https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+
+http://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning
+
+https://codepen.io/eubhawatson/pen/mdMZKvz
+
+https://piccalil.li/blog/a-more-modern-css-reset/
+
+
+https://codepen.io/eubhawatson/pen/rNGLgEW
+
+
+https://codepen.io/eubhawatson/pen/vYXzZEJ
+
+
+
+
+
+CodePen: Font Styles Cheat Sheet
+https://codepen.io/eubhawatson/pen/xxROWVq
+
+This CodePen reviews a number of CSS properties you can use to style typographic elements in your layouts.
+
+Web Safe Font Stacks
+https://www.cssfontstack.com/
+
+A collection of web safe fonts, with the likelihood that a user has it installed on their device.
+
+MDN: CSS styling text
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text
+
+This module will teach you all of the essentials behind styling HTML text content.
+
+CSS Tricks: How to use @font-face in CSS
+https://css-tricks.com/snippets/css/using-font-face-in-css/
+
+The @font-face rule allows custom fonts to be loaded on a webpage. Once added to a stylesheet, the rule instructs the browser to download the font from where it is hosted, then display it as specified in the CSS.
+
+Font Squirrel: Webfont Generator
+https://www.fontsquirrel.com/tools/webfont-generator
+
+Create Your Own @font-face Kits by uploading the fonts you want to use.
+
+Chrome for Developers: Ensure text remains visible during webfont load
+https://developer.chrome.com/docs/lighthouse/performance/font-display/
+
+Some browsers hide text until the font loads, causing a flash of invisible text (FOIT). Here's how to avoid it.
+
+
+Lesson Resources
+CodePen: Font Styles Cheat Sheet
+https://codepen.io/eubhawatson/pen/xxROWVq
+
+This CodePen reviews a number of CSS properties you can use to style typographic elements in your layouts.
+
+Web Safe Font Stacks
+https://www.cssfontstack.com/
+
+A collection of web safe fonts, with the likelihood that a user has it installed on their device.
+
+MDN: CSS styling text
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text
+
+This module will teach you all of the essentials behind styling HTML text content.
+
+CSS Tricks: How to use @font-face in CSS
+https://css-tricks.com/snippets/css/using-font-face-in-css/
+
+The @font-face rule allows custom fonts to be loaded on a webpage. Once added to a stylesheet, the rule instructs the browser to download the font from where it is hosted, then display it as specified in the CSS.
+
+Font Squirrel: Webfont Generator
+https://www.fontsquirrel.com/tools/webfont-generator
+
+Create Your Own @font-face Kits by uploading the fonts you want to use.
+
+Chrome for Developers: Ensure text remains visible during webfont load
+https://developer.chrome.com/docs/lighthouse/performance/font-display/
+
+Some browsers hide text until the font loads, causing a flash of invisible text (FOIT). Here's how to avoid it.
+
+
+LESSON 12 
+
+Lesson Resources
+Chrome for Developers: Overview of Lighthouse
+https://developer.chrome.com/docs/lighthouse/overview/
+
+Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO, and more.
+
+PageSpeed Insights
+https://pagespeed.web.dev/
+
+Run Lighthouse and link to reports without installing a thing.
+
+LESSON 13 
+
+Art Direction in Responsive Images
+https://web.dev/articles/responsive-images#art_direction_in_responsive_images_with_picture
+
+To change images based on device characteristics, also known as art direction, use the picture element.
+
+
+https://devina.io/svg-minifier
+
+lesson 14 
+
+Lesson Resources
+CodePen: Resizing SVGs
+https://codepen.io/eubhawatson/pen/JjRedbe
+
+Because an SVG is made with maths (i.e. our browser renders out a series of lines, points, and polygons), it will never lose its integrity or overall quality, even if we alter its size.
+
+MDN: Scalable Vector Graphics
+https://developer.mozilla.org/en-US/docs/Web/SVG
+
+SVGs are a text-based, open Web standard for describing images that can be rendered cleanly at any size and are designed specifically to work well with other web standards.
+
+SVG Minifier
+https://devina.io/svg-minifier
+
+Optimize SVG files by removing excess markup and compressing vector data.
+
+Online SVG Libraries
+Bootstrap Icon Library
+https://icons.getbootstrap.com/
+
+Flaticon
+https://www.flaticon.com/
+
+Hero Icons
+https://heroicons.com/
+
+IcoMoon
+https://icomoon.io/
+
+SVG Repo
+https://www.svgrepo.com/
+
+The Noun Project
+https://thenounproject.com/
+
+
+
+LESSON 15 
+
+
+Lesson Resources
+CodePen: Absolute Positioning (Within a Relative Container)
+https://codepen.io/eubhawatson/pen/mdMZKvz
+
+The position property lets us break our layout and nudge elements around in ways that we normally couldn’t.
+
+MDN: Positioning
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning
+
+Positioning allows you to take elements out of normal document flow and make them behave differently.
+
+MDN: z-index
+https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+
+The z-index CSS property sets the z-order of a positioned element and its descendants or flex and grid items. Overlapping elements with a larger z-index cover those with a smaller one. 
+
+
+LESSON 16
+
+
+Lesson Resources
+CSS Tricks: Absolute, Relative, Fixed Positioning: How Do They Differ? 
+https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+
+A fixed position element is positioned relative to the viewport, or the browser window itself.
+
+CSS Tricks: position: sticky;
+https://css-tricks.com/position-sticky-2/
+
+ Sticky positioning is a hybrid of relative and fixed positioning.
+
+CSS Tricks: A Clever Sticky Footer Technique
+https://css-tricks.com/a-clever-sticky-footer-technique/
+
+The idea is that sticky footers will stick to the bottom of the screen, even when the content of the page isn’t enough to push them there.
+
+
+
+

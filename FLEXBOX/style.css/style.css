@@ -1,0 +1,369 @@
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f0f2f5;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+code {
+    background: #e8f4f8;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #c7254e;
+}
+
+/* ===================================
+   SECTION STYLES
+   =================================== */
+.intro-section,
+.demo-section,
+.section-header {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.section-header h2 {
+    color: white;
+    margin: 0;
+}
+
+.section-header p {
+    margin: 10px 0 0 0;
+}
+
+.intro-section p,
+.demo-section p,
+.media-section p {
+    margin-bottom: 10px;
+}
+
+.intro-section ul,
+.media-section ul {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   FLEX CONTAINER BASE
+   =================================== */
+.flex-container {
+    display: flex;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border: 3px solid #95a5a6;
+    border-radius: 8px;
+    margin-top: 15px;
+    min-height: 150px;
+}
+
+/* ===================================
+   FLEX ITEM (BOX) STYLES
+   =================================== */
+.box {
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    flex: 0 0 auto; /* Default: no grow, no shrink, auto basis */
+}
+
+/* Color Variations */
+.box-blue { background-color: #3498db; }
+.box-green { background-color: #2ecc71; }
+.box-purple { background-color: #9b59b6; }
+.box-red { background-color: #e74c3c; }
+.box-orange { background-color: #e67e22; }
+.box-yellow { background-color: #f39c12; }
+.box-pink { background-color: #e91e63; }
+.box-cyan { background-color: #00bcd4; }
+.box-lime { background-color: #8bc34a; }
+.box-teal { background-color: #009688; }
+.box-indigo { background-color: #3f51b5; }
+.box-violet { background-color: #673ab7; }
+.box-brown { background-color: #795548; }
+
+/* Gradient Colors */
+.box-gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.box-gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.box-gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+/* Height Variations */
+.tall-small { height: 60px; }
+.tall-medium { height: 100px; }
+.tall-large { height: 140px; }
+
+/* ===================================
+   DEMO EXAMPLES
+   =================================== */
+
+/* Demo 1: Basic Flex */
+.demo1 {
+    /* display: flex is already applied to .flex-container */
+}
+
+/* Demo 2: Flex Direction */
+.demo2 {
+    flex-direction: row;
+}
+
+/* Demo 3: Flex Wrap */
+.demo3 {
+    flex-wrap: wrap;
+}
+
+.demo3 .box {
+    flex: 0 0 150px;
+}
+
+/* Demo 4: Flex Flow */
+.demo4 {
+    flex-flow: row wrap;
+}
+
+.demo4 .box {
+    flex: 0 0 180px;
+}
+
+/* Demo 5: Justify Content */
+.demo5 {
+    justify-content: space-between;
+}
+
+/* Demo 6: Align Items */
+.demo6 {
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Demo 7: Align Content */
+.demo7 {
+    flex-wrap: wrap;
+    align-content: space-around;
+    min-height: 300px;
+}
+
+.demo7 .box {
+    flex: 0 0 200px;
+}
+
+/* Demo 8: Gap */
+.demo8 {
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Demo 9: Flex Grow */
+.demo9 .box {
+    flex-grow: 1;
+}
+
+.demo9 .grow-2 {
+    flex-grow: 2;
+}
+
+/* Demo 10: Flex Shrink */
+.demo10 {
+    /* Container is narrow to force shrinking */
+}
+
+.demo10 .box {
+    flex: 1 1 200px; /* Allow shrinking */
+}
+
+.demo10 .shrink-0 {
+    flex-shrink: 0; /* Prevent shrinking */
+    min-width: 150px;
+}
+
+/* Demo 11: Flex Basis */
+.demo11 .basis-large {
+    flex-basis: 200px;
+}
+
+/* Demo 12: Flex Shorthand */
+.demo12 .flex-1 {
+    flex: 1;
+}
+
+.demo12 .flex-2 {
+    flex: 2;
+}
+
+/* Demo 13: Order */
+.demo13 .order-1 {
+    order: 1;
+}
+
+.demo13 .order-2 {
+    order: 2;
+}
+
+.demo13 .order-3 {
+    order: 3;
+}
+
+/* Demo 14: Align Self */
+.demo14 {
+    align-items: center;
+    min-height: 180px;
+}
+
+.demo14 .align-self-start {
+    align-self: flex-start;
+}
+
+.demo14 .align-self-end {
+    align-self: flex-end;
+}
+
+/* Demo 15: Responsive Cards */
+.demo15 {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.demo15 .box {
+    flex: 1 1 300px;
+    min-height: 120px;
+}
+
+/* ===================================
+   SCREEN SIZE INDICATOR
+   =================================== */
+.screen-indicator {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #2c3e50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===================================
+   MEDIA QUERIES - MOBILE FIRST
+   =================================== */
+
+/* Mobile (Default - up to 600px) */
+.screen-indicator::before {
+    content: "📱 Mobile View";
+}
+
+/* Change demos for mobile */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    /* Demo 2: Stack vertically on mobile */
+    .demo2 {
+        flex-direction: column;
+    }
+
+    /* Demo 5: Center on mobile */
+    .demo5 {
+        justify-content: center;
+    }
+
+    /* Demo 15: Single column on mobile */
+    .demo15 .box {
+        flex: 1 1 100%;
+    }
+
+    .box {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+}
+
+/* Tablet (601px to 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .screen-indicator::before {
+        content: "📱 Tablet View";
+    }
+
+    /* Demo 5: Space around on tablet */
+    .demo5 {
+        justify-content: space-around;
+    }
+
+    /* Demo 15: Two columns on tablet */
+    .demo15 .box {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+/* Desktop (901px and above) */
+@media screen and (min-width: 901px) {
+    .screen-indicator::before {
+        content: "🖥️ Desktop View";
+    }
+
+    /* Demo 15: Three columns on desktop */
+    .demo15 .box {
+        flex: 1 1 calc(33.333% - 15px);
+    }
+}
+
+/* Extra Large Screens (1200px+) */
+@media screen and (min-width: 1200px) {
+    .screen-indicator::before {
+        content: "🖥️ Large Desktop";
+    }
+
+    body {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
