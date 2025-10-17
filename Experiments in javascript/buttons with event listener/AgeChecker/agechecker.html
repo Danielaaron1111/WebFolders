@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Age Verification</h2>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button id="checkBtn">Check Age</button>
+    <div id="result"></div>
+
+    <script>
+        let ageInput = document.getElementById("ageInput");
+        let checkBtn = document.getElementById("checkBtn");
+        let result = document.getElementById("result");
+        
+        checkBtn.addEventListener("click", function() {
+            let age = Number(ageInput.value);
+            
+            // If/else conditions
+            if (age < 0) {
+                result.textContent = "Invalid age!";
+                result.style.color = "red";
+            } else if (age < 13) {
+                result.textContent = "You are a child";
+                result.style.color = "blue";
+            } else if (age < 18) {
+                result.textContent = "You are a teenager";
+                result.style.color = "orange";
+            } else if (age < 65) {
+                result.textContent = "You are an adult";
+                result.style.color = "green";
+            } else {
+                result.textContent = "You are a senior";
+                result.style.color = "purple";
+            }
+        });
+    </script>
+</body>
+</html>

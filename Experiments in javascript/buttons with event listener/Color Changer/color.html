@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Changer</title>
+</head>
+<body>
+    <div id="output">Original Text</div>
+    <button id="changeBtn">Change Text</button>
+
+    <script>
+        // Select the elements
+        let output = document.getElementById("output");
+        let button = document.getElementById("changeBtn");
+        
+        // Change text when button is clicked
+        button.addEventListener("click", function() {
+            output.textContent = "Text has been changed!";
+            output.style.color = "green";
+        });
+
+        //click event listener
+        output.addEventListener("mouseover", function() {
+           output.style.backgroundColor = "purple";
+        })
+      
+    </script>
+</body>
+</html>
+
+<!-- we have click events, mouse events and keyboard events -->
+ <!-- // Click event
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+
+// Mouse events
+div.addEventListener("mouseover", function() {
+    this.style.backgroundColor = "yellow";
+});
+
+div.addEventListener("mouseout", function() {
+    this.style.backgroundColor = "white";
+});
+
+// Keyboard events
+input.addEventListener("keydown", function(event) {
+    console.log("Key pressed:", event.key);
+}); -->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="colorBox">Click me!</div>
+    <button id="purpleBtn">Purple</button>
+    <button id="blueBtn">Blue</button>
+    <button id="greenBtn">Green</button>
+    <button id="redBtn">Red</button>
+
+    <script>
+        let box = document.getElementById("colorBox");
+        let redBtn = document.getElementById("redBtn");
+        let blueBtn = document.getElementById("blueBtn");
+        let greenBtn = document.getElementById("greenBtn");
+        
+        // Add event listeners to each button
+        purpleBtn.addEventListener("click", function() {
+            box.style.backgroundColor = "purple";
+            box.textContent = "Purple Box";
+        });
+
+        redBtn.addEventListener("click", function() {
+            box.style.backgroundColor = "red";
+            box.textContent = "Red Box";
+        });
+        
+        blueBtn.addEventListener("click", function() {
+            box.style.backgroundColor = "blue";
+            box.textContent = "Blue Box";
+        });
+        
+        greenBtn.addEventListener("click", function() {
+            box.style.backgroundColor = "green";
+            box.textContent = "Green Box";
+        });
+        
+        // Hover effect
+        
+        box.addEventListener("mouseover", function() {
+            this.style.transform = "scale(1.1)";
+            this.style.transition = "transform 0.3s";
+        });
+        
+        box.addEventListener("mouseout", function() {
+            this.style.transform = "scale(1)";
+        });
+        // Button hover effect for all buttons when the user hover over any button 
+        // document.querySelectorAll("button").forEach(function(button) {
+        //     button.addEventListener("mouseover", function() {
+        //         this.style.transform = "scale(1.1)";
+        //         this.style.transition = "transform 0.3s";
+        //     });
+        //     // element shrink back to original size when mouse leaves
+        //     button.addEventListener("mouseout", function() {
+        //         this.style.transform = "scale(1)";
+        //     });
+        // });
+
+        // Button hover effect for only red button when the user hover over red button
+        redBtn.addEventListener("mouseover", function() {
+            this.style.transform = "scale(1.1)";
+            this.style.transition = "transform 0.3s";
+        });
+
+        redBtn.addEventListener("mouseout", function() {
+            this.style.transform = "scale(1)";
+        });
+
+    </script>
+</body>
+</html>
+       
+</body>
+</html>

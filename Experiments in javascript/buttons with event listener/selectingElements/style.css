@@ -1,0 +1,122 @@
+/* Light Mode (Default) */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode button {
+    background-color: #28a745;
+}
+
+body.dark-mode button:hover {
+    background-color: #1e7e34;
+}
+
+/* Output div styling */
+#output {
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+body.dark-mode #output {
+    background-color: #2d2d2d;
+}
+
+/* Layout improvements */
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+    transition: background 0.3s;
+}
+body.dark-mode .container {
+    background: rgba(34,34,34,0.98);
+}
+
+/* Input styling */
+#messageInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px 10px 0;
+    width: 60%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+#messageInput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+body.dark-mode #messageInput {
+    background: #232323;
+    color: #fff;
+    border-color: #444;
+}
+
+/* Message list styling */
+#messagesList {
+    margin-top: 20px;
+    padding: 0 0 0 10px;
+}
+#messagesList ul {
+    list-style: disc inside;
+    padding-left: 0;
+    margin: 0;
+}
+#messagesList li {
+    background: #e9ecef;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+body.dark-mode #messagesList li {
+    background: #23272b;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 16px 6px;
+    }
+    #messageInput {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
