@@ -1,0 +1,87 @@
+:root {
+    --header: #263238;
+    --body: #455A64;
+    --link: #14b8a6;
+    --hover: #2dd4bf;
+    --active: #99f6e4;
+    --svg: #26A69A;
+    --svg-hover: #1DE9B6;
+    --svg-active: #A7FFEB;
+}
+
+body {
+    background-color: var(--body);
+    font-family: sans-serif;
+}
+
+/* Utility Classes */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+    visibility: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 72rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul svg {
+    margin-right: 0.5rem;
+    width: 1.25rem;
+}
+
+ul a {
+    align-items: center;
+    color: var(--link);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+svg path {
+    fill: var(--svg);
+}
+
+/* Order for anchor tag pseudo-classes:
+    1. link
+    2. visited
+    3. focus
+    4. hover
+    5. active
+*/
+
+ul.menu a:focus-within,
+ul.menu a:focus svg path,
+ul.menu a:hover,
+ul.menu a:hover svg path {
+    color: var(--svg-hover);
+    fill: var(--svg-hover);
+}
+
+ul.menu a:active,
+ul.menu a:active svg path {
+    color: var(--svg-active);
+    fill: var(--svg-active);
+}
+
+@media screen and (min-width: 64rem) {
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
