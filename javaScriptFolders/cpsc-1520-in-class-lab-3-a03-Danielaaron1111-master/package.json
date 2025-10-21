@@ -1,0 +1,22 @@
+{
+  "name": "cpsc-1520-lab-3",
+  "version": "1.0.0",
+  "description": "In-Class Lab 3 for CPSC-1520 - Event Listeners + Programmatic Styling and Interactivity",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:earned": "vitest --run --exclude tests/*PROVIDED*",
+    "test:json": "vitest --run --exclude tests/*PROVIDED* --outputFile=NoTrack/marked.json --reporter=json",
+    "test:json-all": "vitest --run --outputFile=NoTrack/marked-all.json --reporter=json"
+  },
+  "author": "Danielaaron1111",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@d2t/vitest-ctrf-json-reporter": "^1.3.0",
+    "@vitest/ui": "^3.1.3",
+    "jsdom": "^26.1.0",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.3"
+  }
+}

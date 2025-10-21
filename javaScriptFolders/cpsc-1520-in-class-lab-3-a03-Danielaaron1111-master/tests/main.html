@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <script src="../js/main.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <h1>A minimal testing page</h1>
+    <ul id="theme-switcher" class="icons hide" data-test="showThemeButtons">
+      <li><button id="dark-theme-off" class="las la-sun outline" data-test="btnDarkOff"></button></li>
+      <li><button id="dark-theme-on" class="las la-moon outline" data-test="btnDarkOn"></button></li>
+    </ul>
+  </header>
+  <button class="hide" id="show-resources" data-test="showResourcesButton">Show Resources</button>
+  <main>
+    <section data-test="mainSection">
+      Peek-a-boo!
+    </section>
+    <p id="usage" popover data-test="popoverElement">To follow the links in this page, use your middle-mouse button.</p>
+    <dialog data-test="dialogElement">
+      To be or not to be, that must be shown programmatically.
+    </dialog>
+  </main>
+</body>
+</html>

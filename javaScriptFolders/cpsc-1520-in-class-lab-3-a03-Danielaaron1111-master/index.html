@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+
+  <meta charset="utf-8">
+  <title>JavaScript Resources</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css" />
+  <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="./js/main.js" type="module"></script>
+</head>
+
+<body>
+  <header class="container pb-0 mb-0">
+    <nav>
+      <ul>
+        <li>
+          <img src="./img/MDN_Web_Docs_logo.svg" alt="MDN Logo">
+        </li>
+        <li><h1>Javascript Resources</h1></li>
+      </ul>
+      <ul id="theme-switcher" class="icons hide">
+        <li><button id="dark-theme-off" class="las la-sun outline"></button></li>
+        <li><button id="dark-theme-on" class="las la-moon outline"></button></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container pt-0 mt-0">
+    <blockquote>
+      <footer>
+        <h2>Web technology for developers</h2>
+        <p>The open Web presents incredible opportunities for developers. To take full advantage of these technologies,
+          you need to know how to use them. Below you'll find links to our Web technology documentation.</p>
+        <cite>
+          The <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" rel="noopener noreferrer">MDN Online Reference</a>
+          <button class="hide" id="show-resources">Show Resources</button>
+        </cite>
+      </footer>
+    </blockquote>
+
+    <section>
+      <details open>
+        <summary role="note">JavaScript Reference</summary>
+        <p>A set of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank"
+            rel="noopener noreferrer">language reference links</a> for when you have a question about a specific part of
+          JavaScript.</p>
+      </details>
+
+      <details open>
+        <summary role="note">JavaScript Curriculum</summary>
+        <p>An ordered set of <a href="https://developer.mozilla.org/en-US/curriculum/core/javascript-fundamentals/"
+            target="_blank" rel="noopener noreferrer">lessons</a> with learning outcomes that cover the breadth of
+          JavaScript.</p>
+      </details>
+
+      <details open>
+        <summary role="note">Tutorials and Guides</summary>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript#tutorials" target="_blank"
+            rel="noopener noreferrer">Tutorials</a> ranging from beginner to advanced as well a <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank"
+            rel="noopener noreferrer">guided set of modules</a> to help you learn the language in context.</p>
+      </details>
+
+      <details open>
+        <summary role="note">Playground</summary>
+        <p>An HTML/CSS/JS editor that allows you to <a href="https://developer.mozilla.org/en-US/play" target="_blank"
+            rel="noopener noreferrer">experiment and play</a> in your browser.</p>
+      </details>
+    </section>
+    <p id="usage" popover>To follow the links in this page, use your middle-mouse button.</p>
+    <dialog>
+      <article>
+        <header>Instructions</header>
+        <h3>To follow the links in this page, use your middle-mouse button.</h3>
+        <footer><button autofocus>Close</button></footer>
+      </article>
+    </dialog>
+  </main>
+
+  <footer class="container">
+    <div>
+      <p>MDN Logo from <a href="https://commons.wikimedia.org/wiki/File:MDN_Web_Docs_logo.svg" target="_blank" rel="noopener noreferrer">Wikimedia</a>.<br>Styling from <a href="https://picocss.com/" target="_blank" rel="noopener noreferrer">PicoCSS</a>.</p>
+    </div>
+    <ul>
+      <li><a href="https://github.com/sorrycc/awesome-javascript" target="_blank" rel="noopener noreferrer">Awesome Javascript - GitHub Repo</a></li>
+      <li><a href="https://learning.oreilly.com/playlists/c9eecbfb-0a84-4a9b-9d5e-83462a50f615/" target="_blank"
+        rel="noopener noreferrer">Dan Morris' O'Reilly Javascript Playlist</a></li>
+        <li><a href="https://trends.google.com/trends/explore?date=all&geo=CA&q=%2Fm%2F012l1vxv,%2Fg%2F11c5t00h04,%2Fg%2F11c0vmgx5d,%2Fm%2F0j45p7w" target="_blank">Compare JS Frameworks</a></li>
+      </ul>
+    <ul>
+      <li><a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a></li>
+      <li><a href="https://reactjs.org/" class="btn btn-sm btn-primary " target="_blank">React</a></li>
+      <li><a href="https://solidjs.com/" target="_blank" rel="noopener noreferrer">SolidJS</a></li>
+      <li><a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">Svelte</a></li>
+    </ul>      
+  </footer>
+</body>
+</html>

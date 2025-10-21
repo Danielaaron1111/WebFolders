@@ -1,0 +1,78 @@
+/* Semantic Styles */
+body > header li > img, body > header > svg {
+  float: left;
+  height: 50px;
+  margin-right: 2em;
+}
+
+main > blockquote {
+  font-size: 0.7em;
+}
+
+main > section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+cite > button {
+  padding: .2em .5em;
+  margin-left: .5em;
+}
+
+details {
+  /* Copied from PicoCSS */
+  margin-bottom: var(--pico-block-spacing-vertical);
+  padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  box-shadow: var(--pico-card-box-shadow);
+}
+
+footer, footer > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Utility Classes */
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+details.emphasize a, details:has(*.emphasize) a {
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+details:has(summary.emphasize), summary.emphasize {
+  font-style: italic;
+}
+
+summary.tag-emphasize {
+  font-weight: bold;
+  color: var(--pico-primary-hover)
+}

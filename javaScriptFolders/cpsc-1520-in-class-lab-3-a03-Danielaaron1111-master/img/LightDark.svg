@@ -1,0 +1,20 @@
+<svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define the masks -->
+  <defs>
+    <mask id="mask1">
+      <rect x="0" y="0" width="250" height="250" fill="white"/>
+    </mask>
+    <mask id="mask2">
+      <rect x="250" y="0" width="250" height="250" fill="white"/>
+    </mask>
+  </defs>
+
+  <!-- Load and apply the first mask to the first image -->
+  <image href="./img/Light.png" width="500" height="250" mask="url(#mask1)"/>
+
+  <!-- Load and apply the second mask to the second image -->
+  <image href="./Dark.png" width="500" height="250" mask="url(#mask2)"/>
+
+  <!-- Draw the thick line in the middle -->
+  <line x1="250" y1="0" x2="250" y2="250" stroke="black" stroke-width="4"/>
+</svg>
