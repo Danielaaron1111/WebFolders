@@ -1,0 +1,1130 @@
+/* ============================================================================
+   i applied some border radious to images to make them look better
+   it more pretty but remember to remove it if you want to use the exact the exact figma design which is horrible to be honest;
+   problems in the footer with the justify content 
+   remember to remove border shadow from service cards if you want to use the exact figma design
+    rember fix the colors 
+
+   ============================================================================ */
+
+/* ===================================
+   CSS VARIABLES
+   =================================== */
+:root {
+    --color-primary: #0463FA;
+    --color-primary-dark: #1B2C51;
+    --color-dark-blue: #1B2C51;
+    --color-text: #333333;
+    --color-text-light: #8D8E92;
+    --color-background: #F9FAFB;
+    --color-white: #EFF5FF;
+    
+    --max-width: 75rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+}
+
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark-blue);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark-blue);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.features-list span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.features-list strong {
+    font-weight: 700;
+}
+
+
+/* ===================================
+   TYPOGRAPHY - HOME PAGE
+   =================================== */
+
+/* Navigation Links */
+.main-nav a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Hero Section - Main Heading */
+.hero-stats h2,
+.hero-stats h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* Stats Numbers */
+.stat-number {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Stats Labels */
+.stat-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Trust Section - Heading */
+.trust-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Trust Section - Paragraphs */
+.trust-section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Trust Section - Check List */
+.trust-section .check-list li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Button */
+.btn-primary {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Choose Section - Heading */
+.choose-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Choose Section - Paragraphs */
+.choose-section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Choose Section - Features */
+.features-list li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Doctors Section - Heading */
+.doctors-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Doctor Card - Name */
+.doctor-info h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Doctor Card - Specialty */
+.doctor-info p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* View All Links (white on blue) */
+.doctors-section .link-arrow {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* View All Links (blue on white) */
+.services-section .link-arrow {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Services Section - Heading */
+.services-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Service Card - Title */
+.service-card h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Service Card - Description */
+.service-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Footer - Section Headings */
+.footer-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Footer - Contact Items */
+.footer-item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 2.27;
+}
+
+/* Footer - Quick Links */
+.footer-links a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Footer - Logo/Brand */
+.footer-brand h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* ===================================
+   TYPOGRAPHY - ABOUT PAGE
+   =================================== */
+
+/* About Hero - Main Heading */
+.about-hero h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark-blue);
+}
+
+/* About Hero - Paragraphs */
+.about-hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* About Hero - Check List */
+.about-hero .check-list li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+/* Offer Section - Heading */
+.offer-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark-blue);
+    margin-bottom: 2rem;
+}
+
+/* Offer Section - Paragraphs */
+.offer-section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+
+/* ===================================
+   CONTAINER
+   =================================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
+.site-header {
+    background-color: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+}
+
+/* MOBILE: Centered logo, 2x2 nav grid below */
+.header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-dark-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 2.5rem;
+    width: auto;
+}
+
+/* MOBILE: 2x2 grid for navigation */
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+    max-width: 20rem;
+    list-style: none;
+}
+
+.main-nav li {
+    flex: 0 0 calc(50% - 1rem);
+    text-align: center;
+}
+
+.main-nav a {
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+    display: block;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.trust-section .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.trust-section .btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+.link-arrow {
+    color: var(--color-primary);
+    font-weight: bold;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.link-arrow:hover {
+    color: var(--color-primary-dark);
+}
+
+
+/* ===================================
+   SHARED: CHECK LIST
+   =================================== */
+.check-list {
+    margin: var(--spacing-md) 0;
+    list-style: none;
+}
+
+.check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.check-list img {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+
+/* ===================================
+   SHARED: VIEW ALL LINKS
+   =================================== */
+.view-all {
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+
+/* ===================================
+   HOME: HERO WITH STATS
+   =================================== */
+.hero-stats {
+    padding: var(--spacing-md) 0;
+}
+
+/* MOBILE: Stack everything vertically */
+.hero-stats-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.hero-stats .hero-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.hero-stats h2 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+/* MOBILE: Stats stacked vertically, no separators */
+.stats-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: var(--spacing-md);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-dark-blue);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+/* Separator line - hidden on mobile */
+.stat-item + .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.0625rem;
+    height: 2rem;
+    background-color: var(--color-text-light);
+    display: none;
+}
+
+
+/* ===================================
+   HOME: TRUST SECTION (Blue)
+   =================================== */
+.trust-section {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+}
+
+.trust-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.trust-section .trust-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.trust-section h2 {
+    color: var(--color-white);
+}
+
+
+/* ===================================
+   HOME: CHOOSE SECTION
+   =================================== */
+.choose-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.choose-section h2 {
+    text-align: center;
+}
+
+/* MOBILE: Text first, then image */
+.choose-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.choose-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* MOBILE: Features in 2x2 grid */
+.features-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: var(--spacing-md);
+}
+
+.features-list li {
+    flex: 0 0 calc(50% - 0.75rem);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.features-list img {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+}
+
+
+/* ===================================
+   HOME: DOCTORS SECTION (Blue)
+   =================================== */
+.doctors-section {
+    background-color: var(--color-primary);
+    padding: var(--spacing-lg) 0;
+}
+
+.doctors-section h2 {
+    color: var(--color-white);
+    text-align: center;
+}
+
+.doctors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.doctor-card {
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.doctor-info {
+    padding: var(--spacing-sm);
+    text-align: center;
+}
+
+.doctor-info h3 {
+    margin-bottom: 0.25rem;
+}
+
+.doctor-info p {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.doctors-section .link-arrow {
+    color: var(--color-white);
+}
+
+
+/* ===================================
+   SERVICES SECTION (Home & About)
+   =================================== */
+.services-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.services-section h2 {
+    text-align: center;
+}
+
+/* MOBILE: Single column for all pages */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1);
+    width: 100%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+
+/* ===================================
+   ABOUT: HERO SECTION
+   =================================== */
+.about-hero {
+    padding: var(--spacing-md) 0;
+}
+
+.about-hero-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.about-hero h2 {
+    text-align: center;
+}
+
+
+/* ===================================
+   ABOUT: OFFER SECTION
+   =================================== */
+.offer-section {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.offer-intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+
+/* ===================================
+   ABOUT: TEAM GALLERY
+   =================================== */
+.team-gallery {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.gallery-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.team-gallery img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+/* ===================================
+   FOOTER
+   =================================== */
+.site-footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 2rem 1rem;
+}
+
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-brand h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-brand h2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer-brand h2 img {
+    height: 2.5rem;
+    width: auto;
+}
+
+.footer-address {
+    margin-bottom: 0;
+}
+
+.footer-label {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+
+/* ===================================
+   TABLET (min-width: 48rem / 768px)
+   =================================== */
+@media screen and (min-width: 48rem) {
+
+    .header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav ul {
+        max-width: 25rem;
+        justify-content: flex-end;
+    }
+
+    .hero-stats h2,
+    .hero-stats h1 {
+        font-size: 2rem;
+    }
+
+    .hero-stats-flex {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-stats .hero-image {
+        flex: 0 0 45%;
+    }
+
+    .hero-stats .hero-content {
+        flex: 1 1 auto;
+    }
+
+    .hero-stats h2 {
+        text-align: left;
+    }
+
+    .stats-row {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .stat-item {
+        position: relative;
+        padding: 0 1.5rem;
+    }
+
+    .stat-item:first-child {
+        padding-left: 0;
+    }
+
+    .stat-item + .stat-item::before {
+        display: block;
+    }
+
+    .trust-flex {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .trust-section .trust-image {
+        flex: 0 0 40%;
+    }
+
+    .trust-section .trust-content {
+        flex: 1 1 auto;
+    }
+
+    .choose-flex {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .choose-flex .choose-text {
+        flex: 1 1 auto;
+    }
+
+    .choose-flex .choose-image {
+        flex: 0 0 45%;
+    }
+
+    .features-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .features-list li {
+        flex: 0 0 calc(50% - 0.75rem);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .doctors-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .doctor-card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+    /* HOME PAGE: 3 cards in 1 row */
+    .page-home .services-grid {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .page-home .service-card {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    /* ABOUT PAGE: 2 columns × 3 rows (TABLET) */
+    .page-about .services-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .page-about .service-card {
+        flex: 0 0 calc((100% - 2rem) / 2);
+        width: calc((100% - 2rem) / 2);
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .view-all {
+        text-align: right;
+    }
+
+    .about-hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .about-hero-flex {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .about-hero .hero-image {
+        width: 100%;
+        order: -1;
+    }
+
+    .about-hero .hero-content {
+        order: 1;
+    }
+
+    .about-hero h2 {
+        text-align: center;
+    }
+
+    .offer-intro {
+        flex-direction: row;
+    }
+
+    .offer-intro p {
+        flex: 1 1 auto;
+    }
+
+    .gallery-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .gallery-flex img {
+        flex: 1 1 calc(50% - calc(var(--spacing-md) / 2));
+        max-width: calc(50% - calc(var(--spacing-md) / 2));
+    }
+
+    .site-footer {
+        padding: 3rem 1rem;
+    }
+
+    .footer-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-brand {
+        flex: 0 0 50%;
+    }
+
+    .footer-brand h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-brand h2 a {
+        justify-content: flex-start;
+    }
+
+    .footer-item {
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        flex: 0 0 auto;
+        text-align: right;
+        margin-top: 0;
+    }
+
+    .footer-links ul {
+        align-items: flex-end;
+    }
+}
+
+
+/* ===================================
+   DESKTOP (min-width: 64rem / 1024px)
+   =================================== */
+@media screen and (min-width: 64rem) {
+    
+    .header-flex {
+        justify-content: space-between;
+    }
+
+    .main-nav ul {
+        flex-wrap: nowrap;
+        max-width: none;
+        gap: 2rem;
+        justify-content: flex-end;
+    }
+
+    .main-nav li {
+        flex: 0 0 auto;
+        text-align: left;
+    }
+    
+    .hero-stats-flex {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats h2,
+    .hero-stats h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .offer-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .doctor-card {
+        flex: 1 1 calc(25% - 1.5rem);
+    }
+    
+    /* HOME PAGE: 3 cards in 1 row */
+    .page-home .services-grid {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+    
+    .page-home .service-card {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+    /* ABOUT PAGE: 3 columns × 2 rows (DESKTOP) */
+    .page-about .services-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .page-about .service-card {
+        flex: 0 0 calc((100% - 4rem) / 3);
+        width: calc((100% - 4rem) / 3);
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+    .about-hero-flex {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+
+    .about-hero .hero-image {
+        flex: 0 0 40%;
+        order: 0;
+    }
+
+    .about-hero .hero-content {
+        flex: 1 1 auto;
+        order: 0;
+    }
+
+    .about-hero h2 {
+        text-align: left;
+    }
+    
+    .gallery-flex img {
+        flex: 1 1 calc(25% - calc(var(--spacing-md) * 3 / 4));
+        max-width: calc(25% - calc(var(--spacing-md) * 3 / 4));
+    }
+    
+    .site-footer {
+        padding: 3rem 2rem;
+    }
+    
+    .footer-flex {
+        gap: 4rem;
+        justify-content: space-between;
+    }
+}

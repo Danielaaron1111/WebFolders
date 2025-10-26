@@ -1,0 +1,148 @@
+/* Global Variables */
+
+:root {
+    --cyan-900: #006064;
+    --cyan-700: #0097a7;
+    --grey-50: #eceff1;
+    --grey-100: #cfd8dc;
+    --grey-900: #263238;
+    --box-shadow: 10px 10px 19px 0px rgba(236, 239, 241, 1);
+    --white: #fff;
+}
+
+/* Soft Reset */
+
+body {
+    color: var(--grey-900);
+    font-family: "Open Sans", sans-serif;
+}
+
+
+svg {
+    height: 1.125rem;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+.wide-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+/* Typographic Styles */
+h1 {
+    font-size: 2.125rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a,
+button {
+    font-size: 1.125rem;
+}
+
+a {
+    color: var(--cyan-900);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: var(--cyan-700);
+    text-decoration: underline;
+}
+
+/* Component Styles */
+header {
+    border-bottom: 1px solid var(--grey-100);
+    box-shadow: 10px 10px 19px 0 rgba(236, 239, 241, 1);
+    padding: 0.25rem 1rem;
+}
+
+/* We're preparing this for later. We need to make this relatively positioned because we are going to be absolutely positioning our dropdown menu underneath it. Note that relatively positioning something does not move or change where this element is in the layout. */
+.top-level {
+    position: relative;
+}
+
+.toggle-btn {
+    background-color: var(--cyan-900);
+    border: none;
+    border-radius: 1rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.25rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+    background-color: var(--cyan-700);
+}
+
+ul:not(.dropdown) a,
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dropdown {
+    line-height: 2;
+    padding-left: 1.25rem;
+}
+
+/* This is going to be the default state for our dropdown menu. We will assign it this class because we want it to be hidden when the user initially loads the page. */
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+/* With JavaScript, we will dynamically add or remove this class. It will take precedence over .collapsed because .expanded is defined lower in the cascade and has the same level of specificity. */
+.expanded {
+    max-height: unset;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (min-width: 920px) {
+    .wide-flex {
+        align-items: center;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+
+    /* Here, we're absolutely positioning the dropdown menu to appear underneath the toggle button. */
+    .dropdown {
+        position: absolute;
+        background-color: var(--white);
+        border: 1px solid var(--grey-100);
+        left: 0;
+        padding: 1rem;
+        top: 3rem;
+        min-width: 11.5rem;
+    }
+}
