@@ -1,0 +1,11 @@
+/* SELF-CHECK - Rename to include `.spec` when running self-checks on the test-helpers
+*/
+
+it.skip('SELF-CHECK givenArgs() returns correct types', () =>{
+    const [ownerForm, inputControls, displayContainer, playlistForm, playlistContainer] = givenArgs();
+    expect(ownerForm).toBeInstanceOf(HTMLFormElement);
+    expect(inputControls).toBeInstanceOf(HTMLElement);
+    expect(displayContainer).toBeInstanceOf(HTMLElement);
+    expect(playlistForm).toBeInstanceOf(HTMLFormElement);
+    expect(playlistContainer).toBeInstanceOf(HTMLElement);
+});

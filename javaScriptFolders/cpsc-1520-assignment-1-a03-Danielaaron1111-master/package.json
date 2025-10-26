@@ -1,0 +1,25 @@
+{
+  "name": "skdg-a-1",
+  "description": "A lab experience powered by pain and serious suffering",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Danielaaron1111",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "packageManager": "pnpm@10.17.0",
+  "devDependencies": {
+    "@d2t/vitest-ctrf-json-reporter": "^1.3.0",
+    "@vitest/ui": "^3.2.4",
+    "jsdom": "26.1.0",
+    "semver": "^7.7.3",
+    "vite": "^7.1.9",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "sourdough-toast": "^0.1.0"
+  }
+}

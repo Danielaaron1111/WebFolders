@@ -1,0 +1,42 @@
+.hide {
+  display: none;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header #app-name a {
+  text-decoration: none;
+}
+
+header > div:first-of-type { /* Wonky - for some reason, it fixes PicoCSS's width when inside a flexbox */
+  min-width: calc(260px * 2);
+}
+
+header > div:last-of-type { /* Wonky - for some reason, it fixes PicoCSS's width when inside a flexbox */
+  min-width: calc(260px * 3);
+}
+
+/* Styles copied from Pico for input - Pico doesn't style <output> */
+header output {
+  font-weight: bold;
+  margin-bottom: var(--pico-spacing);
+  padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
+  height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
+  --pico-outline-width: 0.0625rem;
+}
+
+#playlists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+footer > form {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

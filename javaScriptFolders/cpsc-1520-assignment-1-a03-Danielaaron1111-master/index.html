@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+ 
+  <meta charset="utf-8">
+  <title>Album Creator</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+
+<body class="container">
+  <header>
+    <h4 id="app-name"><a href="/">Playlist Creator <i class="las la-home"></i></a></h4>
+    <form id="faux-login"></form>
+    <div id="input-controls" class="grid hide">
+      <input type="text" name="owner" placeholder="Playlist Owner" form="faux-login" />
+      <button name="action" type="submit" form="faux-login" value="sign-in"><i class="las la-sign-in-alt"></i> Sign-in</button>
+    </div>
+    <div id="output-name" class="grid hide">
+      <output name="displayOwner" form="faux-login" style="text-align:right;">Name</output>
+      <button name="action" type="submit" form="faux-login" class="outline primary" value="save"><i class="las la-save"></i> Save</button>
+      <button name="action" type="submit" form="faux-login" class="outline secondary" value="clear"><i class="las la-trash"></i> Clear</button>
+      <button name="action" type="submit" form="faux-login" class="outline contrast" value="log-out"><i class="las la-sign-out-alt"></i> Log Out</button>
+    </div>
+  </header>
+
+  <main>
+    <form id="playlist-form" class="hide">
+      <input type="hidden" name="img-folder" value="/img/" />
+      <fieldset class="grid">
+        <label>
+          <input name="name" type="text"
+                 placeholder="Playlist Title" autocomplete="off"
+                 aria-describedby="invalid-playlist-name" />
+          <small id="invalid-playlist-name" class="hide">
+            Title is required and cannot exceed 20 characters
+          </small>
+        </label>
+        <label>
+          <input name="description" type="text"
+                 placeholder="Describe Playlist" autocomplete="off"
+                 aria-describedby="invalid-description" />
+          <small id="invalid-description" class="hide">
+            Description must be from 10 to 40 characters
+          </small>
+        </label>
+        <label>
+          <select name="cover" aria-describedby="invalid-cover">
+            <option value="">Choose a Cover</option>
+            <option value="cassette.jpg">Retro Cassette</option>
+            <option value="concert_dj.jpg">Concert</option>
+            <option value="gazing_at_stars.jpg">Gazing at Stars</option>
+            <option value="glacier_lake.jpg">Glacier Lake</option>
+            <option value="gravity.jpg">Gravity</option>
+            <option value="guitar.jpg">Guitar</option>
+            <option value="lp_profile.jpg">Long-Play</option>
+            <option value="mountains.jpg">Mountains</option>
+            <option value="pedal_for_the_metal.jpg">Metal Pedals</option>
+            <option value="tv.jpg">Retro TV</option>
+            <option value="vinyl.png">Vinyl</option>
+            <option value="what_you_listen_to.jpg">Rec Room</option>
+          </select>
+          <small id="invalid-cover" class="hide">
+            You must select a cover image for the playlist
+          </small>
+        </label>
+        <button type="submit">Save</button>
+      </fieldset>
+    </form>
+
+    <section id="playlists" class="hide"></section>
+  </main>
+
+  <footer>
+    <form id="admin-form">
+      <fieldset class="grid">
+        <button type="submit" class="outline secondary" name="adminAction" value="purge">Purge Local Storage</button>
+        <button type="submit" class="outline secondary" name="adminAction" value="dump">Dump Local Storage</button>
+      </fieldset>
+    </form>
+  </footer>
+</body>
+
+</html>
