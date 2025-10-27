@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+        <meta name="description" content="The website demonstrates how to use JavaScript to create toggle navigation, also known as hamburger menus, for narrow viewports or mobile devices.">
+
+        <title>18 - Toggle Navigation</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Scripts -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="flex-container inner-container">
+                <h1>The NavBar</h1>
+
+                <!-- Hamburger Menu -->
+                 <button class="hamburger toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <title>Click to Toggle Menu</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    menu
+                 </button>
+                 <nav class="collapsed">
+                    <ul>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="#">Design Patterns</a></li>
+                        <li><a href="#">Web Heuristics</a></li>
+                        <li><a href="#">Learn More</a></li>
+                    </ul>
+                 </nav>
+            </div>
+        </header>
+        <main>
+            <!-- This hero banner is strictly here so that we have something for our menus to come down on top of and for us to test the stacking order or z-indices. -->
+            <div class="hero">
+                <h2>Toggle Navigation</h2>
+
+                <p>
+                    Toggle navigation, also known as navbars or hamburger menus, is a design pattern that you are likely familiar with. It features a collapsible menu icon that, when clicked or tapped, expands to reveal the main navigation links. This approach saves space on smaller screens while still allowing easy access to the full menu, giving us an overall better experience on mobile devices or smaller screens.
+                </p>
+            </div>
+        </main>
+    </body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required Meta Elements -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Additional Document Information -->
+      <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+      <meta name="description" content="Using JavaScript to Build a Hamburger Menu">
+      <title>Lesson 18 - Hamburger Menu with JS</title>
+      <!-- Google Fonnts -->
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <!-- Scripts -->
+      <script src="js/main.js" defer></script>
+   </head>
+   <body>
+      <main>
+         <div class="intro">
+            <h1>Using JavaScript to Build a Hamburger Menu</h1>
+
+            <p>Today, our goal is to create a menu that can be <strong>hidden or shown</strong> when the user clicks on an icon. This is a common feature in mobile web design, where screen space is at a premium.</p>
+            
+            <div class="demo">
+               <nav>
+               <div class="toggle-btn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <p class="label">click!</p>
+               </div>
+               
+               <p>Hello, world!</p>
+               </nav>
+            </div>
+
+            <p>However, in order to do this, we need something to change how this icon behaves. Just as HTML is for content and CSS is for styles, JavaScript is for behaviour.</p>
+
+            <p>Don't worry: you won’t need an in-depth understanding of JavaScript, functions, or flow structures. For our purposes, all you’ll need to know is what things you need to find in your HTML document and what to do with them.</p>
+         </div>
+         <section>
+            <h2>External Scripts</h2>
+
+            <p>Today, we’re going to write an external script. Just like with external styles, we want to separate our markup from our behaviours. However, we'll need to tell the browser where to find it.</p>
+
+            <figure>
+               <pre>
+         &lt;head&gt;
+               &lt;script src="js/main.js" defer&gt;&lt;/script&gt;
+         &lt;/head&gt;
+               </pre>
+            </figure>
+
+            <p>So far, this looks a whole lot like our external stylesheets. But what's with that <strong>defer</strong> attribute?</p>
+
+            <p>We need to use this attribute because the DOM needs to be written before our script can access and interact with it. If our script loads before the DOM and the things it needs are not there, it'll try to execute (but won't work properly because nothing will be there to interact with yet). So, this attribute tells the script to hang tight until enough things are loaded for the script to actually work.</p>
+
+            <p>So, what happens once everything’s in its right place and loaded?</p>
+
+            <h3>Queries</h3>
+
+            <p>JavaScript has different ways of grabbing things in the DOM and doing something with them. This is sort of like how we need to select something in CSS before we can apply a style to it.</p>
+
+            <p>In JavaScript, we can perform a query — that is, we check to see if something is there.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn');
+         </pre>
+            </figure>
+
+            <p>This is looking for a thing in the DOM with a class of <code>.toggle-btn</code>.</p>
+
+            <p><code>document</code> just means <em>hey, let me access the DOM.</em></p>
+
+            <p><code>querySelector</code> says, <em>okay, we're looking for a specific element or class.</em> If there's more than one of them, the script will grab the first one it finds.</p>
+
+            <p><code>('.toggle-btn');</code> is the specific thing we're looking for. In this case, it's something with a class of <code>.toggle-btn</code>.</p>
+
+            <aside>
+               <h3>Constants</h3>
+
+               <p>Once we’ve found a thing to affect, we can either access it right away and do something with it, or store the ‘search result’ so that we can do something with it later.</p>
+
+               <figure>
+               <pre>
+         const clickButton = document.querySelector('.toggle-btn');
+         </pre>
+               </figure>
+
+               <p>Here, we’re storing our ‘search result’ in a constant. Think of a constant as a container for something — and, once we store something in our container, we can use it whenever we want. </p>
+
+               <p>We can also call it whatever we want (although it should make semantic sense). In JavaScript, using camelCase is best practice, so we called it <code>clickButton</code>.</p>
+
+               <p>But let's level for a minute: this entire script is teensy tiny and only affects one specific area of the page. We can actually write the entire script in an even simpler way, which we'll do down below.</p>
+            </aside>
+
+            <h3>Events & Listeners</h3>
+
+            <p>Next, let’s add an event. An event is a thing that happens within our website. Often, it’s something that the user does.</p>
+
+            <p>There are lots of user-driven events, like click events. But in order to react to it, our script needs to be waiting for it. </p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener();
+         </pre>
+            </figure>
+
+            <p>An event listener waits for a specific event to happen. Here, we’re adding one to the search we did in our HTML earlier.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+
+         });            
+         </pre>
+            </figure>
+
+            <p>Let’s add a click event. This means that we'll make something happen when the user clicks on this thing in the HTML. (We’ll tell our browser what we want to happen inside the curly braces.)</p>
+
+            <p>What, specifically, do we want to happen? Well, we want our navigation to either be hidden or shown whenever the user clicks on our icon.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+            document.querySelector('nav');
+         });            
+               </pre>
+            </figure>
+
+            <p>If we want to affect our
+            <nav>, we have to access the DOM and look for it. Here, we’re doing another search, just like when we created our constant.</p>
+
+               <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+            document.querySelector('nav').classList.toggle('show-nav');
+         });            
+               </pre>
+               </figure>
+
+               <p>Finally, if our &lt;nav&gt; is hidden, JavaScript will add a class called <code>show-nav</code>. If our &lt;nav&gt; is already showing, JavaScript will remove it – this is what 'toggle' means!</p>
+
+               <p>Note that we don’t include the dot before the class name here. This is because JavaScript is expecting a class name and nothing else.</p>
+
+               <p>And that's it! Now, we just need to write a little bit of CSS to go along with it.</p>
+
+               <p>This is the only bit of JavaScript that you’ll need for the majority of the semester. Once you’ve got it down, you’ll be able to use it over and over again.</p>
+         </section>
+
+         <section>
+            <h2>tl;dr</h2>
+
+            <p>So, what parts do you <em>really</em> have to pay attention to?</p>
+
+            <figure>
+               <pre>
+         document.querySelector('<span>.toggle-btn</span>').addEventListener('click', () => {    
+            document.querySelector('<span>nav</span>').classList.toggle('<span>show-nav</span>');
+         });            
+               </pre>
+            </figure>
+
+            <ol>
+               <li>The first thing is what you want your user to click.</li>
+               <li>The second thing is an element you want to show or hide.</li>
+               <li>The third thing is which class you want to add or remove.</li>
+            </ol>
+         </section>
+         </main>
+   </body>
+</html>

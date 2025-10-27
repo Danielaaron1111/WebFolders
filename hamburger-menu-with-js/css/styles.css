@@ -1,0 +1,113 @@
+body {
+  background-color: #282923;
+  color: #eceff1;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 110%;
+  line-height: 1.5;
+}
+body main {
+  margin: auto;
+  max-width: 64rem;
+  padding-bottom: 4rem;
+}
+body main h1,
+body main h2,
+body main h3 {
+  color: #e32472;
+  margin-top: 2em;
+}
+body main code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  color: #e7db74;
+}
+body main figure {
+  border: 1px dashed #74705d;
+  margin: 2rem auto;
+}
+body main figure pre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+body main figure pre span {
+  color: #4dd0e1;
+}
+.demo {
+  border: 1px dashed #74705d;
+  cursor: pointer;
+  padding: 1rem;
+  user-select: none;
+}
+.demo nav {
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  max-width: 5rem;
+  margin: auto;
+  transition: all 0.4s ease-out;
+}
+.demo nav > p {
+  font-size: 2rem;
+  max-width: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-out 0.1s;
+  white-space: nowrap;
+}
+.demo .toggle-btn {
+  margin-right: 0;
+  transition: margin-right 2s;
+}
+.demo .toggle-btn p.label {
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  margin: 0;
+  padding: 0.5rem 0 0 0;
+  text-align: center;
+}
+.demo .toggle-btn span {
+  height: 0.3rem;
+  width: 4rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5rem;
+  display: flex;
+  background-color: #4dd0e1;
+  position: relative;
+  transition: all 0.4s ease-out;
+}
+.demo .toggle-btn span:last-of-type {
+  margin-bottom: 0;
+}
+nav.show-nav {
+  max-width: 100%;
+}
+nav.show-nav p {
+  color: #a6e22c;
+  max-width: unset;
+  opacity: 1;
+}
+nav.show-nav .toggle-btn {
+  margin-right: 70%;
+  transition: margin 2s;
+}
+nav.show-nav .toggle-btn p.label {
+  display: none;
+}
+nav.show-nav .toggle-btn span {
+  background-color: #a6e22c;
+}
+nav.show-nav .toggle-btn span:first-child {
+  display: none;
+}
+nav.show-nav .toggle-btn span:nth-child(2) {
+  transform: rotate(45deg);
+  top: 0.65rem;
+}
+nav.show-nav .toggle-btn span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 0.3rem;
+}
