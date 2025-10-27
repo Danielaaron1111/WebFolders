@@ -1,0 +1,87 @@
+:root {
+  --accent: #a95a49;
+  --accent-pale: #d59f9a;
+  --clouds: #ecf0f1;
+  --dark: #272c2b;
+  --mid: #d1d6d8;
+  --radius: 4px;
+  --shadow: rgba(0,0,0,0.25) 0px 6px 10px 0px, rgba(0,0,0,0.25) 0px 0px 0px 1px;
+}
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.flex-container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+.inner-container {
+  margin: auto;
+  max-width: 1200px;
+}
+body {
+  background: url("https://res.cloudinary.com/eubhawatson/image/upload/v1701498228/wildflowers_hx3ged.webp") center/cover no-repeat;
+  color: var(--dark);
+  font-family: "Roboto Flex", sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: linear-gradient(180deg, rgba(39,44,43,0.9) 0%, rgba(39,44,43,0) 90%);
+  padding: 0 1rem;
+}
+nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--clouds);
+  font: 300 1rem/1.5 sans-serif;
+  text-shadow: var(--shadow);
+  text-transform: lowercase;
+}
+nav a svg {
+  height: 1.25rem;
+}
+.dropdown-btn {
+  font-size: 1.25rem;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 12rem;
+}
+.dropdown-content {
+  background-color: #f9f9f9;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: absolute;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.4s all ease-in-out;
+  width: 12rem;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: var(--dark);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+}
+.dropdown-content li:not(:last-of-type) {
+  border-bottom: 1px solid var(--mid);
+}
+.dropdown-content li:hover a {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* .dropdown-content.show {
+  transform: scaleY(1);
+} */
+
+.show {
+  transform: scaleY(1);
+}

@@ -1,0 +1,2347 @@
+Responsive Backgrounds and image optimization:
+
+html: 
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="Bryan Paul Mendoza" content="IanGitHub02">
+        <meta name="description" content="This website demonstrates how to create a responsive hero banner and optimal file sizes for web images.">
+
+        <title>11 - Responsive Backgrounds & Image Optimization</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <main>
+            <section class="hero flex-container">
+                <div class="inner-container">
+                    <h1>Living Slow</h1>
+                    <p>
+                        Step into a world where the rolling green fields stretch endlessly into the horizon, shrouded in a gentle morning mist. Let the serene landscapes and the unhurried rhythm of my little rural life inspire a transformation in your own daily life.
+                    </p>
+                    <a href="#latest" class="btn">Let's Explore</a>
+                </div>
+            </section>
+            
+            <section class="latest-articles">
+                <div class="flex-container inner-container">
+                    <h2 id="latest">Latest Articles</h2>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <img src="img/card-lamb.webp" loading="lazy" alt="A lamb grazing on a grassy hill, overlooking sparse buildings.">
+                        </div>
+                        <div class="card-body">
+                            <h3>Pastoral Landscapes</h3>
+                            <p>
+                                I always find peace in the simplicity and calm of rural living, like watching the sheep graze peacefully in the hills.
+                            </p>
+                            <a href="#">Read More &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-header">
+                            <img src="img/card-salad.webp" loading="lazy" alt="An aproned home cook presenting an artisinal salad.">
+                        </div>
+                        <div class="card-body">
+                            <h3>Garden-to-Table</h3>
+                            <p>
+                                This is my little slice of culinary paradise, always changing depending upon which vegetables and herbs are growing in the garden.
+                            </p>
+                            <a href="#">Read More &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-header">
+                            <img src="img/card-roses.webp" loading="lazy" alt="Pale pink rose blooms, opening in the sunlight.">
+                        </div>
+                        <div class="card-body">
+                            <h3>Cheerful Little Blooms</h3>
+                            <p>
+                                Not long ago, I redesigned a new rose bed behind my greenhouse. The area now produces roses that flower from spring to late autumn.
+                            </p>
+                            <a href="#">Read More &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </body>
+
+</html>
+
+
+css:
+
+:root {
+    --foggy-white: #F5F5F5;
+    --mist: #c7c8ca;
+    --text: #19231b;
+    --text-hover: #314034;
+    --white: #fff;
+}
+
+/* We have on-page anchors in this demo and we may want our user's browser to smoothly scroll down the page rather than jumpimg */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--foggy-white);
+    color: var(--text);
+    font-family: "Mulish", sans-serif;
+    font-size: 1.125em;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+/* Typography */
+h1,
+h2 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+/* Hero Banner */
+/* background: [image] [position] / [size] [repeat] [attachment]; */
+.hero {
+    background: url('../img/hero-sm.webp') center / cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.hero .inner-container {
+    backdrop-filter: blur(2px) brightness(110%);
+    border-radius: 4px;
+    max-width: 70ch;
+    padding: 2rem 1rem;
+}
+
+.btn {
+    background-color: var(--text);
+    border-radius: 4px;
+    color: var(--mist);
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    background-color: var(--text-hover);
+}
+
+/* Cards */
+.latest-articles {
+    padding: 4rem 1rem;
+}
+
+.latest-articles .flex-container {
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    background-color: var(--white);
+    border: 1px solid var(--mist);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    max-width: 720px;
+}
+
+.card-header {
+    width: 50%;
+}
+
+.card-header img {
+    border-radius: 4px 0 0 4px;
+}
+
+.card-body {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 50%;
+}
+
+.card-body a {
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 720px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .hero {
+        background: url('../img/hero-md.webp') center / cover no-repeat fixed;
+    }
+
+    .latest-articles .flex-container {
+        align-items: stretch;
+        flex-flow: row wrap;
+    }
+
+    .latest-articles h2 {
+        width: 100%;
+    }
+
+    .card {
+        display: block;
+        width: calc((100% / 3) - (2rem / 3));
+    }
+
+    .card-header,
+    .card-body {
+        width: unset;
+    }
+
+    .card-header img {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .card-body {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .hero {
+        background: url('../img/hero-lg.webp') center / cover no-repeat fixed;
+    }
+}
+
+
+----PICTURE CARD COMPONENET ---- 
+
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>All Woks Of Life | Chinese Home Cooking</title>
+
+		<meta name="Bryan Paul Mendoza" content="IanGitHub02">
+		<meta name="description" content="This is a faux recipe blog that demonstrates art direction and the picture element.">
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+
+	<body>
+		<main>
+			<section>
+				<div class="inner-container wide-flex">
+					<div class="info">
+						<h1>Latest Recipes</h1>
+						<p>
+							Authentic Chinese recipes, comfort food, and easy dinner solutions, all using the tools available in a home cook's kitchen. Browse the cards below to find the perfect recipe for tonight's dinner!
+						</p>
+					</div>
+
+					<!-- Card 1 -->
+					<div class="card flex-container">
+						<picture>
+							<source srcset="img/lotus-ribs-lg.webp" media="(min-width: 890px)">
+							<source srcset="img/lotus-ribs-md.webp" media="(min-width: 590px)">
+							<img src="img/lotus-ribs-sm.webp" alt="Lotus and Rib Soup">
+						</picture>
+						<div class="card-body">
+							<h2>Lotus &amp; Rib Soup (排骨莲藕汤)</h2>
+							<p>
+								The combination of lotus root and pork ribs is a classic. It seems so simple, yet it creates a rich, flavorful, and satisfying soup. The lotus adds a nice flowery aroma, so the soup feels refreshing and light.
+							</p>
+							<a href="#" class="btn">Get the Recipe &#10095;</a>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="card flex-container">
+						<picture>
+							<source srcset="img/pork-buns-lg.webp" media="(min-width: 890px)">
+							<source srcset="img/pork-buns-md.webp" media="(min-width: 590px)">
+							<img src="img/pork-buns-sm.webp" alt="BBQ Prok Buns">
+						</picture>
+						<div class="card-body">
+							<h2>Steamed BBQ Pork Buns (叉烧包)</h2>
+							<p>
+								The beauty of these steamed BBQ pork buns is the soft and fluffy bread that is silky smooth on the surface. The tender, chunky pork is coated with a sweet glaze, which pairs perfectly with the fragrant bread.
+							</p>
+							<a href="#" class="btn">Get the Recipe &#10095;</a>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="card flex-container">
+						<picture>
+							<source srcset="img/sticky-rice-lg.webp" media="(min-width: 890px)">
+							<source srcset="img/sticky-rice-md.webp" media="(min-width: 590px)">
+							<img src="img/sticky-rice-sm.webp" alt="Sticky Rice with Sausage">
+						</picture>
+						<div class="card-body">
+							<h2>Sticky Rice with Sausage (臘味糯米飯)</h2>
+							<p>
+								Traditionally, it's often wrapped and steamed in ti leaves to a soft and savory perfection. Other times, sticky rice is served family-grub-style, straight out of a rice cooker outfitted with big spoons to scoop up all the goodness.
+							</p>
+							<a href="#" class="btn">Get the Recipe &#10095;</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+
+</html>
+
+
+CSS:
+
+:root {
+    --nunito: 2em/1.5 'Nunito', 'Helvetica Neue', sans-serif;
+    --open-sans: 1rem/1.5 'Open Sans', sans-serif;
+    --box-shadow: 0 0 10px 0 rgb(33 33 33 / 15%);
+    --black: #212121;
+    --red: #c0232a;
+    --white: #fff;
+}
+
+body {
+    color: var(--black);
+    font: var(--open-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2 {
+    font: var(--nunito);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: var(--red);
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+/* Utility Classes */
+.btn {
+    background-color: var(--black);
+    border-radius: 3px;
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto 0 auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    width: 12rem;
+}
+
+.btn:hover {
+    background-color: var(--red);
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner-container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.wide-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1.5rem;
+}
+
+/* Main Content */
+.info {
+    margin: auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.info p {
+    font-size: 1.2em;
+    margin: auto;
+    max-width: 60ch;
+}
+
+.card {
+    border: 1px solid rgb(33 33 33 / 15%);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.card picture {
+    max-width: 40%;
+}
+
+/* If we target the picture element to try to round the corners, it won't really affect anything. THe picture is just a fancy container for the source and img elements inside of it. */
+.card source,
+.card img {
+    border-radius: 5px 0 0 5px;
+}
+
+.card-body {
+    padding: 1rem;
+    max-width: 60%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 890px) {
+    .wide-flex {
+        flex-flow: row wrap;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .card.flex-container {
+        flex-direction: column;
+    }
+
+    /* There is a 1.5rem gap and three cards, so we're working with two gutters (1.5 * 2 = 3rem of space to distribute) */
+    .card {
+        width: calc((100% / 3) - (3rem / 3));
+    }
+
+    .card picture,
+    .card-body {
+        max-width: 100%;
+    }
+
+    /* Let's round just the upper corners now. */
+    .card source,
+    .card img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    /* And let's give everything a little more breathing room in this large view. */
+    .card-body {
+        padding: 2rem;
+    }
+
+    .btn {
+        margin-top: 2rem;
+    }
+}
+
+
+------- SCALABLE VECTOR GRAPHIC (SVGS) AND RESPONSIVE NAVIGATION----
+
+HTML: 
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="">
+        <meta name="description" content="">
+
+        <title>14 - Scalable Vector Graphics (SVGs) and Responsive Navigation</title>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <!-- When working with SVGs within an HTML document, make sure to minify them. This strips away superfluous code, including things like IDs, classes, and more. 
+        
+        There are many online minifiers. We'll use this one today: https://devina.io/svg-minifier
+
+        To use it, copy and paste your SVG. Choose the filters or settings you want. After, click 'View editor' (a slider on the left-hand side, under settings) to get the minified code. To minify another SVG, refresh the page.
+    
+        After you minify your SVG, make sure to add a title. This is akin to the alternative text (or alt attribute) that you add to an image, as it aids in accessibility for screen readers. 
+    
+        Why go to all this trouble? If we incorporated our SVGs using <img> tags (which we can!), we wouldn't be able to style them (add strokes or fills). Just like a JPEG or a WebP, our browser would treat it as this immutable thing that we can only resize or manipulate as we would any other image. -->
+        <header>
+            <h1 class="sr-only">Single-level Navigation</h1>
+            <nav>
+                <h2 class="sr-only">Main Menu</h2>
+                <ul class="menu">
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.4 26.4" xml:space="preserve">
+                                <title>Home</title>
+                                <path d="M3.6 24.3s0 .6.5.6h6.7v-5.5s0-.9.8-.9h2.7c1 0 1 1 1 1v5.4h6.5c.7 0 .7-.8.7-.8v-10l-9.2-8.2-9.7 8.2z"/>
+                                <path d="M0 13.3s.8 1.5 2.6 0l10.8-9.1 10.1 9c2.1 1.6 2.9 0 2.9 0l-13-11.7zm23.3-9.1h-2.6v3.1l2.6 2.2z"/>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 405.2 405.2">
+                                <title>Articles</title>
+                                <path d="M249 330.6H28.3V87h335.6v181.6l28.3 28.3V26.2c0-13-10.6-23.6-23.6-23.6h-345C10.6 2.6 0 13.2 0 26.2v309.1c0 13 10.6 23.6 23.6 23.6h238.9c-13.1-18.6-13.5-28.3-13.5-28.3m89-288.4c0-4.8 4-8.7 8.7-8.7h8.7c4.8 0 8.7 3.9 8.7 8.7v9.9c0 4.8-3.9 8.7-8.7 8.7h-8.7A8.7 8.7 0 0 1 338 52zm-40.4 0c0-4.8 3.9-8.7 8.7-8.7h8.7c4.8 0 8.7 3.9 8.7 8.7v9.9c0 4.8-4 8.7-8.7 8.7h-8.7a8.7 8.7 0 0 1-8.7-8.7zm-40.5 0c0-4.8 3.9-8.7 8.7-8.7h8.7c4.8 0 8.7 3.9 8.7 8.7v9.9c0 4.8-3.9 8.7-8.7 8.7h-8.7a8.7 8.7 0 0 1-8.7-8.7z"/>
+                                <path d="M392.6 322.2 351.4 281a43 43 0 0 0-34-12.5c1-12.1-3.1-24.6-12.4-34l-41.2-41.1a43.3 43.3 0 0 0-61 0l-6.8 6.7a43.3 43.3 0 0 0 0 61l41.2 41.3a43 43 0 0 0 34 12.4 43 43 0 0 0 12.5 34l41.1 41.2a43.3 43.3 0 0 0 61.1 0l6.7-6.7a43.3 43.3 0 0 0 0-61.1m-130.3-48 17 17c-8.7 5.2-20 4-27.6-3.4l-41.1-41.2a22.7 22.7 0 0 1 0-32l6.7-6.6a22.7 22.7 0 0 1 32 0l41.1 41.1a23 23 0 0 1 3.5 27.6l-17-17a10.3 10.3 0 1 0-14.6 14.5M378 368.7l-6.7 6.7a22.7 22.7 0 0 1-32 0l-41.2-41.1a23 23 0 0 1-3.4-27.6l17 17a10.3 10.3 0 1 0 14.6-14.5l-17-17c8.6-5.2 20-4 27.5 3.4l41.2 41.1a22.7 22.7 0 0 1 0 32"/>
+                            </svg>
+                            Articles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490" xml:space="preserve">
+                                <title>Books</title>
+                                <path d="M487.48 357.88c2.71-3.08 4.25-16.3-7.83-17.31H74.72C33.52 340.57 0 374.09 0 415.29S33.52 490 74.72 490h404.93c14.28-1.61 10.5-14.36 7.73-17.42-34.86-38.52-34.81-74.96.1-114.7m-29.32 111.27H74.72a53.9 53.9 0 0 1-53.87-53.86 53.93 53.93 0 0 1 53.87-53.87h383.72c-24.14 36.19-24.24 72.29-.28 107.73M10.35 319.71h404.93c41.2 0 74.72-33.51 74.72-74.7s-33.52-74.73-74.72-74.73H188.75v-20.85h290.9c14.28-1.6 10.5-14.36 7.73-17.42-34.85-38.53-34.81-74.96.1-114.7C490.2 14.23 491.73 1 479.65 0H74.72C33.52 0 0 33.52 0 74.72s33.52 74.71 74.72 74.71h13.32v20.85h-77.7c-12.07 1-10.53 14.24-7.82 17.31 34.92 39.74 34.96 76.18.1 114.7-2.77 3.06-6.55 15.81 7.73 17.42m64.37-191.13a53.9 53.9 0 0 1-53.87-53.86 53.93 53.93 0 0 1 53.87-53.87h383.72c-24.14 36.19-24.24 72.29-.28 107.73H188.75V74.72c0-5.77-4.67-10.43-10.43-10.43H98.47a10.4 10.4 0 0 0-10.43 10.43v53.86zm93.18-43.44v130.28l-23.07-18.07a10.45 10.45 0 0 0-12.87 0l-23.07 18.07V85.14zm-79.86 106v45.7c-.6 9.07 6.3 17.95 16.86 8.2l33.5-26.24 33.49 26.24c10.97 8.89 17.7.52 16.86-8.2v-45.7h226.53A53.93 53.93 0 0 1 469.14 245a53.9 53.9 0 0 1-53.86 53.86H31.84c23.96-35.44 23.86-71.54-.28-107.73z"/>
+                            </svg>
+                            Books
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453 453" xml:space="preserve">
+                                <title>Events</title>
+                                <path d="M404.3 0H48.6A49 49 0 0 0 0 48.7v355.6A49 49 0 0 0 48.6 453h355.7c26.8 0 48.7-22 48.7-48.7V48.7C453 21.9 431 0 404.3 0M148.4 33.6h156V74h-156zM411 406.4H42v-294h369z" fill="#010002"/><path d="M79.3 246.2h48.6v48.7H79.3zm0 77.1h48.6v48.6H79.3zm81.6-154.1h48.6v48.6h-48.6zm0 77h48.6v48.7h-48.6zm0 77.1h48.6v48.6h-48.6zm81.5-154.1h48.7v48.6h-48.7zm0 77h48.7v48.7h-48.7zm0 77.1h48.7v48.6h-48.7zm81.5-154.1h48.7v48.6h-48.7zm0 77h48.7v48.7h-48.7z"/>
+                            </svg>
+                            Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 256 178">
+                                <title>Memberships</title>
+                                <path d="M183.9 38.2a16.3 16.3 0 1 0 32.6 0 16.3 16.3 0 0 0-32.6 0m-16.7 54.6V80c0-11.2 9.1-20.4 20.3-20.4h26.7c11.2 0 20.3 9.1 20.3 20.4v12.7zM95.7 2.4V26a38.5 38.5 0 0 0-36.5 23.6L2 175.5h78.8l5-17a64 64 0 0 0 45.5-43.8h.1l.6-2.2h122V2.4zm150.4 102.3H115.4a49 49 0 0 1-29.2 35 4 4 0 1 1-3-7.2 40 40 0 0 0 25.1-35.6v-4h40.4a10.8 10.8 0 0 0 0-21.6H77.8a4 4 0 0 1 0-8h25.8v-53h142.5zM115.4 26h44.1v7.8h-44zm0 19.6h44.1v8h-44z"/>
+                            </svg>
+                            Memberships
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490" xml:space="preserve">
+                                <title>Newsletter</title>
+                                <path d="M436.4 76.6 367.5 0h-314v490h383zM84.2 459.4V30.6h269.6v60.8h52v368z"/>
+                                <path d="M137.9 281.8h214.4v30.6H137.9zm0 53.3h214.4v30.6H137.9zM245 125.3h107.2v30.6H245zm0 53.2h107.2v30.6H245zm-107.1 53.2h214.4v30.6H137.9zm-.1-106.4h83.9v83.9h-83.9z"/>
+                            </svg>
+                            Newsletter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 575.8 575.8">
+                                <title>Podcasts</title>
+                                <path d="M326.7 327.8V376a152 152 0 0 0 112.8-146.5c0-83.6-68-151.6-151.6-151.6s-151.6 68-151.6 151.6c0 70.2 48 129.4 112.8 146.5v-48.2a105.8 105.8 0 1 1 144.4-98.3c0 44.6-27.7 82.8-66.8 98.3"/>
+                                <path d="M517.4 229.5C517.4 103 414.4 0 287.9 0S58.4 103 58.4 229.5a230 230 0 0 0 190.7 226.1V409a184 184 0 0 1-144.8-179.4A184 184 0 0 1 287.9 45.9a184 184 0 0 1 183.6 183.6c0 88-62.2 161.6-144.8 179.4v46.7a230 230 0 0 0 190.7-226.1"/>
+                                <path d="M264.4 379.2v196.6h47V300.6a75 75 0 0 0 15.3-7 75 75 0 1 0-62.3 7zM260 221.8q1-4.1 3.3-7.6a29 29 0 1 1-3.3 7.6"/>
+                            </svg>
+                            Podcasts
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+
+</html>
+
+CSS:
+
+:root {
+    --header: #263238;
+    --body: #455A64;
+    --link: #14b8a6;
+    --hover: #2dd4bf;
+    --active: #99f6e4;
+    --svg: #26A69A;
+    --svg-hover: #1DE9B6;
+    --svg-active: #A7FFEB;
+}
+
+body {
+    background-color: var(--body);
+    font-family: sans-serif;
+}
+
+/* Utility Classes */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+    visibility: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 72rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul svg {
+    margin-right: 0.5rem;
+    width: 1.25rem;
+}
+
+ul a {
+    align-items: center;
+    color: var(--link);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+svg path {
+    fill: var(--svg);
+}
+
+/* Order for anchor tag pseudo-classes:
+    1. link
+    2. visited
+    3. focus
+    4. hover
+    5. active
+*/
+
+ul.menu a:focus-within,
+ul.menu a:focus svg path,
+ul.menu a:hover,
+ul.menu a:hover svg path {
+    color: var(--svg-hover);
+    fill: var(--svg-hover);
+}
+
+ul.menu a:active,
+ul.menu a:active svg path {
+    color: var(--svg-active);
+    fill: var(--svg-active);
+}
+
+@media screen and (min-width: 64rem) {
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+---- STATIC RELATIVE AND ABSOLUTE POSITIONING----
+
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Paul Mendoza | IanGitHub02">
+        <meta name="description" content="The website demonstrates static, relative, and absolute positioning techniques, as well as offset properties.">
+
+        <title>15 - Static, Relative, &amp; Absolute Positioning</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <section>
+            <div class="inner-container">
+                <h1>CSS Positioning</h1>
+
+                <p>The <code>position</code> property is a layout technique that can let us change where and how elements appear on a page. More specifically, it allows us to arrange an element relative to:</p>
+
+                <ol>
+                    <li>its current position within the <strong>document flow</strong>;</li>
+                    <li>its <strong>containing</strong> element; or</li>
+                    <li>the browser <strong>viewport</strong>.</li>
+                </ol>
+
+                <p>There are five different position values and four offset properties to go along with them. Today, we'll cover three of these position values.</p>
+
+                <div class="md-flex">
+                    <!-- This is a relatively positioned container. When the images inside of it are absolutely positioned, they will not take up any space in the document flow. Therefore, we need to assign a height and width to this container. -->
+                    <div class="relative">
+                        <img src="img/charcuterie.webp" alt="An assortment of fruit and cheese atop a rustic serving board." class="absolute">
+                        <img src="img/camera.webp" alt="A camera, book, and bag, laid out neatly on bed lines." class="absolute">
+                    </div>
+
+                    <!-- Notes -->
+                    <div>
+                        <h2>Position Property Values</h2>
+
+                        <h3>Static Positioning</h3>
+
+                        <p><strong>Static</strong> is the default for all HTML elements. If an element is set to static, then it will follow the <strong>regular document flow</strong>.</p>
+
+                        <p>A static element cannot be nudged around by offset properties. However, it is helpful if you have an element that has another type of positioning in a mobile or smaller view and you want to return it to where it belongs in a desktop or larger view (using a rule in a media query).</p>
+
+                        <h3>Relative Positioning</h3>
+
+                        <p>Other than static, <strong>relative</strong> is the only position value that keeps the element in the normal document flow - that is, it still occupies its original space in the document.</p>
+
+                        <p>Although something relatively positioned will respond to offset properties, relatively positioned elements are usually used as <strong>containers</strong>, or boundaries for positioning other things within it.</p>
+
+                        <h3>Absolute Positioning</h3>
+
+                        <p><strong>Absolute</strong> positioning removes an element from the normal document flow. This means that the space it once occupied will <strong>collapse</strong>. If you want to create space for it, you will need to define the height and width of a container.</p>
+
+                        <p>Absolute positioning also positions an element relative to the <strong>nearest positioned ancestor</strong> (an ancestor element with a position other than static). This is why we usually put an absolutely positioned element inside of a <strong>relatively positioned container</strong>.</p>
+
+                        <p>If no such ancestor exists, it will be positioned relative to the initial containing block, usually the <code>&lt;html&gt;</code> element or the viewport.</p>
+
+                        <p>Absolute positioning is useful for precise placement of elements, such as tooltips, pop-ups, or elements that need to be placed in a specific location on the page. However, it should be used sparingly, as it disrupts regular document flow.</p>
+
+                        <h2>Offset Properties</h2>
+
+                        <p><strong>Offset</strong> properties help precisely place a non-static element, relative to its reference point. There are four offset properties in total.</p>
+
+                        <ol>
+                            <li><strong>Top</strong>: Moves the element down from the top of its reference point.</li>
+                            <li><strong>Right</strong>: Moves the element left from the right edge of its reference point.</li>
+                            <li><strong>Bottom</strong>: Moves the element up from the bottom of its reference point.</li>
+                            <li><strong>Left</strong>: Moves the element right from the left edge of its reference point.</li>
+                        </ol>
+
+                        <div class="offset-box">
+                            <span class="top">top</span>
+                            <span class="right">right</span>
+                            <span class="bottom">bottom</span>
+                            <span class="left">left</span>
+                        </div>
+                    </div> <!-- End of Notes -->
+                </div> <!-- End of .md-flex -->
+            </div>
+        </section>
+    </body>
+
+</html>
+
+
+CSS: 
+
+
+:root {
+    --black: #201203;
+    --white: #f9f3ed;
+    --accent: #c94706;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Utility Classes */
+.inner-container {
+    margin: 4rem auto;
+    max-width: 1080px;
+    padding: 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2,
+h3 {
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+p,
+li {
+    font-size: 1.06rem;
+}
+
+ol {
+    /* Shorthand for list-style-type, list-style-position, and list-style-image */
+    /* list-style: decimal; */
+    list-style-type: decimal;
+}
+
+strong {
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+/* Layout */
+
+/* Our images have a ratio of 4:5. Each one will take up half of the available space. We can do some simple cross-multiplication to figure out what the minimum height needs to be, proportional to the width (== 62.5vw).
+
+We will add a little more to this so that we can offset them and give the photos an overlapping effect, plus maintain 1rem of padding. */
+.relative {
+    background-color: var(--black);
+    border-radius: 4px;
+    height: calc(70vw + 2rem);
+    margin: 2rem auto;
+    /* However, we have to keep in mind that we're using viewport width here. Since our viewport can extend past our .inner-container width, we need to also set a maximum height; otherwise, our relative container will keep growing beyond what we want it to be. */
+    max-height: 800px;
+    position: relative;
+    width: 100%;
+}
+
+/* Notice what happens as soon as we turn on absolute positioning. */
+.absolute {
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    position: absolute;
+    width: 55%;
+}
+
+/* We can have a little more control by using offset properties. These tell us how far from the top, right, bottom, or left bounds of the nearest relatively positioned container these absolutely positioned items should be. 
+
+So, for example, if we say `left: 1rem;`, we are offsetting this item 1rem from the left-hand side. */
+.absolute:first-of-type {
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+}
+/* We're introducing z-index here, which is a third dimension (or the z-axis) in our viewport. This determines the stacking order of elements. The higher the number, the further forward the element will appear; the smaller the number, the further back the element will apear. */
+
+.absolute:last-of-type {
+    bottom: 1rem;
+    right: 1rem;
+}
+
+/* Offset Practice
+
+One example isn't quite enough to get the hang of absolute positioning. This box down here is meant to be played around with, to see what different values do. */
+.offset-box {
+    background-color: var(--white);
+    border: 2px dotted var(--black);
+    border-radius: 4px;
+    height: 320px;
+    margin: 2rem auto 0 auto;
+    max-width: 640px;
+    position: relative;
+}
+
+.offset-box span {
+    background-color: var(--accent);
+    border-radius: 1rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: center;
+    width: 5rem;
+}
+
+.top {
+    left: calc(50% - 2.5rem);
+    top: 2rem;
+}
+
+.right {
+    right: 2rem;
+    top: calc(50% - 1rem);
+}
+
+.bottom {
+    bottom: 2rem;
+    right: calc(50% - 2.5rem);
+}
+
+.left {
+    bottom: calc(50% - 1rem);
+    left: 2rem;
+}
+
+------STICKY & FIXED POSITIONING ----- 
+
+
+HTML : 
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Paul Mendoza | IanGitHub02">
+        <meta name="description" content="The website demonstrates Sticky and Fixed Positioning">
+
+        <title>16 - Sticky &amp; Fixed Positioning</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.83 299.83" xml:space="preserve">
+                    <title>Bumpy Baby Clothing Company Logo</title>
+                    <path d="M271.2 117.72c-14.25-53.64-63.22-93.29-121.28-93.29S42.88 64.08 28.63 117.72C12.53 119.6 0 133.32 0 149.92s12.53 30.3 28.63 32.2c14.25 53.63 63.22 93.28 121.29 93.28s107.03-39.65 121.28-93.29c16.1-1.88 28.63-15.6 28.63-32.2s-12.53-30.3-28.63-32.2M149.92 251.7c-56.13 0-101.78-45.66-101.78-101.78A101.8 101.8 0 0 1 96.35 63.4a6.6 6.6 0 0 1-3.16 5.46 11.85 11.85 0 1 0 12.35 20.23 30 30 0 0 0 13.67-18.73 30 30 0 0 0-.87-17.21q4.14-1.36 8.44-2.37c6.4 16.57.25 35.9-15.44 45.47a11.85 11.85 0 1 0 12.34 20.23 61.3 61.3 0 0 0 27.14-68.34q6.96.07 13.66 1.03a61.8 61.8 0 0 1-27.53 68.02 11.85 11.85 0 1 0 12.34 20.23c28.33-17.28 43.53-49.28 40.43-81.19 36.4 15.53 61.98 51.67 61.98 93.68 0 56.12-45.66 101.78-101.78 101.78"/><path d="M129.22 159.27c0-6.54-5.3-11.85-11.85-11.85h-13.72a11.85 11.85 0 0 0 0 23.7h13.72c6.55 0 11.85-5.3 11.85-11.85m66.96-11.85h-13.72a11.85 11.85 0 0 0 0 23.7h13.72a11.85 11.85 0 0 0 0-23.7m-13.92 53.38a11.85 11.85 0 0 0-16.72 1.17 20.7 20.7 0 0 1-31.25 0 11.85 11.85 0 0 0-17.88 15.56 44.4 44.4 0 0 0 67.01 0 11.85 11.85 0 0 0-1.16-16.72"/>
+                </svg>
+
+                <h1>Bumpy Baby Clothing Co.</h1>
+            </div>
+        </header>
+        <main>
+            <section class="container">
+                <h2>Cosy Onesies</h2>
+
+                <div class="wide-flex">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <img src="img/bun.webp" alt="A baby wearing a onesie with bunny ears, sitting on a blanket in the leaves.">
+                        <img src="img/sale.svg" alt="I'm on sale!" class="sale">
+                        <h3>Floppy Baby Bunny</h3>
+                        <p class="price"><span>$49.99</span> NOW $25.00</p>
+                        <p>This onesie features super soft fabric, hood with ears, front zipper closure, cinched legs, and a tail.</p>
+                        <a href=#>Quick Look</a>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <img src="img/fox.webp" alt="A baby wearing a onesie with a knitted fox ear cap.">
+                        <h3>What Does The Baby Say?</h3>
+                        <p class="price">$54.99</p>
+                        <p>Let your little one stay cosy with our knitted-hood onesie! Includes button front and detachable tail.</p>
+                        <a href=#>Quick Look</a>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <img src="img/wool.webp" alt="A baby in a onesie with matching knitted cool socks and cap.">
+                        <img src="img/new.svg" alt="Hello! I'm new." class="new">
+                        <h3>The Life Aquatic with Baby</h3>
+                        <p class="price">$59.99</p>
+                        <p>Keep your little one warm during their maritime adventures with our award-winning cotton/wool knits.</p>
+                        <a href=#>Quick Look</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="chat">
+                <img src="img/chat.svg" alt="Need help? Chat live with an agent.">
+                <p>Live Chat</p>
+            </div>
+        </main>
+    </body>
+
+</html>
+
+
+CSS:
+
+:root {
+    --header-bg: #3DB39E;
+    --white: #fff;
+    --card-bg: #f6f4f0;
+    --border: #e8e4dc;
+    --price: #dc6419;
+    --price-span: #666;
+    --hover: #349f8c;
+}
+
+body {
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Utility Classes */
+.container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+.wide-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: white;
+    font-family: 'Signika', sans-serif;
+    /* Vendor prefixes help make experimental
+       properties and features compatible with
+       browsers where support may be iffy. */
+    padding: 1rem;
+    position: -webkit-sticky;
+    position: sticky;
+    /* Without a helper property, the sticky
+       poisiton won't work. */
+    top: 0;
+    /* This helps keep the header in front. */
+    z-index: 1;
+}
+
+header .container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+header svg {
+    width: 3rem;
+}
+
+header svg path {
+    fill: var(--white);
+}
+
+/* Main Layout */
+main {
+    padding: 2rem;
+}
+
+main section h2 {
+    font-family: 'Signika', sans-serif;
+    font-size: 5rem;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    /* While this won't move the container, it
+       will allow us to absolutely position the
+       elements inside of it, relative to where
+       this <div> is in the layout. */
+    position: relative;
+}
+
+h3 {
+    line-height: 2;
+    margin-top: 1rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+.sale,
+.new {
+    position: absolute;
+    width: 4rem;
+}
+
+.sale {
+    right: 2rem;
+    top: 2rem;
+}
+
+.new {
+    left: 2rem;
+    top: 2rem;
+}
+
+.price {
+    color: var(--price);
+    font-weight: 600;
+}
+
+.price span {
+    color: var(--price-span);
+    text-decoration: line-through;
+}
+
+a {
+    background-color: var(--header-bg);
+    border-radius: 0.4rem;
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 80%;
+}
+
+a:hover,
+a:focus {
+    background-color: var(--hover);
+    text-decoration: underline;
+}
+
+.chat {
+    background-color: var(--white);
+    border-radius: 50%;
+    border: 2px dotted var(--header-bg);
+    cursor: pointer;
+    height: 6rem;
+    padding: 1rem;
+    width: 6rem;
+    /* This will put the chat icon in the 
+       lower right-hand corner of the body,
+       no matter what the viewport does. */
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.chat img {
+    margin: auto;
+    width: 3rem;
+}
+
+.chat p {
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1070px) {
+    .wide-flex {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    main .wide-flex > div {
+        width: calc((100% / 3) - (2rem / 3));
+    }
+}
+
+
+
+------MULTILEVEL NAVIGATION-------
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+        <meta name="description" content="This website demonstrates how to create a simple dropdown or toggle menu. It is based upon Edmonton Public Library's website.">
+
+        <title>17 - Multi-Level (Dropdown) Navigation</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Scripts -->
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+        <!-- 
+            All SVG icons for this demo are from heroicons: https://heroicons.com/
+
+            The specific icons used are: chevron-down, calendar-days, chat-bubble-bottom-center-text, and magnifying-glass-circle
+         -->
+        <header>
+            <div class="inner-container wide-flex">
+                <h1>Book Nook</h1>
+
+                <nav>
+                    <ul class="wide-flex">
+                        <li class="top-level">
+                            <!-- Why a button? This is not a link and it will trigger a behaviour or a change on the page. Therefore, a button is the most semantic choice. -->
+                            <button class="flex-container toggle-btn">
+                                Browse
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <title>Click to Expand</title>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <!-- This unordered list is inside of a list item, making it a secondary list. In order for our script to work, it is important that it is the sibling of our button. -->
+                            <ul class="dropdown collapsed">
+                                <li><a href="#">Audiobooks</a></li>
+                                <li><a href="#">Books</a></li>
+                                <li><a href="#">Films &amp; Television</a></li>
+                                <li><a href="#">Music</a></li>
+                                <li><a href="#">Video Games</a></li>
+                            </ul>
+                        </li> <!-- end of .top-level -->
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <title>Calendar of Events</title>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                                </svg>
+                                What's on
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <title>Open Chat</title>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                </svg>
+                                Chat with Staff
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <title>Search</title>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                Search the Catalogue
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> <!-- end of .inner-container -->
+        </header>
+    </body>
+</html>
+
+
+CSS:
+
+/* Global Variables */
+
+:root {
+    --cyan-900: #006064;
+    --cyan-700: #0097a7;
+    --grey-50: #eceff1;
+    --grey-100: #cfd8dc;
+    --grey-900: #263238;
+    --box-shadow: 10px 10px 19px 0px rgba(236, 239, 241, 1);
+    --white: #fff;
+}
+
+/* Soft Reset */
+
+body {
+    color: var(--grey-900);
+    font-family: "Open Sans", sans-serif;
+}
+
+
+svg {
+    height: 1.125rem;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+.wide-flex {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+/* Typographic Styles */
+h1 {
+    font-size: 2.125rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a,
+button {
+    font-size: 1.125rem;
+}
+
+a {
+    color: var(--cyan-900);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: var(--cyan-700);
+    text-decoration: underline;
+}
+
+/* Component Styles */
+header {
+    border-bottom: 1px solid var(--grey-100);
+    box-shadow: 10px 10px 19px 0 rgba(236, 239, 241, 1);
+    padding: 0.25rem 1rem;
+}
+
+/* We're preparing this for later. We need to make this relatively positioned because we are going to be absolutely positioning our dropdown menu underneath it. Note that relatively positioning something does not move or change where this element is in the layout. */
+.top-level {
+    position: relative;
+}
+
+.toggle-btn {
+    background-color: var(--cyan-900);
+    border: none;
+    border-radius: 1rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.25rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+    background-color: var(--cyan-700);
+}
+
+ul:not(.dropdown) a,
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dropdown {
+    line-height: 2;
+    padding-left: 1.25rem;
+}
+
+/* This is going to be the default state for our dropdown menu. We will assign it this class because we want it to be hidden when the user initially loads the page. */
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+/* With JavaScript, we will dynamically add or remove this class. It will take precedence over .collapsed because .expanded is defined lower in the cascade and has the same level of specificity. */
+.expanded {
+    max-height: unset;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (min-width: 920px) {
+    .wide-flex {
+        align-items: center;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+
+    /* Here, we're absolutely positioning the dropdown menu to appear underneath the toggle button. */
+    .dropdown {
+        position: absolute;
+        background-color: var(--white);
+        border: 1px solid var(--grey-100);
+        left: 0;
+        padding: 1rem;
+        top: 3rem;
+        min-width: 11.5rem;
+    }
+}
+
+
+javascript:
+
+// Here, we're looking for something in our HTML document. The thing we're looking for is any element with a class of .toggle-btn – and, when we find it, we're putting it in a little storage container to access later, called `toggleButtons`. 
+
+// The reason we're doing this here, right at the very top, is so that our script only has to search the document once. This speeds up performance.
+const toggleButtons = document.querySelectorAll(".toggle-btn");
+
+// We're now assigning a behaviour to each .toggle-btn that we found. 
+toggleButtons.forEach((toggleButtons) => {
+    // On this line, we're adding an event listener. This tells our toggle buttons to wait for or to anticipate something. In this case, we're telling it to wait for a user-driven event called a click-event – or, simple put, we're telling it to do something whenever the users clicks on it. 
+    toggleButtons.addEventListener("click", function (event) {
+        // This line restricts the behaviour to only this one single toggle button that's being pressed, not anything else in the document (i.e. it prevents bubbling up).
+        event.stopPropagation();
+        // This is where the magic happens. We are adding or removing a class called .expanded to the .toggle-btn's next sibling, or the element that comes immediately after it. This should either reveal or hide the dropdown menu. 
+        this.nextElementSibling.classList.toggle("expanded");
+    });
+});
+
+// We could add additional code here to collapse or dismiss the menu when we click elsewhere in the document, but we will keep it simple for this lesson.
+
+
+
+
+
+
+
+
+
+--------jsprodown menu---------
+
+html:
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required Meta Elements -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Additional Document Information -->
+      <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+      <meta name="description" content="This document is about JS-Dropdown-Menus.">
+      <title>Lesson 17 - JS-Dropdown-Menus</title>
+      <!-- Google Fonnts -->
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <!-- Scripts -->
+      <script src="js/main.js" defer></script>
+   </head>
+   <body>
+      <header>
+         <nav class='inner-container'>
+            <ul class='flex-container'>
+            <!-- Top-Level Link -->
+            <li class='nav-item dropdown'>
+               <a class='dropdown-btn flex-container' href='#'>
+                  Documents
+                  <svg fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path d='M19.5 8.25l-7.5 7.5-7.5-7.5' stroke-linecap='round' stroke-linejoin='round'></path>
+                  </svg>
+               </a>
+               <!-- Dropdown Links -->
+               <ul class='dropdown-content'>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     Create New
+                  </a>
+                  </li>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     All Drafts
+                  </a>
+                  </li>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     Your Drive
+                  </a>
+                  </li>
+               </ul>
+            </li>
+            <!-- Top-Level Link -->
+            <li class='nav-item dropdown'>
+               <a class='dropdown-btn flex-container' href='#'>
+                  Account
+                  <svg fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path d='M19.5 8.25l-7.5 7.5-7.5-7.5' stroke-linecap='round' stroke-linejoin='round'></path>
+                  </svg>
+               </a>
+               <!-- Dropdown Links -->
+               <ul class='dropdown-content'>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     Profile
+                  </a>
+                  </li>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     Notifications
+                  </a>
+                  </li>
+                  <li>
+                  <a class='flex-container' href='#'>
+                     <svg class='w-6 h-6' fill='none' stroke-width='1.5' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z' stroke-linecap='round' stroke-linejoin='round'></path>
+                        <path d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </svg>
+                     Settings
+                  </a>
+                  </li>
+               </ul>
+            </li>
+            </ul>
+         </nav>
+      </header>
+   </body>
+</html>
+
+css:
+
+
+:root {
+  --accent: #a95a49;
+  --accent-pale: #d59f9a;
+  --clouds: #ecf0f1;
+  --dark: #272c2b;
+  --mid: #d1d6d8;
+  --radius: 4px;
+  --shadow: rgba(0,0,0,0.25) 0px 6px 10px 0px, rgba(0,0,0,0.25) 0px 0px 0px 1px;
+}
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.flex-container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+.inner-container {
+  margin: auto;
+  max-width: 1200px;
+}
+body {
+  background: url("https://res.cloudinary.com/eubhawatson/image/upload/v1701498228/wildflowers_hx3ged.webp") center/cover no-repeat;
+  color: var(--dark);
+  font-family: "Roboto Flex", sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: linear-gradient(180deg, rgba(39,44,43,0.9) 0%, rgba(39,44,43,0) 90%);
+  padding: 0 1rem;
+}
+nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--clouds);
+  font: 300 1rem/1.5 sans-serif;
+  text-shadow: var(--shadow);
+  text-transform: lowercase;
+}
+nav a svg {
+  height: 1.25rem;
+}
+.dropdown-btn {
+  font-size: 1.25rem;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 12rem;
+}
+.dropdown-content {
+  background-color: #f9f9f9;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: absolute;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.4s all ease-in-out;
+  width: 12rem;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: var(--dark);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+}
+.dropdown-content li:not(:last-of-type) {
+  border-bottom: 1px solid var(--mid);
+}
+.dropdown-content li:hover a {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* .dropdown-content.show {
+  transform: scaleY(1);
+} */
+
+.show {
+  transform: scaleY(1);
+}
+
+
+javscript: // Let's define a constant that selects all dropdown buttons for us.
+const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+/* ... I mean, we don't really need it in this itty bitty script. We couldddd just string it all together with the forEach method, like this:
+
+  querySelectorAll('.nav-item.dropdown').forEach(dropdown => { ... })
+
+*/
+
+// Now, let's add a click event to each top level link.
+dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+        // This little method prevents the click from immediately propagating (bubbling up) to higher or parent elements. Basically, it says 'only do the thing to the child and nothing else'.
+        event.stopPropagation();
+        // Toggle visibility of the dropdown content
+        // this.querySelector('.dropdown-content').classList.toggle('show');
+        this.querySelector('.dropdown-content').classList.add('show');        
+    });
+});
+
+/*
+  ... and that's technically all we need.
+  
+  Right now, you can only close the dropdown by clicking the top-level link again. However, a common usability pattern that we see on the modern web is that if you 'click off' (i.e. click anywhere else on the screen), the menu will close.
+  
+  We can add a few other things to make this happen. 
+  
+  Everything from here onwards is 'nice to have' but not 'need to have'.
+*/
+
+// Function to close all dropdowns
+
+// Note: functions are normally defined under variables and constants, buuuut I wanted to lump this in with the 'nice to have' stuff, so it's down here. 
+function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown-content').forEach(dropdownContent => {
+        dropdownContent.classList.remove('show');
+    });
+}
+
+// Add click event to the whole document
+document.addEventListener('click', () => {
+    // Close all dropdowns when clicking anywhere in the document
+    closeAllDropdowns();
+});
+
+// Prevent dropdown contents from closing when clicked
+// document.querySelectorAll('.dropdown-content').forEach(content => {
+//     content.addEventListener('click', function(event) {
+//         // Stop the click inside dropdown content from propagating up
+//         event.stopPropagation();
+//     });
+// });
+
+const dropdownContent = document.querySelectorAll('.dropdown-content');
+dropdownContent.forEach(content => {
+    content.addEventListener('click', function(event) {
+        // Stop the click inside dropdown content from propagating up
+        event.stopPropagation();
+    });
+});
+
+
+
+------toggle navigation-------------
+
+html: 
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+        <meta name="description" content="The website demonstrates how to use JavaScript to create toggle navigation, also known as hamburger menus, for narrow viewports or mobile devices.">
+
+        <title>18 - Toggle Navigation</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Scripts -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="flex-container inner-container">
+                <h1>The NavBar</h1>
+
+                <!-- Hamburger Menu -->
+                 <button class="hamburger toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <title>Click to Toggle Menu</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    menu
+                 </button>
+                 <nav class="collapsed">
+                    <ul>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="#">Design Patterns</a></li>
+                        <li><a href="#">Web Heuristics</a></li>
+                        <li><a href="#">Learn More</a></li>
+                    </ul>
+                 </nav>
+            </div>
+        </header>
+        <main>
+            <!-- This hero banner is strictly here so that we have something for our menus to come down on top of and for us to test the stacking order or z-indices. -->
+            <div class="hero">
+                <h2>Toggle Navigation</h2>
+
+                <p>
+                    Toggle navigation, also known as navbars or hamburger menus, is a design pattern that you are likely familiar with. It features a collapsible menu icon that, when clicked or tapped, expands to reveal the main navigation links. This approach saves space on smaller screens while still allowing easy access to the full menu, giving us an overall better experience on mobile devices or smaller screens.
+                </p>
+            </div>
+        </main>
+    </body>
+
+</html>
+
+css:
+:root {
+    --accent: #639187;
+    --black: #141208;
+    --hover: #f1f5f9;
+    --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --white: #fff;
+}
+
+body {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Utility Classes */
+.flex-container {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+/* Typography */
+h1,
+h2 {
+    font-weight: 300;
+}
+
+h1,
+li {
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+p,
+a {
+    font-size: 1.2rem;
+}
+
+/* Navigation */
+header {
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+header .inner-container {
+    height: 4.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.toggle-btn {
+    background-color: unset;
+    border: none;
+    font-size: 0.825rem;
+}
+
+.toggle-btn svg {
+    display: block;
+    width: 2rem;
+}
+
+/* Our header is 4.875rem tall, so let's position the navigation that far down below it. */
+nav {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    left: 0;
+    position: absolute;
+    top: 4.25rem;
+    /* Use percentages, not viewport width here. 
+    If you use 100vw, you will get horizontal overflow (because it counts the vertical scrollbar). */
+    width: 100%;
+    z-index: 10;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--hover);
+}
+
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.expanded {
+    max-height: unset;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Layout */
+main {
+    display: flex;
+    align-items: center;
+    background: url('../img/hero-sm.webp') center / cover no-repeat;
+    justify-content: center;
+    /* We are subtracting the navbar height from the full height of the viewport so that everything fits perfectly inside. */
+    min-height: calc(100vh - 4.25rem);
+    padding: 1rem;
+}
+
+.hero {
+    max-width: 640px;
+}
+
+/* Medium View */
+@media screen and (min-width: 720px) {
+    h2 {
+        font-size: 3.1875rem;
+    }
+
+    p {
+        font-size: 1.3125rem;
+    }
+
+    main {
+        background: url('../img/hero-lg.webp') center / cover no-repeat;   
+    }
+}
+
+/* Large View */
+@media screen and (min-width: 1080px) {
+    /* We have a lot of work cut out for us here because we need to undo a lot of the things we did above to hide our menu. Alternatively, we can do strictly mobile styles in a max-width media query, making our job here a little easier. */
+
+    /* First, let's get rid of the hamburger menu. */
+    .hamburger {
+        display: none;
+    }
+
+    nav.collapsed,
+    nav.expanded {
+        background-color: none;
+        box-shadow: none;
+        max-height: unset;
+        opacity: 1;
+        position: static;
+        visibility: visible;
+        width: unset;
+    }
+
+    /* Next, regardless of whether the nav is opened or closed, we need to make sure it's open. */
+    nav ul {
+        display: flex;
+    }
+
+    /* The hover styles that looked good in the smaller views don't look so great here. Let's change them. */
+    nav a:hover,
+    nav a:focus {
+        background-color: unset;
+        text-decoration: underline;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+}
+
+js: 
+
+// The following code demonstrates how to apply onclick functionality to multiple toggle menus that share the same class selector and CSS styles
+// const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+// toggleButtons.forEach((toggleButtons) => {
+//     toggleButtons.addEventListener("click", function (event) {
+//         event.stopPropagation();
+//         // this.nextElementSibling.classList.toggle('expanded');
+
+//         // const nav = document.querySelector('nav');
+//         // nav.classList.toggle('expanded');
+
+//         document.querySelector('nav').classList.toggle('expanded');
+
+// The following code is the equivalent of toggle, add and remove
+//         // if (document.querySelector('nav').classList.contains('expanded')) {
+//         //     document.querySelector('nav').classList.remove('expanded');
+//         // } else {
+//         //     document.querySelector('nav').classList.add('expanded');
+//         // }
+//     })
+// });
+
+// The following code demonstrates a arrow function in javascript
+// function (event) is equal to (e) =>
+// toggleButtons.forEach((toggleButtons) => {
+//     toggleButtons.addEventListener("click", (e) => {
+
+//     })
+// });
+
+const toggleButton = document.querySelector('.toggle-btn');
+
+toggleButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    document.querySelector('nav').classList.toggle('expanded');
+})
+
+
+------hamburguer menu -----------
+
+
+html: 
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required Meta Elements -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Additional Document Information -->
+      <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+      <meta name="description" content="Using JavaScript to Build a Hamburger Menu">
+      <title>Lesson 18 - Hamburger Menu with JS</title>
+      <!-- Google Fonnts -->
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <!-- Scripts -->
+      <script src="js/main.js" defer></script>
+   </head>
+   <body>
+      <main>
+         <div class="intro">
+            <h1>Using JavaScript to Build a Hamburger Menu</h1>
+
+            <p>Today, our goal is to create a menu that can be <strong>hidden or shown</strong> when the user clicks on an icon. This is a common feature in mobile web design, where screen space is at a premium.</p>
+            
+            <div class="demo">
+               <nav>
+               <div class="toggle-btn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <p class="label">click!</p>
+               </div>
+               
+               <p>Hello, world!</p>
+               </nav>
+            </div>
+
+            <p>However, in order to do this, we need something to change how this icon behaves. Just as HTML is for content and CSS is for styles, JavaScript is for behaviour.</p>
+
+            <p>Don't worry: you won’t need an in-depth understanding of JavaScript, functions, or flow structures. For our purposes, all you’ll need to know is what things you need to find in your HTML document and what to do with them.</p>
+         </div>
+         <section>
+            <h2>External Scripts</h2>
+
+            <p>Today, we’re going to write an external script. Just like with external styles, we want to separate our markup from our behaviours. However, we'll need to tell the browser where to find it.</p>
+
+            <figure>
+               <pre>
+         &lt;head&gt;
+               &lt;script src="js/main.js" defer&gt;&lt;/script&gt;
+         &lt;/head&gt;
+               </pre>
+            </figure>
+
+            <p>So far, this looks a whole lot like our external stylesheets. But what's with that <strong>defer</strong> attribute?</p>
+
+            <p>We need to use this attribute because the DOM needs to be written before our script can access and interact with it. If our script loads before the DOM and the things it needs are not there, it'll try to execute (but won't work properly because nothing will be there to interact with yet). So, this attribute tells the script to hang tight until enough things are loaded for the script to actually work.</p>
+
+            <p>So, what happens once everything’s in its right place and loaded?</p>
+
+            <h3>Queries</h3>
+
+            <p>JavaScript has different ways of grabbing things in the DOM and doing something with them. This is sort of like how we need to select something in CSS before we can apply a style to it.</p>
+
+            <p>In JavaScript, we can perform a query — that is, we check to see if something is there.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn');
+         </pre>
+            </figure>
+
+            <p>This is looking for a thing in the DOM with a class of <code>.toggle-btn</code>.</p>
+
+            <p><code>document</code> just means <em>hey, let me access the DOM.</em></p>
+
+            <p><code>querySelector</code> says, <em>okay, we're looking for a specific element or class.</em> If there's more than one of them, the script will grab the first one it finds.</p>
+
+            <p><code>('.toggle-btn');</code> is the specific thing we're looking for. In this case, it's something with a class of <code>.toggle-btn</code>.</p>
+
+            <aside>
+               <h3>Constants</h3>
+
+               <p>Once we’ve found a thing to affect, we can either access it right away and do something with it, or store the ‘search result’ so that we can do something with it later.</p>
+
+               <figure>
+               <pre>
+         const clickButton = document.querySelector('.toggle-btn');
+         </pre>
+               </figure>
+
+               <p>Here, we’re storing our ‘search result’ in a constant. Think of a constant as a container for something — and, once we store something in our container, we can use it whenever we want. </p>
+
+               <p>We can also call it whatever we want (although it should make semantic sense). In JavaScript, using camelCase is best practice, so we called it <code>clickButton</code>.</p>
+
+               <p>But let's level for a minute: this entire script is teensy tiny and only affects one specific area of the page. We can actually write the entire script in an even simpler way, which we'll do down below.</p>
+            </aside>
+
+            <h3>Events & Listeners</h3>
+
+            <p>Next, let’s add an event. An event is a thing that happens within our website. Often, it’s something that the user does.</p>
+
+            <p>There are lots of user-driven events, like click events. But in order to react to it, our script needs to be waiting for it. </p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener();
+         </pre>
+            </figure>
+
+            <p>An event listener waits for a specific event to happen. Here, we’re adding one to the search we did in our HTML earlier.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+
+         });            
+         </pre>
+            </figure>
+
+            <p>Let’s add a click event. This means that we'll make something happen when the user clicks on this thing in the HTML. (We’ll tell our browser what we want to happen inside the curly braces.)</p>
+
+            <p>What, specifically, do we want to happen? Well, we want our navigation to either be hidden or shown whenever the user clicks on our icon.</p>
+
+            <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+            document.querySelector('nav');
+         });            
+               </pre>
+            </figure>
+
+            <p>If we want to affect our
+            <nav>, we have to access the DOM and look for it. Here, we’re doing another search, just like when we created our constant.</p>
+
+               <figure>
+               <pre>
+         document.querySelector('.toggle-btn').addEventListener('click', () => {    
+            document.querySelector('nav').classList.toggle('show-nav');
+         });            
+               </pre>
+               </figure>
+
+               <p>Finally, if our &lt;nav&gt; is hidden, JavaScript will add a class called <code>show-nav</code>. If our &lt;nav&gt; is already showing, JavaScript will remove it – this is what 'toggle' means!</p>
+
+               <p>Note that we don’t include the dot before the class name here. This is because JavaScript is expecting a class name and nothing else.</p>
+
+               <p>And that's it! Now, we just need to write a little bit of CSS to go along with it.</p>
+
+               <p>This is the only bit of JavaScript that you’ll need for the majority of the semester. Once you’ve got it down, you’ll be able to use it over and over again.</p>
+         </section>
+
+         <section>
+            <h2>tl;dr</h2>
+
+            <p>So, what parts do you <em>really</em> have to pay attention to?</p>
+
+            <figure>
+               <pre>
+         document.querySelector('<span>.toggle-btn</span>').addEventListener('click', () => {    
+            document.querySelector('<span>nav</span>').classList.toggle('<span>show-nav</span>');
+         });            
+               </pre>
+            </figure>
+
+            <ol>
+               <li>The first thing is what you want your user to click.</li>
+               <li>The second thing is an element you want to show or hide.</li>
+               <li>The third thing is which class you want to add or remove.</li>
+            </ol>
+         </section>
+         </main>
+   </body>
+</html>
+javascript:
+
+const demo = document.querySelector('.demo');
+
+// document.querySelector('.demo').addEventListener('click', () => {
+demo.addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('show-nav');
+
+    // const nav = document.querySelector('nav');
+    // nav.classList.toggle('show-nav');
+
+    // if (nav.classList.contains('show-nav')) {
+    //     document.querySelector('nav').classList.remove('show-nav');
+    // } else {
+    //     document.querySelector('nav').classList.add('show-nav');
+    // }
+}); 
+
+
+css: body {
+  background-color: #282923;
+  color: #eceff1;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 110%;
+  line-height: 1.5;
+}
+body main {
+  margin: auto;
+  max-width: 64rem;
+  padding-bottom: 4rem;
+}
+body main h1,
+body main h2,
+body main h3 {
+  color: #e32472;
+  margin-top: 2em;
+}
+body main code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  color: #e7db74;
+}
+body main figure {
+  border: 1px dashed #74705d;
+  margin: 2rem auto;
+}
+body main figure pre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+body main figure pre span {
+  color: #4dd0e1;
+}
+.demo {
+  border: 1px dashed #74705d;
+  cursor: pointer;
+  padding: 1rem;
+  user-select: none;
+}
+.demo nav {
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  max-width: 5rem;
+  margin: auto;
+  transition: all 0.4s ease-out;
+}
+.demo nav > p {
+  font-size: 2rem;
+  max-width: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-out 0.1s;
+  white-space: nowrap;
+}
+.demo .toggle-btn {
+  margin-right: 0;
+  transition: margin-right 2s;
+}
+.demo .toggle-btn p.label {
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  margin: 0;
+  padding: 0.5rem 0 0 0;
+  text-align: center;
+}
+.demo .toggle-btn span {
+  height: 0.3rem;
+  width: 4rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5rem;
+  display: flex;
+  background-color: #4dd0e1;
+  position: relative;
+  transition: all 0.4s ease-out;
+}
+.demo .toggle-btn span:last-of-type {
+  margin-bottom: 0;
+}
+nav.show-nav {
+  max-width: 100%;
+}
+nav.show-nav p {
+  color: #a6e22c;
+  max-width: unset;
+  opacity: 1;
+}
+nav.show-nav .toggle-btn {
+  margin-right: 70%;
+  transition: margin 2s;
+}
+nav.show-nav .toggle-btn p.label {
+  display: none;
+}
+nav.show-nav .toggle-btn span {
+  background-color: #a6e22c;
+}
+nav.show-nav .toggle-btn span:first-child {
+  display: none;
+}
+nav.show-nav .toggle-btn span:nth-child(2) {
+  transform: rotate(45deg);
+  top: 0.65rem;
+}
+nav.show-nav .toggle-btn span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 0.3rem;
+}
+

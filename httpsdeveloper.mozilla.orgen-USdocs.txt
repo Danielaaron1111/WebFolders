@@ -181,5 +181,17 @@ https://css-tricks.com/a-clever-sticky-footer-technique/
 The idea is that sticky footers will stick to the bottom of the screen, even when the content of the page isn’t enough to push them there.
 
 
+Lesson 17
+
+
+https://codepen.io/eubhawatson/pen/oNmQvwr
+
+LESSON 18 
+
+
+https://codepen.io/eubhawatson/pen/MWQMWGN
+
+
+
 
 
