@@ -1,0 +1,470 @@
+/* ============================================
+   FLEXBOX VERSION - Character Cards Demo
+   Using ONLY Flexbox (No CSS Grid)
+   ============================================ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.username {
+    color: #a78bfa;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #888888;
+    margin-top: 5px;
+}
+
+/* Section */
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* ============================================
+   CHARACTER CARDS - FLEXBOX LAYOUT
+   ============================================ */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Individual Character Card */
+.character-card {
+    /* Flexbox properties for responsive sizing */
+    flex: 1 1 280px;  /* flex-grow: 1, flex-shrink: 1, flex-basis: 280px */
+    min-width: 250px;
+    max-width: 350px;
+    
+    /* Card styling */
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+    /* Flexbox for internal layout */
+    display: flex;
+    flex-direction: column;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    flex-shrink: 0;  /* Prevent image from shrinking */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;  /* ADD THIS - centers the image */
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;  /* Allow content to grow and fill space */
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.card-author {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 12px;
+    flex-grow: 1;  /* Push stats to bottom */
+}
+
+.card-stats {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #888888;
+    margin-top: auto;  /* Stick to bottom */
+}
+
+.chat-icon {
+    font-size: 16px;
+}
+
+.chat-count {
+    font-weight: 500;
+}
+
+/* ============================================
+   SCENE BOXES - FLEXBOX LAYOUT
+   ============================================ */
+
+.scenes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Scene Box */
+.scene-box {
+    flex: 0 0 320px;    /* CHANGE: flex-grow 0 prevents stretching */
+    width: 320px;       /* ADD: Fixed width */
+    height: 280px;
+    min-height: 280px;  /* ADD THIS */
+    max-height: 280px;
+    /* Positioning for overlay */
+    position: relative;
+    
+    /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Card styling */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scene-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.scene-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+    
+    /* Flexbox for content positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.scene-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scene-button {
+    /* Flexbox for button content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    /* Button styling */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    
+    /* Flex sizing */
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.scene-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.user-icon {
+    font-size: 16px;
+}
+
+.scene-author {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Tablet and smaller desktops */
+@media (max-width: 1024px) {
+    .cards-container {
+        gap: 15px;
+    }
+    
+    .character-card {
+        flex: 1 1 250px;
+        min-width: 220px;
+        max-width: 320px;
+    }
+    
+    .scenes-container {
+        gap: 15px;
+    }
+    
+    .scene-box {
+        flex: 1 1 280px;
+        min-width: 250px;
+        max-width: 400px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .cards-container {
+        /* Force 2 columns on tablet */
+        justify-content: space-between;
+    }
+    
+    .character-card {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 0;
+        max-width: none;
+    }
+    
+    .scenes-container {
+        /* Stack scenes vertically on tablet */
+        flex-direction: column;
+    }
+    
+    .scene-box {
+        flex: 1 1 auto;
+        min-width: 100%;
+        max-width: none;
+        height: 250px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .cards-container {
+        /* Single column on mobile */
+        flex-direction: column;
+    }
+    
+    .character-card {
+        flex: 1 1 auto;
+        min-width: 100%;
+        max-width: none;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+    
+    .scene-box {
+        height: 220px;
+    }
+    
+    .scene-title {
+        font-size: 18px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    body {
+        padding: 10px;
+    }
+    
+    .card-image {
+        height: 160px;
+    }
+    
+    .scene-box {
+        height: 200px;
+    }
+}
+
+/* ============================================
+   FLEXBOX UTILITIES
+   ============================================ */
+
+/* Center content horizontally and vertically */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Space items evenly */
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Vertical layout */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrap items */
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Custom scene backgrounds */
+.scene-mafia {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                      url('/img/IMG_8961.jpg');
+}
+
+.scene-halloween {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                      url('../images/scenes/halloween.jpg');
+}
+
+.scene-exorcism {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                      url('../images/scenes/exorcism.jpg');
+}
+
+/* .scene-box {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+ */
+
+
+/*background-position: center center;  /* Centered */
+/*background-position: center top;     /* Show top of image */
+/*background-position: center bottom;  /* Show bottom of image */
+/*background-position: 50% 30%;        Custom position
+
+
+OR for individual scenes (if using classes):
+css.scene-mafia {
+    background-image: url('../images/scenes/mafia.jpg');
+    background-position: center top;  /* This scene shows top */
+/* }
+
+.scene-halloween {
+    background-image: url('../images/scenes/halloween.jpg');
+    background-position: center bottom;  /* This scene shows bottom */
+/* } */ */
+
+
+
+
+
+
+
+/* ============================================
+   NOTES ON FLEXBOX VS GRID
+   ============================================ */
+
+/*
+FLEXBOX ADVANTAGES:
+- Better browser support (works on older browsers)
+- Great for one-dimensional layouts (rows OR columns)
+- More control over item sizing with flex-grow/shrink/basis
+- Easier to understand for beginners
+- Perfect for navigation bars, card layouts, centering
+
+FLEXBOX LIMITATIONS:
+- More complex for two-dimensional layouts (rows AND columns)
+- Requires more calculations for equal-width columns
+- Gap property has less support than Grid's gap
+- Can be harder to create complex layouts
+
+CSS GRID ADVANTAGES:
+- Perfect for two-dimensional layouts
+- Easier to create complex layouts
+- Better for equal-width/height items
+- More intuitive for page layouts
+- Less code for complex designs
+
+WHEN TO USE WHICH:
+- Use Flexbox: Navigation menus, card layouts, centering, button groups
+- Use Grid: Page layouts, photo galleries, dashboards, complex UIs
+- Use Both: Combine them! Grid for page layout, Flexbox for components
+*/
