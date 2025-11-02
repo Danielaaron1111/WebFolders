@@ -1,0 +1,19 @@
+name: In class 4 End to End testing with Cypress
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Test the code with Cypress.
+        uses: cypress-io/github-action@v5
+        with:
+          # just perform install
+          start: npm start
+          working-directory: automated-tests-do-not-touch
+          browser: chrome

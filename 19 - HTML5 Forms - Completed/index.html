@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>18 - Google Support</title>
+
+    <!-- Additional Information -->
+    <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | IanGitHub02 on GitHub">
+    <meta name="description" content="For this demo, we are pretending to be scammers trying to get as much information from our user as possible. This will allow us to practice several different form components.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="inner-container">
+            <h1 class="sr-only">Google Support</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <title>Google Logo</title>
+                <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+            </svg>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Get Help</a></li>
+                    <li><a href="#">Gift Card Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="inner-container">
+            <div class="intro">
+                <h2>Get Technical Support</h2>
+                <p>Dear citizen: there is a problem with your computer. Fortunately, we're here to help you with it.</p>
+                <p>Fill out the super secure form below to get in touch with our experts. (You can trust us.)</p>
+            </div>
+
+            <!-- The form element has two main attributes:
+            
+            action: Specifies the URL where the form data will be sent after submission.
+        
+            method: Defines the HTTP method used to send data, GET (default) or POST
+
+            The GET method creates a query string (i.e. the data is put in the URL itself). This is good for searches, etc.
+
+            The POST method is more masked and cannot be tampered with by the user. This is what you should use for all PII (personally identifying information).
+            -->
+            <form action="index.html" method="POST">
+                <!-- A fieldset is a set of form fields. It's a logical grouping of similar things. -->
+                <fieldset>
+                    <!-- A legend is just a title or heading for a fieldset. -->
+                    <legend>Personal Information</legend>
+
+                    <!-- Full Name -->
+                    <div>
+                        <!-- The for attribute on a label must match the id attribute of its corresponding input. -->
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="ex. Jack Pott" required>
+                    </div>
+                    
+                    <!-- Date of Birth -->
+                    <div>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    
+                    <!-- Sex on ID -->
+                    <div>
+                        <h3>Sex On Your ID</h3>
+
+                        <!-- A group of radio buttons needs to share the same name values. This indicates that they all belong together (and only one from this grouping may be chosen). -->
+                        <div>
+                            <!-- We also need to include the value here because the user cannot type out their chosen value with this input type. -->
+                            <input type="radio" id="F" name="sex" value="F">
+                            <label for="F">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="M" name="sex" value="M">
+                            <label for="M">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="X" name="sex" value="X">
+                            <label for="X">Non-Specified</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <!-- Email Address -->
+                    <div>
+                        <label for="email">Email Address</label>
+                        <!-- This looks for a pattern with a string, an @, another string, a ., and a top-level domain. -->
+                        <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+                    </div>
+                    
+                    <!-- Telephone -->
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <!-- Telephone numbers can be written or formatted in dozens of different ways! The pattern that we have here uses a regular expression that looks for a specific way of writing it. We need to tell our user what format we want so that they have the opportunity to write it properly and submit the form. -->
+                        <input type="tel" name="phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="123-456-7890" aria-describedby="phone-help" required>
+                        <!-- aria-describedby links an element to extra descriptive text (via its ID), helping assistive technologies provide more context to users.
+                        The value of aria-describedby should be the id of another element (often a paragraph, div, or span) that provides extra information. -->
+                        <p class="help" id="phone-help">
+                            Please use the following format: 123-456-7890
+                        </p>
+                    </div>
+
+                    <!-- Address: Street address, City, Province, Postal Code -->
+                    <div>
+                        <label for="street-address">Street Address</label>
+                        <input type="text" id="street-address" name="street-address" autocomplete="street-address" required>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" autocomplete="address-level2" required>
+                    </div>
+
+                    <!-- Let's say we want the official Canada Post abbreviations for each province or territory. Instead of checking to see if our user entered it correctly, we can simply give them predetermined options to choose from. -->
+                    <div>
+                        <label for="province">Province or Territory</label>
+                        <select name="province" id="province" required>
+                            <option value="">-- Please choose an option: --</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="YT">Yukon Territories</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="post-code">Postal Code</label>
+                        <input type="text" id="post-code" name="post-code" aria-describedby="post-code-help" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" placeholder="A1A 1A1" required>
+                        <p class="help" id="post-code-help">
+                            Please use the following format: A1A 1A1
+                        </p>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Online Banking Information</legend>
+
+                    <!-- Your Banking Website -->
+                    <div>
+                        <label for="bank">Your Banking Website</label>
+                        <input type="url" id="bank" name="bank" placeholder="https://www.somebank.ca" required>
+                    </div>
+
+                    <!-- Card Number -->
+                    <div>
+                        <label for="card-number">Account Number</label>
+                        <input type="number" id="card-number" name="card-number" min="1000000000000000" max="9999999999999999" step="1" required>
+                    </div>
+
+                    <!-- Password for Online Banking -->
+                    <div>
+                        <label for="bank-pw">Account Password</label>
+                        <input type="password" id="bank-pw" name="bank-pw" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Verification</legend>
+                    
+                    <div>
+                        <label for="secret">What is your darkest secret?</label>
+                        <textarea name="secret" id="secret" aria-describedby="secret-help" required></textarea>
+                        <p class="help" id="secret-help">Don't worry: we won't use this for nefarious purposes like blackmail or anything. Trust us.</p>
+                    </div>
+                </fieldset>
+                
+                <!-- Consent -->
+                <div>
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I hereby agree to my personal data being stored on servers in Nigeria.</label>
+                </div>
+
+                <!-- Submit -->
+                <div>
+                    <label for="submit">Submit Form</label>
+                    <input type="submit" id="submit" name="submit" value="Submit" aria-describedby="submit-help">
+                    <p class="help" id="submit-help">Never give out your email address or password to anyone but Google. Only we will contact you regarding your submission.</p>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="inner-container">
+            <h2>&copy; 2025 Google Technical Support</h2>
+        </div>
+    </footer>
+</body>
+</html>
