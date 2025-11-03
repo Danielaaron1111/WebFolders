@@ -1,0 +1,279 @@
+:root {
+    --accent: #639187;
+    --black: #141208;
+    --hover: #f1f5f9;
+    --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --white: #fff;
+}
+
+body {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Utility Classes */
+.flex-container {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+/* Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+    color: var(--accent);
+}
+
+/* Typography */
+h1,
+h2 {
+    font-weight: 300;
+}
+
+h1,
+li {
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+p,
+a {
+    font-size: 1.2rem;
+}
+
+/* Navigation */
+header {
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+header .inner-container {
+    height: 4.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.toggle-btn {
+    background-color: unset;
+    border: none;
+    font-size: 0.825rem;
+}
+
+.toggle-btn svg {
+    display: block;
+    width: 2rem;
+}
+
+/* Our header is 4.875rem tall, so let's position the navigation that far down below it. */
+nav {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    left: 0;
+    position: absolute;
+    top: 4.25rem;
+    /* Use percentages, not viewport width here. 
+    If you use 100vw, you will get horizontal overflow (because it counts the vertical scrollbar). */
+    width: 100%;
+    z-index: 10;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* Hide main nav icons on mobile */
+nav > ul > li > a svg {
+    display: none;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--hover);
+}
+
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.expanded {
+    max-height: unset;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Submenu Styles */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.submenu.open {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Layout */
+main {
+    display: flex;
+    align-items: center;
+    background: url('../img/hero-sm.webp') center / cover no-repeat;
+    justify-content: center;
+    /* We are subtracting the navbar height from the full height of the viewport so that everything fits perfectly inside. */
+    min-height: calc(100vh - 4.25rem);
+    padding: 1rem;
+}
+
+.hero {
+    max-width: 640px;
+}
+
+/* Medium View */
+@media screen and (min-width: 720px) {
+    h2 {
+        font-size: 3.1875rem;
+    }
+
+    p {
+        font-size: 1.3125rem;
+    }
+
+    main {
+        background: url('../img/hero-lg.webp') center / cover no-repeat;   
+    }
+}
+
+/* Large View */
+@media screen and (min-width: 1080px) {
+    /* We have a lot of work cut out for us here because we need to undo a lot of the things we did above to hide our menu. Alternatively, we can do strictly mobile styles in a max-width media query, making our job here a little easier. */
+
+    /* First, let's get rid of the hamburger menu. */
+    .hamburger {
+        display: none;
+    }
+
+    nav.collapsed,
+    nav.expanded {
+        background-color: none;
+        box-shadow: none;
+        max-height: unset;
+        opacity: 1;
+        position: static;
+        visibility: visible;
+        width: unset;
+    }
+
+    /* Next, regardless of whether the nav is opened or closed, we need to make sure it's open. */
+    nav ul {
+        display: flex;
+    }
+
+    /* Desktop: Icons on top of text in main nav */
+    nav > ul > li > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem;
+    }
+
+    nav > ul > li > a svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    /* The hover styles that looked good in the smaller views don't look so great here. Let's change them. */
+    nav a:hover,
+    nav a:focus {
+        background-color: unset;
+        text-decoration: underline;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    /* Submenu for desktop - dropdown column */
+    .has-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        min-width: 220px;
+        z-index: 100;
+    }
+
+    /* Submenu items in column (vertical) */
+    .submenu {
+        flex-direction: column;
+    }
+
+    .submenu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
+    }
+
+    .has-submenu:hover .submenu {
+        display: block;
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .submenu a:hover,
+    .submenu a:focus {
+        background-color: var(--hover);
+        text-decoration: none;
+    }
+}

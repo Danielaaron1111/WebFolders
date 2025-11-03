@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  .panel {
+    height: 180px;
+    overflow: auto;             /* creates its own scroll container */
+    border: 2px solid #333;
+    margin: 24px;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    background: #ffd166;
+    padding: 8px 12px;
+  }
+  .block { height: 400px; background: #f2f2f2; }
+</style>
+
+<div class="panel">
+  <div class="sticky">I stick to the TOP of THIS panel</div>
+  <div class="block">Scroll inside me…</div>
+</div>
+<p>Notice the sticky header pins inside the panel, not at the viewport top.</p>
