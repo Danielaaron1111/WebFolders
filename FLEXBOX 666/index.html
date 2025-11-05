@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Completo: Flexbox Responsivo</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ============================================
+         DEMO 1: NAVEGACIÓN RESPONSIVA
+         ============================================ -->
+    <div class="demo-section">
+        <nav class="navbar">
+            <div class="logo">🌙 FlexDemo</div>
+            
+            <!-- Botón hamburguesa para mobile -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menú de navegación -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#cards">Tarjetas</a></li>
+                <li><a href="#columns">Columnas</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ============================================
+         DEMO 2: HERO SECTION
+         ============================================ -->
+    <div class="demo-section" id="hero">
+        <h2 class="section-title">Demo 2: Hero Section Responsivo</h2>
+        <p class="section-description">
+            Combinación de align-items, justify-content y order para reorganizar contenido
+        </p>
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Domina Flexbox</h1>
+                <p>
+                    Aprende todos los patrones esenciales de Flexbox para crear 
+                    diseños web modernos y completamente responsivos. Este demo 
+                    cubre desde lo básico hasta layouts complejos.
+                </p>
+                <a href="#cards" class="cta-button">Ver Demos</a>
+            </div>
+            
+            <div class="hero-image">
+                <!-- Placeholder image - reemplaza con tu propia imagen -->
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop" 
+                     alt="Código en pantalla">
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         DEMO 3: GRID DE TARJETAS
+         ============================================ -->
+    <div class="demo-section" id="cards">
+        <h2 class="section-title">Demo 3: Grid de Tarjetas con Flex-Wrap</h2>
+        <p class="section-description">
+            3 columnas (desktop) → 2 columnas (tablet) → 1 columna (mobile)
+        </p>
+        
+        <div class="card-grid">
+            <!-- Tarjeta 1 -->
+            <div class="card">
+                <div class="card-image">🎨</div>
+                <div class="card-content">
+                    <h3>Diseño Responsivo</h3>
+                    <p>
+                        Crea layouts que se adaptan perfectamente a cualquier 
+                        tamaño de pantalla usando flex-wrap y media queries.
+                    </p>
+                    <a href="#" class="card-button">Aprender Más</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="card">
+                <div class="card-image">⚡</div>
+                <div class="card-content">
+                    <h3>Alineación Perfecta</h3>
+                    <p>
+                        Domina justify-content y align-items para centrar y 
+                        distribuir elementos con precisión matemática.
+                    </p>
+                    <a href="#" class="card-button">Ver Ejemplos</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <div class="card-image">🚀</div>
+                <div class="card-content">
+                    <h3>Gap Moderno</h3>
+                    <p>
+                        Usa la propiedad gap para espaciar elementos de forma 
+                        limpia sin margins complicados.
+                    </p>
+                    <a href="#" class="card-button">Explorar</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="card">
+                <div class="card-image">🎯</div>
+                <div class="card-content">
+                    <h3>Flex Direction</h3>
+                    <p>
+                        Cambia entre row y column para crear layouts verticales 
+                        y horizontales según el dispositivo.
+                    </p>
+                    <a href="#" class="card-button">Descubrir</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="card">
+                <div class="card-image">💎</div>
+                <div class="card-content">
+                    <h3>Order Property</h3>
+                    <p>
+                        Reorganiza visualmente elementos sin cambiar el HTML 
+                        usando la propiedad order.
+                    </p>
+                    <a href="#" class="card-button">Practicar</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="card">
+                <div class="card-image">✨</div>
+                <div class="card-content">
+                    <h3>Align Content</h3>
+                    <p>
+                        Controla el espaciado entre múltiples líneas cuando 
+                        los elementos hacen wrap.
+                    </p>
+                    <a href="#" class="card-button">Comenzar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         DEMO 4: LAYOUT DE COLUMNAS
+         ============================================ -->
+    <div class="demo-section" id="columns">
+        <h2 class="section-title">Demo 4: Layout de Columnas Adaptativo</h2>
+        <p class="section-description">
+            3 columnas (desktop) → 2 columnas (tablet) → 1 columna (mobile)
+        </p>
+        
+        <div class="columns-layout">
+            <div class="column">
+                <div class="column-icon">📱</div>
+                <h3>Mobile First</h3>
+                <p>
+                    Diseña primero para móviles y luego expande hacia tablets 
+                    y desktop. Este enfoque garantiza que tu sitio funcione 
+                    en todos los dispositivos.
+                </p>
+            </div>
+
+            <div class="column">
+                <div class="column-icon">💻</div>
+                <h3>Breakpoints Claros</h3>
+                <p>
+                    Define puntos de quiebre específicos: mobile (&lt;600px), 
+                    tablet (600-1023px), y desktop (≥1024px) para control total 
+                    de tu layout.
+                </p>
+            </div>
+
+            <div class="column">
+                <div class="column-icon">🎓</div>
+                <h3>Código Limpio</h3>
+                <p>
+                    Escribe CSS organizado con comentarios claros. El código 
+                    bien documentado es fácil de mantener y extender en el futuro.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         DEMO 5: FOOTER CON MÚLTIPLES SECCIONES
+         ============================================ -->
+    <div class="demo-section">
+        <h2 class="section-title">Demo 5: Footer Multi-columna</h2>
+        <p class="section-description">
+            Demuestra align-content con flex-wrap en múltiples líneas
+        </p>
+        
+        <footer class="footer" id="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Guías</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Equipo</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Licencia</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 FlexDemo. Creado con 💜 para aprender Flexbox</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="js/main.js"></script>
+</body>
+</html>

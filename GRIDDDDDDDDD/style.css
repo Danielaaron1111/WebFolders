@@ -1,0 +1,1006 @@
+/* ============================================
+   RESET Y CONFIGURACIÓN BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ============================================
+   HERO HEADER - INTRODUCCIÓN
+   ============================================ */
+.hero-header {
+    /* GRID: Sistema de centrado con grid */
+    display: grid;
+    /* SHORTHAND: place-content centra todo el contenido */
+    place-content: center;
+    /* SHORTHAND: place-items centra los items */
+    place-items: center;
+    min-height: 40vh;
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(187, 134, 252, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #b0b0b0;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   ESTRUCTURA DE SECCIONES DEMO
+   ============================================ */
+.demo-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+
+.section-description code {
+    background: rgba(187, 134, 252, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #bb86fc;
+}
+
+/* ============================================
+   CONTENEDORES DE EJEMPLOS
+   ============================================ */
+.example-container {
+    background: rgba(15, 15, 30, 0.6);
+    border: 2px solid rgba(187, 134, 252, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s ease;
+}
+
+.example-container:hover {
+    border-color: rgba(187, 134, 252, 0.6);
+}
+
+.example-title {
+    color: #bb86fc;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* ============================================
+   BLOQUES DE CÓDIGO
+   ============================================ */
+.code-display {
+    background: #0a0a15;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #bb86fc;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.code-display:hover {
+    background: #0d0d18;
+    border-left-color: #03dac6;
+}
+
+.code-display code {
+    color: #03dac6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.small-code {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   EXPLICACIONES Y NOTAS
+   ============================================ */
+.explanation {
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(187, 134, 252, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #bb86fc;
+}
+
+/* ============================================
+   CONTENEDORES GRID DEMO - ESTILOS BASE
+   ============================================ */
+.grid-demo {
+    /* GRID CONTAINER: Activa el grid layout */
+    display: grid;
+    background: rgba(45, 27, 78, 0.3);
+    border: 2px dashed rgba(187, 134, 252, 0.4);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 200px;
+    transition: all 0.3s ease;
+}
+
+.grid-demo:hover {
+    border-color: rgba(187, 134, 252, 0.7);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.2);
+}
+
+/* ============================================
+   GRID ITEMS - ESTILOS BASE
+   ============================================ */
+.grid-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    /* Grid interno para centrar contenido del item */
+    display: grid;
+    place-content: center;
+    transition: all 0.3s ease;
+    min-height: 80px;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.5);
+    cursor: pointer;
+}
+
+/* ============================================
+   DEMO 1: GRID BÁSICO
+   Fundamentos: columns, rows, gap, fr, repeat
+   ============================================ */
+
+/* Ejemplo 1.1: 3 columnas iguales */
+.demo-1-1 {
+    /* GRID-TEMPLATE-COLUMNS: Define el ancho de las columnas */
+    /* fr = fracción del espacio disponible */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* GAP: Espacio entre celdas (shorthand de row-gap y column-gap) */
+    gap: 20px;
+}
+
+/* Ejemplo 1.2: repeat() function */
+.demo-1-2 {
+    /* REPEAT(): Evita repetir el mismo valor */
+    /* repeat(cantidad, tamaño) */
+    grid-template-columns: repeat(4, 1fr);
+    /* Equivale a: 1fr 1fr 1fr 1fr */
+    gap: 15px;
+}
+
+/* Ejemplo 1.3: Columnas mixtas (px, fr) */
+.demo-1-3 {
+    /* MEZCLA DE UNIDADES */
+    /* px = tamaño fijo, fr = flexible */
+    grid-template-columns: 200px 1fr 2fr;
+    /* Primera columna: 200px fijo */
+    /* Segunda columna: 1 parte del espacio restante */
+    /* Tercera columna: 2 partes del espacio restante */
+    gap: 20px;
+}
+
+.grid-item.sidebar {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Ejemplo 1.4: minmax() para responsividad */
+.demo-1-4 {
+    /* MINMAX(): Define tamaño mínimo y máximo */
+    /* minmax(min, max) */
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    /* Cada columna: mínimo 150px, máximo 1fr */
+    /* Se ajusta automáticamente al espacio disponible */
+    gap: 20px;
+}
+
+/* ============================================
+   DEMO 2: GRID-AREA Y POSICIONAMIENTO
+   Positioning: grid-area, grid-column, grid-row, span
+   ============================================ */
+
+/* Ejemplo 2.1: Posicionamiento con líneas numéricas */
+.demo-2-1 {
+    /* Grid de 3x3 */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+}
+
+.item-large {
+    /* GRID-AREA SHORTHAND */
+    /* Sintaxis: row-start / col-start / row-end / col-end */
+    grid-area: 1 / 1 / 3 / 3;
+    /* Línea de fila 1 a 3 (2 filas) */
+    /* Línea de columna 1 a 3 (2 columnas) */
+    /* Resultado: ocupa un cuadrado 2x2 */
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Ejemplo 2.2: Usando span keyword */
+.demo-2-2 {
+    grid-template-columns: repeat(3, 1fr);
+    /* GRID-AUTO-ROWS: Altura de filas auto-generadas */
+    grid-auto-rows: 100px;
+    gap: 15px;
+}
+
+.span-col-2 {
+    /* GRID-COLUMN: Shorthand para column-start / column-end */
+    /* span X = expande X columnas desde su posición */
+    grid-column: span 2;
+    /* Más intuitivo que calcular líneas finales */
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.span-row-2 {
+    /* GRID-ROW: Shorthand para row-start / row-end */
+    grid-row: span 2;
+    /* Expande 2 filas desde su posición */
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+/* Ejemplo 2.3: Grid Template Areas (Nombrado) */
+.demo-2-3 {
+    /* GRID-TEMPLATE-AREAS: Layout semántico con nombres */
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+    /* Define el layout visualmente con nombres */
+    /* Cada string = una fila */
+    /* Cada palabra = una columna */
+    
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 15px;
+    min-height: 400px;
+}
+
+.area-header {
+    /* Asigna el item al área nombrada 'header' */
+    grid-area: header;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.area-sidebar {
+    grid-area: sidebar;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.area-content {
+    grid-area: content;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.area-footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ============================================
+   DEMO 3: AUTO-FIT Y AUTO-FILL (Responsive Grid)
+   Grids responsivos sin media queries
+   ============================================ */
+
+/* Ejemplo 3.1: auto-fill */
+.demo-3-1 {
+    /* AUTO-FILL: Crea tantas columnas como quepan */
+    /* Mantiene tracks vacíos si sobra espacio */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Crea columnas de mínimo 150px */
+    /* Se ajustan automáticamente al ancho del contenedor */
+    gap: 20px;
+}
+
+/* Ejemplo 3.2: auto-fit */
+.demo-3-2 {
+    /* AUTO-FIT: Crea columnas y colapsa las vacías */
+    /* Los items se expanden para llenar todo el espacio */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Diferencia con auto-fill: */
+    /* auto-fit colapsa tracks vacíos */
+    /* auto-fill mantiene tracks vacíos */
+    gap: 20px;
+}
+
+/* Ejemplo 3.3: Galería responsiva */
+.demo-3-3 {
+    /* GALERÍA RESPONSIVA: Combinación de auto-fit + minmax */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* GRID-AUTO-ROWS: Define altura de filas auto-generadas */
+    grid-auto-rows: 200px;
+    /* Todas las filas tendrán 200px de altura */
+    gap: 15px;
+}
+
+.img-item {
+    font-size: 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ============================================
+   DEMO 4: ALINEACIÓN EN GRID
+   place-items, place-content, align, justify
+   ============================================ */
+
+/* Ejemplo 4.1: place-items (alinea items dentro de celdas) */
+.demo-4-1 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
+    /* PLACE-ITEMS SHORTHAND */
+    /* Sintaxis: align-items justify-items */
+    place-items: center;
+    /* = align-items: center; justify-items: center; */
+    /* Centra cada item DENTRO de su celda */
+}
+
+.small-item {
+    width: 80px;
+    height: 80px;
+}
+
+/* Ejemplo 4.2: place-content (alinea el grid completo) */
+.demo-4-2 {
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 15px;
+    min-height: 400px;
+    /* PLACE-CONTENT SHORTHAND */
+    /* Sintaxis: align-content justify-content */
+    place-content: center;
+    /* = align-content: center; justify-content: center; */
+    /* Centra TODO el grid dentro del contenedor */
+    /* Requiere espacio extra en el contenedor */
+}
+
+.tiny-item {
+    width: 100px;
+    height: 100px;
+}
+
+/* Ejemplo 4.3: Diferentes alineaciones */
+.alignment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.align-example {
+    background: rgba(10, 10, 21, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.demo-4-3-start {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px;
+    gap: 10px;
+    /* PLACE-ITEMS: start = alinea al inicio */
+    place-items: start;
+}
+
+.demo-4-3-end {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px;
+    gap: 10px;
+    /* PLACE-ITEMS: end = alinea al final */
+    place-items: end;
+}
+
+.demo-4-3-stretch {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px;
+    gap: 10px;
+    /* PLACE-ITEMS: stretch = estira items para llenar celda */
+    place-items: stretch;
+}
+
+/* ============================================
+   DEMO 5: HOLY GRAIL LAYOUT
+   Layout clásico implementado con Grid
+   ============================================ */
+.holy-grail {
+    display: grid;
+    /* GRID-TEMPLATE SHORTHAND AVANZADO */
+    /* Combina: areas, rows y columns en una sola declaración */
+    /* Sintaxis: "áreas" altura / columnas */
+    grid-template:
+        "header header header" auto
+        "nav content aside" 1fr
+        "footer footer footer" auto
+        / 200px 1fr 200px;
+    /* 
+    EXPLICACIÓN LÍNEA POR LÍNEA:
+    Fila 1: "header header header" auto
+      - header ocupa 3 columnas
+      - altura auto (se ajusta al contenido)
+    
+    Fila 2: "nav content aside" 1fr
+      - nav, content, aside en columnas separadas
+      - altura 1fr (toma todo el espacio disponible)
+    
+    Fila 3: "footer footer footer" auto
+      - footer ocupa 3 columnas
+      - altura auto
+    
+    Después del / :
+      - Columna 1: 200px (nav fijo)
+      - Columna 2: 1fr (content flexible)
+      - Columna 3: 200px (aside fijo)
+    */
+    gap: 20px;
+    min-height: 600px;
+    background: rgba(45, 27, 78, 0.2);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* Áreas del Holy Grail */
+.hg-header {
+    grid-area: header;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hg-header h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.hg-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hg-nav {
+    grid-area: nav;
+    background: rgba(15, 15, 30, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.hg-nav h3 {
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.hg-nav ul {
+    list-style: none;
+}
+
+.hg-nav li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: rgba(187, 134, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hg-nav li:hover {
+    background: rgba(187, 134, 252, 0.3);
+    transform: translateX(5px);
+}
+
+.hg-content {
+    grid-area: content;
+    background: rgba(10, 10, 21, 0.6);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.hg-content h2 {
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.hg-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+/* Tarjetas dentro del contenido */
+.content-cards {
+    display: grid;
+    /* Grid anidado dentro del grid principal */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.content-card {
+    background: rgba(187, 134, 252, 0.1);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    background: rgba(187, 134, 252, 0.2);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+}
+
+.content-card h4 {
+    color: #03dac6;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.content-card p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.hg-aside {
+    grid-area: aside;
+    background: rgba(15, 15, 30, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.hg-aside h3 {
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.widget {
+    background: rgba(187, 134, 252, 0.1);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+    transition: all 0.3s ease;
+}
+
+.widget:hover {
+    background: rgba(187, 134, 252, 0.2);
+}
+
+.widget h4 {
+    color: #03dac6;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.widget p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.hg-footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* ============================================
+   DEMO 6: CHEAT SHEET
+   Referencia rápida de propiedades Grid
+   ============================================ */
+.cheatsheet-grid-layout {
+    display: grid;
+    /* Grid responsivo para las tarjetas del cheat sheet */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.cheat-category {
+    background: rgba(15, 15, 30, 0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(187, 134, 252, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cheat-category:hover {
+    border-color: rgba(187, 134, 252, 0.6);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+}
+
+.cheat-category h3 {
+    color: #bb86fc;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(187, 134, 252, 0.3);
+    padding-bottom: 1rem;
+}
+
+.cheat-item {
+    background: rgba(10, 10, 21, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #03dac6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cheat-item:hover {
+    transform: translateX(5px);
+    border-left-color: #bb86fc;
+    background: rgba(10, 10, 21, 0.8);
+}
+
+.cheat-item h4 {
+    color: #03dac6;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cheat-item code {
+    display: block;
+    color: #e0e0e0;
+    background: rgba(3, 218, 198, 0.1);
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(3, 218, 198, 0.2);
+}
+
+/* ============================================
+   FOOTER PRINCIPAL
+   ============================================ */
+.main-footer {
+    background: #0a0a15;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    margin-top: 3rem;
+    border-top: 2px solid rgba(187, 134, 252, 0.2);
+}
+
+.main-footer p {
+    font-size: 1rem;
+}
+
+/* ============================================
+   MEDIA QUERIES: TABLET (600px - 1023px)
+   ============================================ */
+@media (min-width: 600px) and (max-width: 1023px) {
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Secciones */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Holy Grail: ajuste para tablet */
+    .holy-grail {
+        /* En tablet: nav arriba, content y aside lado a lado */
+        grid-template:
+            "header header" auto
+            "nav nav" auto
+            "content aside" 1fr
+            "footer footer" auto
+            / 1fr 200px;
+    }
+
+    /* Demo 1.3: ajusta columnas mixtas */
+    .demo-1-3 {
+        grid-template-columns: 150px 1fr 1fr;
+    }
+
+    /* Cheat sheet: 1 columna completa en tablet */
+    .cheatsheet-grid-layout {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Demos básicos: mantienen múltiples columnas */
+    .demo-1-2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .demo-2-1 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    .item-large {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+}
+
+/* ============================================
+   MEDIA QUERIES: MOBILE (< 600px)
+   ============================================ */
+@media (max-width: 599px) {
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Secciones */
+    .demo-section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .example-container {
+        padding: 1.5rem;
+    }
+
+    /* TODOS LOS DEMOS: 1 columna en mobile */
+    .demo-1-1,
+    .demo-1-2,
+    .demo-1-3,
+    .demo-1-4 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Demo 2.1: resetea posicionamiento en mobile */
+    .demo-2-1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item-large {
+        /* Resetea grid-area en mobile */
+        grid-area: auto;
+    }
+
+    /* Demo 2.2: quita spans en mobile */
+    .demo-2-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .span-col-2,
+    .span-row-2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* Demo 2.3: cambia a layout vertical */
+    .demo-2-3 {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    /* Demos auto-fit/auto-fill: columnas más pequeñas */
+    .demo-3-1,
+    .demo-3-2 {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .demo-3-3 {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-auto-rows: 150px;
+    }
+
+    /* Demo 4: alineaciones en mobile */
+    .demo-4-1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 120px);
+    }
+
+    .demo-4-2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 100px);
+        min-height: auto;
+    }
+
+    .alignment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Holy Grail: layout vertical completo en mobile */
+    .holy-grail {
+        grid-template:
+            "header" auto
+            "nav" auto
+            "content" 1fr
+            "aside" auto
+            "footer" auto
+            / 1fr;
+        min-height: auto;
+        padding: 0.5rem;
+    }
+
+    .hg-header,
+    .hg-nav,
+    .hg-content,
+    .hg-aside,
+    .hg-footer {
+        padding: 1rem;
+    }
+
+    .content-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cheat sheet: 1 columna en mobile */
+    .cheatsheet-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cheat-category {
+        padding: 1.5rem;
+    }
+
+    .cheat-item {
+        padding: 1rem;
+    }
+}
+
+/* ============================================
+   MEDIA QUERIES: DESKTOP GRANDE (≥ 1400px)
+   ============================================ */
+@media (min-width: 1400px) {
+    .demo-section {
+        max-width: 1400px;
+    }
+
+    /* Holy Grail: sidebars más anchos en pantallas grandes */
+    .holy-grail {
+        grid-template:
+            "header header header" auto
+            "nav content aside" 1fr
+            "footer footer footer" auto
+            / 250px 1fr 250px;
+    }
+
+    /* Galerías: más columnas en pantallas grandes */
+    .demo-3-3 {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    /* Cheat sheet: máximo 3 columnas */
+    .cheatsheet-grid-layout {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+}
+
+/* ============================================
+   ANIMACIONES Y TRANSICIONES GLOBALES
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Clase de utilidad para animaciones */
+.animate-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* ============================================
+   UTILIDADES ADICIONALES
+   ============================================ */
+
+/* Efecto de brillo en hover para elementos interactivos */
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(187, 134, 252, 0.6);
+}
+
+/* Texto destacado */
+.highlight {
+    color: #bb86fc;
+    font-weight: 600;
+}
+
+/* Badge de nuevo */
+.badge-new {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #03dac6;
+    color: #0a0a15;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}

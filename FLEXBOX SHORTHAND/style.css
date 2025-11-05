@@ -1,0 +1,704 @@
+/* ============================================
+   RESET Y ESTILOS BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HERO HEADER
+   ============================================ */
+.hero-header {
+    /* SHORTHAND: flex-flow combina direction y wrap */
+    display: flex;
+    flex-flow: column wrap;
+    /* SHORTHAND: place-content combina justify y align */
+    place-content: center;
+    place-items: center;
+    min-height: 40vh;
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(187, 134, 252, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #b0b0b0;
+    max-width: 700px;
+}
+
+/* ============================================
+   SECCIONES DEMO
+   ============================================ */
+.demo-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+}
+
+.section-description code {
+    background: rgba(187, 134, 252, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #bb86fc;
+    font-family: 'Courier New', monospace;
+}
+
+/* ============================================
+   CONTENEDORES DE EJEMPLO
+   ============================================ */
+.example-container {
+    background: rgba(15, 15, 30, 0.6);
+    border: 2px solid rgba(187, 134, 252, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.example-title {
+    color: #bb86fc;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.code-display {
+    background: #0a0a15;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #bb86fc;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+}
+
+.code-display code {
+    color: #03dac6;
+    font-size: 0.95rem;
+}
+
+.explanation {
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(187, 134, 252, 0.1);
+    border-radius: 6px;
+}
+
+/* ============================================
+   DEMOS VISUALES BASE
+   ============================================ */
+.flex-demo {
+    display: flex;
+    background: rgba(45, 27, 78, 0.3);
+    border: 2px dashed rgba(187, 134, 252, 0.4);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 150px;
+}
+
+.flex-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    /* SHORTHAND: place-content para centrar contenido */
+    display: flex;
+    place-content: center;
+    place-items: center;
+    transition: all 0.3s ease;
+}
+
+.flex-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.5);
+}
+
+/* ============================================
+   DEMO 1: FLEX SHORTHAND
+   ============================================ */
+
+/* Demo 1.1: flex: 1 (todos iguales) */
+.demo-1-1 {
+    /* SHORTHAND: gap reemplaza row-gap y column-gap */
+    gap: 1rem;
+}
+
+.item-flex-1 {
+    /* SHORTHAND: flex: 1 = flex: 1 1 0% */
+    /* grow: 1, shrink: 1, basis: 0% */
+    flex: 1;
+}
+
+/* Demo 1.2: flex con dos valores */
+.demo-1-2 {
+    gap: 1rem;
+}
+
+.item-flex-2-200 {
+    /* SHORTHAND: flex: 2 200px = flex: 2 1 200px */
+    /* grow: 2, shrink: 1, basis: 200px */
+    flex: 2 200px;
+}
+
+.item-flex-1-100 {
+    /* SHORTHAND: flex: 1 100px = flex: 1 1 100px */
+    flex: 1 100px;
+}
+
+/* Demo 1.3: flex con tres valores completos */
+.demo-1-3 {
+    gap: 1rem;
+}
+
+.item-flex-complete {
+    /* SHORTHAND COMPLETO: flex: grow shrink basis */
+    /* Este item crece (2) pero NO se encoge (0) */
+    flex: 2 0 150px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.item-flex-shrink {
+    /* Este item se encoge el doble de rápido (shrink: 2) */
+    flex: 1 2 100px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.item-flex-normal {
+    /* Comportamiento normal */
+    flex: 1 1 100px;
+}
+
+/* Demo 1.4: Valores especiales */
+.demo-1-4 {
+    gap: 1rem;
+}
+
+.item-flex-initial {
+    /* KEYWORD: initial = flex: 0 1 auto */
+    /* No crece, puede encogerse, tamaño por contenido */
+    flex: initial;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.item-flex-auto {
+    /* KEYWORD: auto = flex: 1 1 auto */
+    /* Crece y encoge, tamaño por contenido (MÁS COMÚN) */
+    flex: auto;
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.item-flex-none {
+    /* KEYWORD: none = flex: 0 0 auto */
+    /* Tamaño fijo, no crece ni encoge */
+    flex: none;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.special-values-grid {
+    /* SHORTHAND: flex-flow = flex-direction + flex-wrap */
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.special-card {
+    /* SHORTHAND: flex con un valor base */
+    flex: 1 1 250px;
+    background: rgba(10, 10, 21, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+}
+
+.special-card h4 {
+    color: #03dac6;
+    margin-bottom: 0.5rem;
+}
+
+.special-card p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   DEMO 2: FLEX-FLOW SHORTHAND
+   ============================================ */
+
+/* Demo 2.1: flex-flow: row wrap */
+.demo-2-1 {
+    /* SHORTHAND: flex-flow combina direction y wrap */
+    flex-flow: row wrap;
+    /* En lugar de:
+       flex-direction: row;
+       flex-wrap: wrap; */
+    gap: 1rem;
+}
+
+.demo-2-1 .flex-item {
+    /* Cada item tiene ancho base fijo */
+    flex: 0 0 150px;
+}
+
+/* Demo 2.2: flex-flow: column wrap */
+.demo-2-2 {
+    /* SHORTHAND: dirección columna + wrap */
+    flex-flow: column wrap;
+    height: 300px; /* Altura necesaria para ver el wrap */
+    gap: 1rem;
+    align-content: flex-start;
+}
+
+.demo-2-2 .flex-item {
+    flex: 0 0 80px;
+    width: 100px;
+}
+
+/* Demo 2.3: flex-flow: row-reverse nowrap */
+.demo-2-3 {
+    /* SHORTHAND: invierte dirección sin wrap */
+    flex-flow: row-reverse nowrap;
+    gap: 1rem;
+}
+
+.demo-2-3 .flex-item {
+    flex: 1;
+}
+
+/* ============================================
+   DEMO 3: PLACE-CONTENT Y PLACE-ITEMS
+   ============================================ */
+
+/* Demo 3.1: place-content */
+.demo-3-1 {
+    /* SHORTHAND: place-content = align-content + justify-content */
+    flex-flow: row wrap;
+    place-content: center;
+    /* En lugar de:
+       align-content: center;
+       justify-content: center; */
+    min-height: 300px;
+    gap: 1rem;
+}
+
+.small-item {
+    flex: 0 0 100px;
+    height: 80px;
+}
+
+/* Demo 3.2: place-items */
+.demo-3-2 {
+    /* SHORTHAND: place-items = align-items + justify-items */
+    place-items: center;
+    /* En lugar de:
+       align-items: center;
+       justify-items: center; */
+    min-height: 200px;
+    gap: 1rem;
+}
+
+.tall-item {
+    height: 120px;
+}
+
+.short-item {
+    height: 60px;
+}
+
+/* Demo 3.3: place-content con dos valores */
+.demo-3-3 {
+    /* SHORTHAND: dos valores diferentes */
+    /* Primer valor: align-content, Segundo: justify-content */
+    flex-flow: row wrap;
+    place-content: space-between center;
+    min-height: 350px;
+    gap: 1rem;
+}
+
+/* ============================================
+   DEMO 4: DASHBOARD LAYOUT REAL
+   ============================================ */
+.dashboard {
+    background: rgba(15, 15, 30, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Header del dashboard usa flex-flow */
+.dashboard-header {
+    /* SHORTHAND: flex-flow para layout horizontal responsive */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a0a15;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bb86fc;
+    /* flex: none para tamaño fijo */
+    flex: none;
+}
+
+.dashboard-nav {
+    display: flex;
+    gap: 2rem;
+    /* flex: 1 para crecer y ocupar espacio central */
+    flex: 1;
+    justify-content: center;
+}
+
+.dashboard-nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.dashboard-nav a:hover {
+    color: #bb86fc;
+}
+
+.user-section {
+    /* flex: none para tamaño fijo */
+    flex: none;
+    color: #b0b0b0;
+}
+
+/* Main layout del dashboard */
+.dashboard-main {
+    display: flex;
+    /* SHORTHAND: flex-flow para columnas en mobile */
+    flex-flow: row nowrap;
+    min-height: 500px;
+}
+
+.dashboard-sidebar {
+    /* SHORTHAND: flex con ancho fijo que no crece ni encoge */
+    flex: 0 0 250px;
+    background: rgba(10, 10, 21, 0.8);
+    padding: 2rem;
+    border-right: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.dashboard-sidebar h3 {
+    color: #bb86fc;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-sidebar ul {
+    list-style: none;
+}
+
+.dashboard-sidebar li {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dashboard-sidebar li:hover {
+    background: rgba(187, 134, 252, 0.2);
+}
+
+.dashboard-content {
+    /* SHORTHAND: flex: 1 para que crezca y ocupe espacio restante */
+    flex: 1;
+    padding: 2rem;
+}
+
+.dashboard-content h2 {
+    color: #bb86fc;
+    margin-bottom: 2rem;
+}
+
+/* Grid de métricas */
+.metrics-grid {
+    display: flex;
+    /* SHORTHAND: flex-flow para grid responsive */
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    /* SHORTHAND: flex con base que permite responsive */
+    flex: 1 1 200px;
+    background: rgba(45, 27, 78, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    /* SHORTHAND: place-content para centrar */
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.metric-card h4 {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    color: #bb86fc;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.metric-change {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.metric-change.positive {
+    background: rgba(3, 218, 198, 0.2);
+    color: #03dac6;
+}
+
+.metric-change.negative {
+    background: rgba(207, 102, 121, 0.2);
+    color: #cf6679;
+}
+
+.code-explanation {
+    background: rgba(10, 10, 21, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #03dac6;
+}
+
+.code-explanation h4 {
+    color: #03dac6;
+    margin-bottom: 1rem;
+}
+
+.code-explanation ul {
+    list-style: none;
+}
+
+.code-explanation li {
+    padding: 0.5rem 0;
+    color: #b0b0b0;
+}
+
+.code-explanation code {
+    background: rgba(187, 134, 252, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #bb86fc;
+    font-family: 'Courier New', monospace;
+}
+
+/* ============================================
+   DEMO 5: CHEAT SHEET
+   ============================================ */
+.cheatsheet-grid {
+    display: flex;
+    /* SHORTHAND: flex-flow para grid */
+    flex-flow: row wrap;
+    gap: 1.5rem;
+}
+
+.cheatsheet-card {
+    /* SHORTHAND: flex para tarjetas responsivas */
+    flex: 1 1 300px;
+    background: rgba(15, 15, 30, 0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(187, 134, 252, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cheatsheet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(187, 134, 252, 0.4);
+}
+
+.cheatsheet-card h3 {
+    color: #bb86fc;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.syntax {
+    color: #03dac6;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(3, 218, 198, 0.1);
+    border-radius: 4px;
+}
+
+.examples {
+    margin: 1rem 0;
+}
+
+.examples code {
+    display: block;
+    color: #e0e0e0;
+    background: rgba(10, 10, 21, 0.6);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.keywords {
+    display: flex;
+    /* SHORTHAND: flex-flow */
+    flex-flow: row wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.keyword {
+    background: rgba(187, 134, 252, 0.2);
+    color: #bb86fc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.main-footer {
+    background: #0a0a15;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   MEDIA QUERIES: RESPONSIVE
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .dashboard-nav {
+        /* SHORTHAND: flex con orden */
+        order: 3;
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .metric-card {
+        flex: 1 1 calc(50% - 0.75rem);
+    }
+
+    .cheatsheet-card {
+        flex: 1 1 calc(50% - 0.75rem);
+    }
+}
+
+/* Mobile */
+@media (max-width: 599px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .demo-section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Dashboard responsive */
+    .dashboard-main {
+        /* SHORTHAND: cambia a columnas en mobile */
+        flex-flow: column nowrap;
+    }
+
+    .dashboard-sidebar {
+        /* SHORTHAND: flex auto para ajustar en mobile */
+        flex: auto;
+    }
+
+    .dashboard-header {
+        /* SHORTHAND: flex-flow columna */
+        flex-flow: column wrap;
+        text-align: center;
+    }
+
+    .dashboard-nav {
+        /* SHORTHAND: también en columna */
+        flex-flow: column wrap;
+        gap: 0.5rem;
+    }
+
+    .metric-card,
+    .cheatsheet-card,
+    .special-card {
+        flex: 1 1 100%;
+    }
+
+    /* Demo 2.2 ajuste mobile */
+    .demo-2-2 {
+        height: auto;
+        flex-flow: column nowrap;
+    }
+
+    .demo-2-2 .flex-item {
+        width: 100%;
+    }
+}

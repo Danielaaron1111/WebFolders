@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Completo: Flexbox Shorthand Properties</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ============================================
+         SECCIÓN HERO: Introducción
+         ============================================ -->
+    <header class="hero-header">
+        <div class="hero-content">
+            <h1>🎯 Flexbox Shorthand</h1>
+            <p class="hero-subtitle">
+                Domina las propiedades abreviadas de Flexbox para escribir 
+                CSS más limpio, rápido y profesional
+            </p>
+        </div>
+    </header>
+
+    <!-- ============================================
+         DEMO 1: FLEX SHORTHAND (flex-grow, flex-shrink, flex-basis)
+         ============================================ -->
+    <section class="demo-section">
+        <div class="section-header">
+            <h2 class="section-title">Demo 1: flex Shorthand</h2>
+            <p class="section-description">
+                La propiedad <code>flex</code> combina: flex-grow, flex-shrink y flex-basis
+            </p>
+        </div>
+
+        <!-- Ejemplo 1.1: flex con un valor -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 1.1: flex con un valor (flex-grow)</h3>
+            <div class="code-display">
+                <code>flex: 1;</code> = <code>flex: 1 1 0%;</code>
+            </div>
+            
+            <div class="flex-demo demo-1-1">
+                <div class="flex-item item-flex-1">flex: 1</div>
+                <div class="flex-item item-flex-1">flex: 1</div>
+                <div class="flex-item item-flex-1">flex: 1</div>
+            </div>
+            
+            <p class="explanation">
+                ✨ Todos los items crecen equitativamente para llenar el espacio disponible
+            </p>
+        </div>
+
+        <!-- Ejemplo 1.2: flex con dos valores -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 1.2: flex con dos valores (grow y basis)</h3>
+            <div class="code-display">
+                <code>flex: 2 200px;</code> = <code>flex: 2 1 200px;</code>
+            </div>
+            
+            <div class="flex-demo demo-1-2">
+                <div class="flex-item item-flex-2-200">flex: 2 200px</div>
+                <div class="flex-item item-flex-1-100">flex: 1 100px</div>
+                <div class="flex-item item-flex-1-100">flex: 1 100px</div>
+            </div>
+            
+            <p class="explanation">
+                🎨 El primer item crece el doble y tiene base de 200px
+            </p>
+        </div>
+
+        <!-- Ejemplo 1.3: flex con tres valores completos -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 1.3: flex completo (grow, shrink, basis)</h3>
+            <div class="code-display">
+                <code>flex: 2 0 150px;</code> (grow: 2, shrink: 0, basis: 150px)
+            </div>
+            
+            <div class="flex-demo demo-1-3">
+                <div class="flex-item item-flex-complete">flex: 2 0 150px<br><small>(crece, no encoge)</small></div>
+                <div class="flex-item item-flex-shrink">flex: 1 2 100px<br><small>(encoge el doble)</small></div>
+                <div class="flex-item item-flex-normal">flex: 1 1 100px<br><small>(normal)</small></div>
+            </div>
+            
+            <p class="explanation">
+                🔧 Control total: el primer item crece pero NUNCA se encoge
+            </p>
+        </div>
+
+        <!-- Ejemplo 1.4: Valores especiales de flex -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 1.4: Valores especiales del flex shorthand</h3>
+            
+            <div class="special-values-grid">
+                <div class="special-card">
+                    <h4>flex: initial</h4>
+                    <div class="code-display"><code>= flex: 0 1 auto</code></div>
+                    <p>No crece, puede encogerse, tamaño automático</p>
+                </div>
+                
+                <div class="special-card">
+                    <h4>flex: auto</h4>
+                    <div class="code-display"><code>= flex: 1 1 auto</code></div>
+                    <p>Crece y encoge, tamaño automático (más común)</p>
+                </div>
+                
+                <div class="special-card">
+                    <h4>flex: none</h4>
+                    <div class="code-display"><code>= flex: 0 0 auto</code></div>
+                    <p>Tamaño fijo, no crece ni encoge</p>
+                </div>
+            </div>
+
+            <div class="flex-demo demo-1-4">
+                <div class="flex-item item-flex-initial">flex: initial</div>
+                <div class="flex-item item-flex-auto">flex: auto (crece mucho)</div>
+                <div class="flex-item item-flex-none">flex: none</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DEMO 2: FLEX-FLOW SHORTHAND (flex-direction + flex-wrap)
+         ============================================ -->
+    <section class="demo-section">
+        <div class="section-header">
+            <h2 class="section-title">Demo 2: flex-flow Shorthand</h2>
+            <p class="section-description">
+                Combina <code>flex-direction</code> y <code>flex-wrap</code> en una sola línea
+            </p>
+        </div>
+
+        <!-- Ejemplo 2.1: flex-flow row wrap -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 2.1: flex-flow: row wrap</h3>
+            <div class="code-display">
+                <code>flex-flow: row wrap;</code> = 
+                <code>flex-direction: row; flex-wrap: wrap;</code>
+            </div>
+            
+            <div class="flex-demo demo-2-1">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+                <div class="flex-item">Item 4</div>
+                <div class="flex-item">Item 5</div>
+                <div class="flex-item">Item 6</div>
+            </div>
+            
+            <p class="explanation">
+                📦 Los items fluyen en fila y se envuelven a nueva línea cuando es necesario
+            </p>
+        </div>
+
+        <!-- Ejemplo 2.2: flex-flow column wrap -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 2.2: flex-flow: column wrap</h3>
+            <div class="code-display">
+                <code>flex-flow: column wrap;</code> = 
+                <code>flex-direction: column; flex-wrap: wrap;</code>
+            </div>
+            
+            <div class="flex-demo demo-2-2">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+            </div>
+            
+            <p class="explanation">
+                🔄 Items en columna que crean nuevas columnas al envolver (altura limitada)
+            </p>
+        </div>
+
+        <!-- Ejemplo 2.3: flex-flow row-reverse nowrap -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 2.3: flex-flow: row-reverse nowrap</h3>
+            <div class="code-display">
+                <code>flex-flow: row-reverse nowrap;</code>
+            </div>
+            
+            <div class="flex-demo demo-2-3">
+                <div class="flex-item">Primero</div>
+                <div class="flex-item">Segundo</div>
+                <div class="flex-item">Tercero</div>
+                <div class="flex-item">Cuarto</div>
+            </div>
+            
+            <p class="explanation">
+                ↩️ Orden visual invertido sin wrap (útil para layouts RTL)
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DEMO 3: PLACE-CONTENT Y PLACE-ITEMS (Modern Shortcuts)
+         ============================================ -->
+    <section class="demo-section">
+        <div class="section-header">
+            <h2 class="section-title">Demo 3: place-content & place-items</h2>
+            <p class="section-description">
+                Shortcuts modernos para alineación en ambos ejes simultáneamente
+            </p>
+        </div>
+
+        <!-- Ejemplo 3.1: place-content -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 3.1: place-content (alinea el contenedor)</h3>
+            <div class="code-display">
+                <code>place-content: center;</code> = 
+                <code>align-content: center; justify-content: center;</code>
+            </div>
+            
+            <div class="flex-demo demo-3-1">
+                <div class="flex-item small-item">1</div>
+                <div class="flex-item small-item">2</div>
+                <div class="flex-item small-item">3</div>
+                <div class="flex-item small-item">4</div>
+                <div class="flex-item small-item">5</div>
+            </div>
+            
+            <p class="explanation">
+                🎯 Centra todo el grupo de items en ambos ejes (requiere wrap y espacio extra)
+            </p>
+        </div>
+
+        <!-- Ejemplo 3.2: place-items -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 3.2: place-items (alinea items individuales)</h3>
+            <div class="code-display">
+                <code>place-items: center;</code> = 
+                <code>align-items: center; justify-items: center;</code>
+            </div>
+            
+            <div class="flex-demo demo-3-2">
+                <div class="flex-item tall-item">Item Alto</div>
+                <div class="flex-item">Normal</div>
+                <div class="flex-item short-item">Bajo</div>
+            </div>
+            
+            <p class="explanation">
+                📐 Centra cada item dentro de su espacio asignado
+            </p>
+        </div>
+
+        <!-- Ejemplo 3.3: place-content con dos valores -->
+        <div class="example-container">
+            <h3 class="example-title">Ejemplo 3.3: place-content con dos valores diferentes</h3>
+            <div class="code-display">
+                <code>place-content: space-between center;</code><br>
+                (align-content: space-between; justify-content: center;)
+            </div>
+            
+            <div class="flex-demo demo-3-3">
+                <div class="flex-item small-item">1</div>
+                <div class="flex-item small-item">2</div>
+                <div class="flex-item small-item">3</div>
+                <div class="flex-item small-item">4</div>
+                <div class="flex-item small-item">5</div>
+                <div class="flex-item small-item">6</div>
+            </div>
+            
+            <p class="explanation">
+                🎪 Espacio vertical entre líneas, centrado horizontal
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DEMO 4: LAYOUT REAL CON SHORTHANDS
+         ============================================ -->
+    <section class="demo-section">
+        <div class="section-header">
+            <h2 class="section-title">Demo 4: Layout Real - Dashboard</h2>
+            <p class="section-description">
+                Combinando todos los shorthands en un ejemplo práctico
+            </p>
+        </div>
+
+        <div class="dashboard">
+            <!-- Header del dashboard -->
+            <header class="dashboard-header">
+                <div class="logo">📊 Dashboard</div>
+                <nav class="dashboard-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">Reports</a>
+                </nav>
+                <div class="user-section">
+                    <span>👤 Usuario</span>
+                </div>
+            </header>
+
+            <!-- Contenido principal -->
+            <div class="dashboard-main">
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <h3>Menú</h3>
+                    <ul>
+                        <li>📈 Estadísticas</li>
+                        <li>💰 Ventas</li>
+                        <li>👥 Usuarios</li>
+                        <li>⚙️ Configuración</li>
+                    </ul>
+                </aside>
+
+                <!-- Área de contenido -->
+                <main class="dashboard-content">
+                    <h2>Métricas Principales</h2>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h4>Visitantes</h4>
+                            <p class="metric-value">12,345</p>
+                            <span class="metric-change positive">+15%</span>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h4>Ventas</h4>
+                            <p class="metric-value">$45,678</p>
+                            <span class="metric-change positive">+8%</span>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h4>Conversión</h4>
+                            <p class="metric-value">3.2%</p>
+                            <span class="metric-change negative">-2%</span>
+                        </div>
+                    </div>
+
+                    <div class="code-explanation">
+                        <h4>💡 Shorthands usados en este layout:</h4>
+                        <ul>
+                            <li><code>flex-flow: row wrap</code> - Header del dashboard</li>
+                            <li><code>flex: 0 0 250px</code> - Sidebar con ancho fijo</li>
+                            <li><code>flex: 1</code> - Área de contenido que crece</li>
+                            <li><code>flex: 1 1 200px</code> - Tarjetas de métricas responsivas</li>
+                            <li><code>place-content: center</code> - Centrado de valores</li>
+                        </ul>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DEMO 5: CHEAT SHEET INTERACTIVO
+         ============================================ -->
+    <section class="demo-section">
+        <div class="section-header">
+            <h2 class="section-title">Demo 5: Cheat Sheet Visual</h2>
+            <p class="section-description">
+                Referencia rápida de todos los shorthands de Flexbox
+            </p>
+        </div>
+
+        <div class="cheatsheet-grid">
+            <!-- Tarjeta 1 -->
+            <div class="cheatsheet-card">
+                <h3>flex</h3>
+                <div class="syntax">flex: [grow] [shrink] [basis]</div>
+                <div class="examples">
+                    <code>flex: 1</code><br>
+                    <code>flex: 2 200px</code><br>
+                    <code>flex: 0 0 auto</code>
+                </div>
+                <div class="keywords">
+                    <span class="keyword">initial</span>
+                    <span class="keyword">auto</span>
+                    <span class="keyword">none</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="cheatsheet-card">
+                <h3>flex-flow</h3>
+                <div class="syntax">flex-flow: [direction] [wrap]</div>
+                <div class="examples">
+                    <code>flex-flow: row wrap</code><br>
+                    <code>flex-flow: column nowrap</code><br>
+                    <code>flex-flow: row-reverse wrap</code>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="cheatsheet-card">
+                <h3>place-content</h3>
+                <div class="syntax">place-content: [align] [justify]</div>
+                <div class="examples">
+                    <code>place-content: center</code><br>
+                    <code>place-content: start end</code><br>
+                    <code>place-content: space-between center</code>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="cheatsheet-card">
+                <h3>place-items</h3>
+                <div class="syntax">place-items: [align] [justify]</div>
+                <div class="examples">
+                    <code>place-items: center</code><br>
+                    <code>place-items: start end</code><br>
+                    <code>place-items: stretch center</code>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="cheatsheet-card">
+                <h3>place-self</h3>
+                <div class="syntax">place-self: [align] [justify]</div>
+                <div class="examples">
+                    <code>place-self: center</code><br>
+                    <code>place-self: start end</code><br>
+                    <code>place-self: stretch</code>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="cheatsheet-card">
+                <h3>gap</h3>
+                <div class="syntax">gap: [row] [column]</div>
+                <div class="examples">
+                    <code>gap: 20px</code><br>
+                    <code>gap: 1rem 2rem</code><br>
+                    <code>gap: 10px 20px</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2024 Flexbox Shorthand Demo | Creado con 💜 para aprender CSS eficiente</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="js/main.js"></script>
+</body>
+</html>
