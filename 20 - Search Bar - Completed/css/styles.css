@@ -1,0 +1,175 @@
+:root {
+    --nav: #020617;
+    --main-text: #1e293b;
+    --white: #f8fafc;
+    --nav-accent: #f59e0b;
+    --accent: #d97706;
+    --lg-text: 3.625rem;
+    --md-text: 2.0625rem;
+    --sm-text: 0.85rem;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 960px;
+}
+
+/* The .sr-only CSS class (short for screen reader only) is a utility class used in web development to make content accessible to screen readers while keeping it visually hidden from sighted users. */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+/* Typography */
+h1,
+h2 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: var(--md-text);
+}
+
+h2 {
+    font-size: var(--lg-text);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.lead {
+    color: var(--accent);
+    font-size: var(--md-text);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: var(--nav-accent);
+}
+
+.btn {
+    background-color: var(--nav);
+    border-radius: 4px;
+    color: var(--white);
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+ul {
+    padding: 0;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--main-text);
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    background-color: var(--nav);
+    color: var(--white);
+    padding: 0.5rem;
+}
+
+header > div.flex-container {
+    justify-content: space-between;
+}
+
+header button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: var(--sm-text);
+    text-align: center;
+    transition: color 0.3s;
+}
+
+header button svg {
+    display: block;
+    margin: auto;
+    width: 2rem;
+}
+
+header button:hover,
+header button:focus {
+    color: var(--nav-accent);
+}
+
+header button:focus {
+    border-radius: 4px;
+    outline: 2px solid var(--white);
+}
+
+header form {
+    background-color: var(--main-text);
+    position: absolute;
+    left: 0;
+    padding: 2rem 1rem;
+    top: 4.5rem;
+    width: 100%;
+}
+
+header form .flex-container {
+    gap: 0;
+}
+
+header form input {
+    border: none;
+    height: 2.5rem;
+    padding: 0.5rem;
+}
+
+header form input[type="search"] {
+    border-radius: 4px 0 0 4px;
+}
+
+header form input[type="submit"] {
+    background-color: var(--accent);
+    border-radius: 0 4px 4px 0;
+    color: var(--white);
+    transition: background-color 0.3s;
+}
+
+/* These are the exact same classes we used with our hamburger menus and dropdown menus. */
+
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.expanded {
+    max-height: unset;
+    opacity: 1;
+    visibility: visible;
+}
+
+main {
+    min-height: calc(100vh - 4.5rem);
+    padding: 1rem;
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Additional Information -->
+    <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+    <meta name="description"
+        content="Travelers - Your guide to exploring the world. Anywhere, Anytime, we're here to help.">
+
+    <title>Travelers - Travel Guide</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- KoHo Bold -->
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&display=swap" rel="stylesheet">
+    <!-- Catamaran -->
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- ========== HEADER / NAVIGATION (DO NOT MODIFY) ========== -->
+    <header>
+        <div class="flex-container inner-container">
+            <div class="logo-title">
+                <!-- Logo SVG -->
+                <svg width="40" height="39" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>Travelers Logo</title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15 6.78261C15 4.90964 16.4924 3.3913 18.3333 3.3913H22.2222C23.5773 3.3913 25 4.71638 25 6.78261H28.3333C28.3333 3.22995 25.7764 0 22.2222 0H18.3333C14.6514 0 11.6667 3.03669 11.6667 6.78261H1.66667L0 8.47826V37.3043L1.66667 39H38.3333L40 37.3043V8.47826L38.3333 6.78261H15ZM3.33333 28.8261V10.1739H6.66667C6.66667 12.0469 5.17429 13.5652 3.33333 13.5652V16.9565C7.01522 16.9565 10 13.9198 10 10.1739H30C30 13.9198 32.9847 16.9565 36.6667 16.9565V28.8261C32.9847 28.8261 30 31.8627 30 35.6087H10C10 31.8627 7.01522 28.8261 3.33333 28.8261ZM3.33333 32.2174V35.6087H6.66667C6.66667 33.7358 5.17429 32.2174 3.33333 32.2174ZM36.6667 13.5652C34.8258 13.5652 33.3333 12.0469 33.3333 10.1739H36.6667V13.5652ZM33.3333 35.6087H36.6667V32.2174C34.8258 32.2174 33.3333 33.7358 33.3333 35.6087ZM20.8553 20.5689L26.2847 19.089L24.83 13.5652L19.4007 15.0453L20.8553 20.5689ZM18.3333 25.4348C18.3333 27.3077 16.8409 28.8261 15 28.8261C13.159 28.8261 11.6667 27.3077 11.6667 25.4348C11.6667 23.5619 13.159 22.0435 15 22.0435C16.8409 22.0435 18.3333 23.5619 18.3333 25.4348ZM25.2611 32.5111L29.988 26.2543L22.2984 25.218L25.2611 32.5111Z"
+                        fill="#2D2D2D" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15 6.78261C15 4.90964 16.4924 3.3913 18.3333 3.3913H22.2222C23.5773 3.3913 25 4.71638 25 6.78261H28.3333C28.3333 3.22995 25.7764 0 22.2222 0H18.3333C14.6514 0 11.6667 3.03669 11.6667 6.78261H1.66667L0 8.47826V37.3043L1.66667 39H38.3333L40 37.3043V8.47826L38.3333 6.78261H15ZM3.33333 28.8261V10.1739H6.66667C6.66667 12.0469 5.17429 13.5652 3.33333 13.5652V16.9565C7.01522 16.9565 10 13.9198 10 10.1739H30C30 13.9198 32.9847 16.9565 36.6667 16.9565V28.8261C32.9847 28.8261 30 31.8627 30 35.6087H10C10 31.8627 7.01522 28.8261 3.33333 28.8261ZM3.33333 32.2174V35.6087H6.66667C6.66667 33.7358 5.17429 32.2174 3.33333 32.2174ZM36.6667 13.5652C34.8258 13.5652 33.3333 12.0469 33.3333 10.1739H36.6667V13.5652ZM33.3333 35.6087H36.6667V32.2174C34.8258 32.2174 33.3333 33.7358 33.3333 35.6087ZM20.8553 20.5689L26.2847 19.089L24.83 13.5652L19.4007 15.0453L20.8553 20.5689ZM18.3333 25.4348C18.3333 27.3077 16.8409 28.8261 15 28.8261C13.159 28.8261 11.6667 27.3077 11.6667 25.4348C11.6667 23.5619 13.159 22.0435 15 22.0435C16.8409 22.0435 18.3333 23.5619 18.3333 25.4348ZM25.2611 32.5111L29.988 26.2543L22.2984 25.218L25.2611 32.5111Z"
+                        fill="#246729" />
+                </svg>
+
+                <h1>Travelers</h1>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger toggle-btn">
+                <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>Click to Toggle Menu</title>
+                    <path
+                        d="M28.125 0L28.1734 0.000604248C29.1866 0.0262833 30 0.855635 30 1.87498C30 2.89433 29.1866 3.72368 28.1734 3.74936L28.125 3.74997H1.87498C0.839448 3.74997 0 2.91052 0 1.87498C0 0.839448 0.839448 0 1.87498 0H28.125Z"
+                        fill="#246729" />
+                    <path
+                        d="M28.125 18.75L28.1734 18.7506C29.1866 18.7763 30 19.6056 30 20.625C30 21.6443 29.1866 22.4737 28.1734 22.4994L28.125 22.5H1.87498C0.839448 22.5 0 21.6605 0 20.625C0 19.5895 0.839448 18.75 1.87498 18.75H28.125Z"
+                        fill="#246729" />
+                    <path
+                        d="M28.125 9.375L28.1734 9.37561C29.1866 9.40129 30 10.2306 30 11.25C30 12.2693 29.1866 13.0987 28.1734 13.1244L28.125 13.125H1.87498C0.839448 13.125 0 12.2855 0 11.25C0 10.2145 0.839448 9.375 1.87498 9.375H28.125Z"
+                        fill="#246729" />
+                </svg>
+                menu
+            </button>
+            <nav class="collapsed">
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.697 17.8717C19.2607 17.394 17.7165 17.037 16.0913 16.806C16.3125 15.5063 16.4303 14.1442 16.4678 12.75H22.4715C22.3373 14.6407 21.702 16.3905 20.697 17.8717ZM14.5755 22.1693C15.075 20.9625 15.4837 19.6583 15.798 18.2843C17.1465 18.4838 18.4395 18.7785 19.6642 19.1655C18.3112 20.6078 16.5548 21.669 14.5755 22.1693ZM12.7282 22.4632C12.4867 22.4805 12.246 22.5 12 22.5C11.754 22.5 11.514 22.4805 11.2718 22.4632C10.6335 21.1342 10.1168 19.6553 9.73425 18.0855C10.4798 18.0203 11.235 17.982 12 17.982C12.765 17.982 13.5203 18.0203 14.2665 18.0855C13.8833 19.6553 13.3665 21.1342 12.7282 22.4632ZM4.33575 19.1655C5.5605 18.7785 6.8535 18.4838 8.202 18.2843C8.51625 19.6583 8.925 20.9625 9.4245 22.1693C7.44525 21.669 5.6895 20.6078 4.33575 19.1655ZM3.30301 17.8717C2.29801 16.3905 1.66275 14.6407 1.5285 12.75H7.53225C7.56975 14.1442 7.6875 15.5063 7.90875 16.806C6.2835 17.037 4.73925 17.394 3.30301 17.8717ZM3.30301 6.12827C4.73925 6.60602 6.2835 6.96374 7.90875 7.19398C7.6875 8.49374 7.56975 9.85575 7.53225 11.25H1.5285C1.66275 9.35925 2.29801 7.60952 3.30301 6.12827ZM9.4245 1.83073C8.925 3.03748 8.51625 4.34173 8.202 5.71573C6.8535 5.51698 5.5605 5.22149 4.33575 4.83449C5.6895 3.39224 7.44525 2.33098 9.4245 1.83073ZM11.2718 1.53676C11.514 1.52026 11.754 1.5 12 1.5C12.246 1.5 12.4867 1.52026 12.7282 1.53676C13.3665 2.86576 13.8833 4.34549 14.2665 5.91449C13.5203 5.97974 12.765 6.01799 12 6.01799C11.235 6.01799 10.4798 5.97974 9.73425 5.91449C10.1168 4.34549 10.6335 2.86576 11.2718 1.53676ZM14.9655 12.75C14.925 14.0708 14.805 15.3698 14.5792 16.617C13.7347 16.5435 12.876 16.5 12 16.5C11.124 16.5 10.2652 16.5435 9.4215 16.617C9.195 15.3698 9.075 14.0708 9.03525 12.75H14.9655ZM9.03525 11.25C9.075 9.92925 9.195 8.63025 9.4215 7.383C10.2652 7.4565 11.124 7.5 12 7.5C12.876 7.5 13.7348 7.4565 14.5785 7.383C14.805 8.63025 14.925 9.92925 14.9655 11.25H9.03525ZM19.6642 4.83449C18.4395 5.22149 17.1465 5.51698 15.798 5.71573C15.4837 4.34173 15.075 3.03748 14.5755 1.83073C16.5548 2.33098 18.3112 3.39224 19.6642 4.83449ZM20.697 6.12827C21.702 7.60952 22.3373 9.35925 22.4715 11.25H16.4678C16.4303 9.85575 16.3125 8.49374 16.0913 7.19398C17.7165 6.96374 19.2607 6.60602 20.697 6.12827ZM12 0C5.373 0 0 5.37225 0 12C0 18.6278 5.373 24 12 24C18.627 24 24 18.6278 24 12C24 5.37225 18.627 0 12 0Z"
+                                    fill="white" />
+                            </svg>
+
+
+                            Travel Guide
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="submenu-toggle">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.8501 4.77076C19.3167 4.95893 19.8418 4.95893 20.3083 4.77076L22.0583 4.08576C22.5793 3.87576 23.1668 4.02993 23.5376 4.46743C23.9085 4.90493 23.9793 5.51493 23.7168 6.02843L22.7793 7.92093C22.5595 8.34093 22.5595 8.83326 22.7793 9.25326L23.7168 11.1466C23.9793 11.6601 23.9085 12.2701 23.5376 12.7076C23.1668 13.1451 22.5793 13.2991 22.0583 13.0893L20.3083 12.4043C19.8418 12.2161 19.3167 12.2161 18.8501 12.4043L17.1001 13.0893C16.5793 13.2993 15.9918 13.1451 15.6209 12.7076C15.2501 12.2701 15.1793 11.6601 15.4418 11.1458L16.3793 9.25326C16.5992 8.83326 16.5992 8.34093 16.3793 7.92093L15.4418 6.02843C15.1793 5.51493 15.2501 4.90493 15.6209 4.46743C15.9918 4.02993 16.5793 3.87576 17.1001 4.08576L18.8501 4.77076ZM11.4251 6.87576L15.4501 9.04326L14.2251 11.4183C13.5751 12.6833 13.5751 14.1933 14.2251 15.4574L15.4501 17.8324L11.4251 19.9991C10.9418 20.2516 10.3709 20.2516 9.88758 19.9991L5.86341 17.8324L7.08841 15.4574C7.73758 14.1933 7.73758 12.6833 7.08841 11.4183L5.86341 9.04326L9.88758 6.87576C10.3709 6.62409 10.9418 6.62409 11.4251 6.87576ZM12.6793 4.77076C12.2127 4.95893 11.6876 4.95893 11.2209 4.77076L7.19591 2.60326C5.72424 1.83326 3.91258 2.22576 2.89008 3.52743C1.86758 4.82993 1.80924 6.69326 2.74341 8.06826L3.96841 10.4433C4.11424 10.7183 4.11424 11.0558 3.96841 11.3308L2.74341 13.7058C1.80841 15.0808 1.86758 16.9441 2.89008 18.2458C3.91258 19.5466 5.72424 19.9391 7.19591 19.1691L11.2209 17.0016C11.6876 16.8133 12.2127 16.8133 12.6793 17.0016L16.7043 19.1691C18.1751 19.9391 19.9876 19.5466 21.0101 18.2458C22.0326 16.9441 22.0909 15.0808 21.1559 13.7058L19.9309 11.3308C19.7851 11.0558 19.7851 10.7183 19.9309 10.4433L21.1559 8.06826C22.0909 6.69326 22.0326 4.82993 21.0101 3.52743C19.9876 2.22576 18.1751 1.83326 16.7043 2.60326L12.6793 4.77076Z"
+                                    fill="white" />
+                            </svg>
+
+                            Services
+                            <svg class="arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="submenu collapsed">
+                            <li><a href="#">Flight Booking</a></li>
+                            <li><a href="#">Hotel Reservations</a></li>
+                            <li><a href="#">Car Rentals</a></li>
+                            <li><a href="#">Travel Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 13.5C11.0717 13.5 10.1815 13.1312 9.52512 12.4748C8.8687 11.8184 8.5 10.9283 8.5 10C8.5 9.07173 8.8687 8.18154 9.52512 7.52512C10.1815 6.8687 11.0717 6.5 12 6.5C12.9283 6.5 13.8185 6.8687 14.4749 7.52512C15.1313 8.18154 15.5 9.07173 15.5 10C15.5 10.4596 15.4095 10.9148 15.2336 11.3394C15.0577 11.764 14.7999 12.1499 14.4749 12.4748C14.1499 12.7999 13.764 13.0577 13.3394 13.2336C12.9148 13.4095 12.4596 13.5 12 13.5ZM12 2L14.39 5.42C14.7829 5.98132 15.3142 6.42781 15.9299 6.71623C16.5456 7.00465 17.2246 7.12542 17.9 7.068L22 6.5L21.06 10.55C20.9628 11.0276 20.9959 11.523 21.1558 11.9838C21.3157 12.4446 21.5966 12.8546 21.97 13.17L24.44 15.47L21.97 17.77C21.5966 18.0854 21.3157 18.4954 21.1558 18.9562C20.9959 19.417 20.9628 19.9124 21.06 20.39L22 24.5L17.9 23.932C17.2246 23.8746 16.5456 23.9953 15.9299 24.2838C15.3142 24.5722 14.7829 25.0186 14.39 25.58L12 29L9.61 25.58C9.21711 25.0186 8.68582 24.5722 8.07014 24.2838C7.45445 23.9953 6.77544 23.8746 6.1 23.932L2 24.5L2.94 20.45C3.03718 19.9724 3.00412 19.477 2.84421 19.0162C2.68431 18.5554 2.40336 18.1454 2.03 17.83L-0.44 15.47L2.03 13.17C2.40336 12.8546 2.68431 12.4446 2.84421 11.9838C3.00412 11.523 3.03718 11.0276 2.94 10.55L2 6.5L6.1 7.068C6.77544 7.12542 7.45445 7.00465 8.07014 6.71623C8.68582 6.42781 9.21711 5.98132 9.61 5.42L12 2Z"
+                                    fill="white" />
+                            </svg>
+
+                            Testimonials
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg width="21" height="24" viewBox="0 0 21 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.75 3.66667H16.125V2.16667C16.125 1.66667 15.7875 1.33333 15.3 1.33333C14.8125 1.33333 14.475 1.66667 14.475 2.16667V3.66667H6.42503V2.16667C6.42503 1.66667 6.08753 1.33333 5.60003 1.33333C5.11253 1.33333 4.77503 1.66667 4.77503 2.16667V3.66667H2.15003C0.987531 3.66667 0.000156402 4.66667 0.000156402 5.83333L0.000156402 21.5C0.000156402 22.6667 0.987531 23.6667 2.15003 23.6667H18.75C19.9125 23.6667 20.9 22.6667 20.9 21.5V5.83333C20.9 4.66667 19.9125 3.66667 18.75 3.66667ZM18.15 21.5H2.75C2.51253 21.5 2.30003 21.3333 2.30003 21V8.33333H18.6V21C18.6 21.3333 18.3875 21.5 18.15 21.5Z"
+                                    fill="white" />
+                            </svg>
+
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- Hero Section with Background Image -->
+        <section class="hero">
+            <!-- Background Image using Picture Element -->
+            <picture class="hero-media">
+                <source media="(min-width: 1080px)" srcset="img/hero-lg.webp">
+                <source media="(min-width: 720px)" srcset="img/hero-md.webp">
+                <img src="img/hero-sm.webp" alt="Traveler with backpack exploring" class="hero-image">
+            </picture>
+
+            <div class="hero-content">
+                <h1 class="hero-title">travelers gets you to where you want to be.</h1>
+            </div>
+        </section>
+
+        <!-- Tagline Section -->
+        <section class="tagline-section">
+            <h2 class="tagline-title">Anywhere, Anytime, we're here to help</h2>
+            <p class="tagline-subtitle">And we mean that.</p>
+        </section>
+
+        <!-- Three Info Cards Section -->
+        <section class="info-cards">
+            <!-- Card 1: Save Time -->
+            <article class="info-card">
+                <div class="card-image">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/save-time-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/save-time-md.webp">
+                        <img src="img/save-time-sm.webp" alt="Save Time" class="card-img">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Save Time</h3>
+                    <p class="card-description">Planning your next adventure shouldn't feel like a full-time job. With our streamlined booking tools, curated trip itineraries, and 24/7 support, you can skip the hassle and focus on making memories. Whether you're looking for a weekend getaway or a month-long backpacking journey, we've got your travel logistics covered so you can focus on making memories.</p>
+                </div>
+            </article>
+
+            <!-- Card 2: Win over the team -->
+            <article class="info-card">
+                <div class="card-image">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/team-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/team-md.webp">
+                        <img src="img/team-sm.webp" alt="Win over the team" class="card-img">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Win over the team</h3>
+                    <p class="card-description">Travel can often feel like navigating a maze on your own, and that's a group travel a breeze with our team-friendly planning tools. From shared itineraries and customizable itineraries, we help make sure everyone's comfortable, happy, and excited. It's a contagious human, a team-building getaway, or a collaborative project, we help travel groups stay in sync, no matter where each team member is starting from. We focus on building connections and unforgettable experiences.</p>
+                </div>
+            </article>
+
+            <!-- Card 3: Features -->
+            <article class="info-card">
+                <div class="card-image">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/features-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/features-md.webp">
+                        <img src="img/features-sm.webp" alt="Features" class="card-img">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Features</h3>
+                    <p class="card-description">Discover a universe you to travel with features designed to make every step of your journey effortless and exciting. From real-time price tracking to discover flexible payment options, our platform is built to support any kind of journey. With live updates on flight and hotel availability, secure payment options, our platform is built to support you whether you're traveling solo, with family, or as a group. We're here to ensure that every aspect of your trip is smooth, safe, and seamless.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2 class="team-title">A humble Team we are</h2>
+            <p class="team-subtitle">well some of us anyways</p>
+
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <article class="team-member">
+                    <div class="member-avatar">
+                        <img src="img/team-member-1.svg" alt="John Janen - Travel Producer">
+                    </div>
+                    <h3 class="member-name">John Janen</h3>
+                    <p class="member-role">Travel Producer</p>
+                    <div class="member-socials">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Team Member 2 -->
+                <article class="team-member">
+                    <div class="member-avatar">
+                        <img src="img/team-member-2.svg" alt="Inazy Tague - Assistant">
+                    </div>
+                    <h3 class="member-name">Inazy Tague</h3>
+                    <p class="member-role">Assistant</p>
+                    <div class="member-socials">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Team Member 3 -->
+                <article class="team-member">
+                    <div class="member-avatar">
+                        <img src="img/team-member-3.svg" alt="Sout Reeson - Manager">
+                    </div>
+                    <h3 class="member-name">Sout Reeson</h3>
+                    <p class="member-role">Manager</p>
+                    <div class="member-socials">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Team Member 4 -->
+                <article class="team-member">
+                    <div class="member-avatar">
+                        <img src="img/team-member-4.svg" alt="Roben Chaid - Administrator">
+                    </div>
+                    <h3 class="member-name">Roben Chaid</h3>
+                    <p class="member-role">Administrator</p>
+                    <div class="member-socials">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section class="destinations-section">
+            <h2 class="destinations-title">awesome Places to visit</h2>
+
+            <div class="destinations-grid">
+                <!-- Destination 1: Santorini, Greece -->
+                <article class="destination-card">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/santorini-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/santorini-md.webp">
+                        <img src="img/santorini-sm.webp" alt="Santorini, Greece" class="destination-img">
+                    </picture>
+                    <h3 class="destination-name">Santorini, Greece</h3>
+                </article>
+
+                <!-- Destination 2: Vakarufalhi island, Maldives -->
+                <article class="destination-card">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/maldives-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/maldives-md.webp">
+                        <img src="img/maldives-sm.webp" alt="Vakarufalhi island, Maldives" class="destination-img">
+                    </picture>
+                    <h3 class="destination-name">Vakarufalhi island, Maldives</h3>
+                </article>
+
+                <!-- Destination 3: Valley of Fire State Park, United States -->
+                <article class="destination-card">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/valley-fire-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/valley-fire-md.webp">
+                        <img src="img/valley-fire-sm.webp" alt="Valley of Fire State Park, United States" class="destination-img">
+                    </picture>
+                    <h3 class="destination-name">Valley of Fire State Park, United States</h3>
+                </article>
+
+                <!-- Destination 4: Tulum, Mexico -->
+                <article class="destination-card">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="img/tulum-lg.webp">
+                        <source media="(min-width: 720px)" srcset="img/tulum-md.webp">
+                        <img src="img/tulum-sm.webp" alt="Tulum, Mexico" class="destination-img">
+                    </picture>
+                    <h3 class="destination-name">Tulum, Mexico</h3>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-credit">All images sourced from Unsplash.</p>
+            <p class="footer-credit">Content created with CoPilot.</p>
+            <p class="footer-credit">DMIT1530 - 2025</p>
+        </div>
+        <a href="#" class="back-to-top" aria-label="Back to top">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="19" stroke="#246729" stroke-width="2"/>
+                <path d="M20 28V12M20 12L13 19M20 12L27 19" stroke="#246729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </footer>
+
+</body>
+
+</html>

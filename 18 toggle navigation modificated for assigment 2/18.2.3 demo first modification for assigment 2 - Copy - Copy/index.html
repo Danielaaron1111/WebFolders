@@ -49,9 +49,15 @@
             <button class="hamburger toggle-btn">
                 <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <title>Click to Toggle Menu</title>
-                    <path d="M28.125 0L28.1734 0.000604248C29.1866 0.0262833 30 0.855635 30 1.87498C30 2.89433 29.1866 3.72368 28.1734 3.74936L28.125 3.74997H1.87498C0.839448 3.74997 0 2.91052 0 1.87498C0 0.839448 0.839448 0 1.87498 0H28.125Z" fill="#246729"/>
-                    <path d="M28.125 18.75L28.1734 18.7506C29.1866 18.7763 30 19.6056 30 20.625C30 21.6443 29.1866 22.4737 28.1734 22.4994L28.125 22.5H1.87498C0.839448 22.5 0 21.6605 0 20.625C0 19.5895 0.839448 18.75 1.87498 18.75H28.125Z" fill="#246729"/>
-                    <path d="M28.125 9.375L28.1734 9.37561C29.1866 9.40129 30 10.2306 30 11.25C30 12.2693 29.1866 13.0987 28.1734 13.1244L28.125 13.125H1.87498C0.839448 13.125 0 12.2855 0 11.25C0 10.2145 0.839448 9.375 1.87498 9.375H28.125Z" fill="#246729"/>
+                    <path
+                        d="M28.125 0L28.1734 0.000604248C29.1866 0.0262833 30 0.855635 30 1.87498C30 2.89433 29.1866 3.72368 28.1734 3.74936L28.125 3.74997H1.87498C0.839448 3.74997 0 2.91052 0 1.87498C0 0.839448 0.839448 0 1.87498 0H28.125Z"
+                        fill="#246729" />
+                    <path
+                        d="M28.125 18.75L28.1734 18.7506C29.1866 18.7763 30 19.6056 30 20.625C30 21.6443 29.1866 22.4737 28.1734 22.4994L28.125 22.5H1.87498C0.839448 22.5 0 21.6605 0 20.625C0 19.5895 0.839448 18.75 1.87498 18.75H28.125Z"
+                        fill="#246729" />
+                    <path
+                        d="M28.125 9.375L28.1734 9.37561C29.1866 9.40129 30 10.2306 30 11.25C30 12.2693 29.1866 13.0987 28.1734 13.1244L28.125 13.125H1.87498C0.839448 13.125 0 12.2855 0 11.25C0 10.2145 0.839448 9.375 1.87498 9.375H28.125Z"
+                        fill="#246729" />
                 </svg>
                 menu
             </button>
@@ -223,13 +229,24 @@
         </div>
     </header>
     <main>
+
+
+        <section>
+            <div class="inner-container">
+                <h1>travlers gets you to where you want to be. </h1>
+                
+                <a href="#latest" class="btn">Let's Explore</a>
+            </div>
+
+        </section>
         <!-- HERO: art-directed picture (keeps the existing hero image behavior) -->
         <section class="hero" aria-labelledby="hero-title">
             <picture class="hero-media" aria-hidden="true">
                 <!-- Use existing WebP files in img/ for this new demo. No AVIF/2x required here. -->
                 <source media="(min-width:1080px)" type="image/webp" srcset="img/hero-lg.webp">
                 <source media="(min-width:720px)" type="image/webp" srcset="img/backgroun-tablet-800.webp">
-                <img src="img/hero-sm.webp" alt="Scenic travel photo" loading="eager" decoding="async" class="hero-image">
+                <img src="img/hero-sm.webp" alt="Scenic travel photo" loading="eager" decoding="async"
+                    class="hero-image">
             </picture>
 
             <div class="hero-content inner-container">
@@ -241,13 +258,21 @@
         <!-- INTRO / KEY MESSAGE -->
         <section class="intro inner-container" aria-labelledby="intro-title">
             <h3 id="intro-title">Save Time</h3>
-            <p>Planning your next adventure shouldn’t feel like a full-time job. With our streamlined booking tools, curated travel itineraries, and insider tips, you can skip the stress and get straight to the fun. Whether you're looking for a weekend getaway or a month-long escape, we make it easy to find, plan, and book your perfect trip—all in one place. Let us handle the details so you can focus on making memories.</p>
+            <p>Planning your next adventure shouldn’t feel like a full-time job. With our streamlined booking tools,
+                curated travel itineraries, and insider tips, you can skip the stress and get straight to the fun.
+                Whether you're looking for a weekend getaway or a month-long escape, we make it easy to find, plan, and
+                book your perfect trip—all in one place. Let us handle the details so you can focus on making memories.
+            </p>
         </section>
 
         <!-- TEAM / FEATURES -->
         <section class="team inner-container" aria-labelledby="team-title">
             <h3 id="team-title">Win over the team</h3>
-            <p class="muted">Impress your colleagues and make group travel a breeze with our team-friendly planning tools. From seamless coordination to customizable itineraries, we help you create trips that everyone will love. Whether it’s a corporate retreat, a team-building getaway, or a celebratory escape, we make it easy to align schedules, preferences, and budgets—so you can focus on building connections and unforgettable experiences.</p>
+            <p class="muted">Impress your colleagues and make group travel a breeze with our team-friendly planning
+                tools. From seamless coordination to customizable itineraries, we help you create trips that everyone
+                will love. Whether it’s a corporate retreat, a team-building getaway, or a celebratory escape, we make
+                it easy to align schedules, preferences, and budgets—so you can focus on building connections and
+                unforgettable experiences.</p>
 
             <div class="features">
                 <h4>Features</h4>
@@ -263,7 +288,8 @@
 
             <div class="team-list">
                 <article class="team-card">
-                    <img src="img/team-john.jpg" alt="John Joshen — Digital Producer" class="team-avatar" width="220" height="220">
+                    <img src="img/team-john.jpg" alt="John Joshen — Digital Producer" class="team-avatar" width="220"
+                        height="220">
                     <div class="team-meta">
                         <strong>John Joshen</strong>
                         <div class="role">Digital Producer</div>
@@ -271,7 +297,8 @@
                 </article>
 
                 <article class="team-card">
-                    <img src="img/team-jenny.jpg" alt="Jenny Taupe — Developer" class="team-avatar" width="220" height="220">
+                    <img src="img/team-jenny.jpg" alt="Jenny Taupe — Developer" class="team-avatar" width="220"
+                        height="220">
                     <div class="team-meta">
                         <strong>Jenny Taupe</strong>
                         <div class="role">Developer</div>
@@ -279,7 +306,8 @@
                 </article>
 
                 <article class="team-card">
-                    <img src="img/team-raz.jpg" alt="Raz Blobar — Designer" class="team-avatar" width="220" height="220">
+                    <img src="img/team-raz.jpg" alt="Raz Blobar — Designer" class="team-avatar" width="220"
+                        height="220">
                     <div class="team-meta">
                         <strong>Raz Blobar</strong>
                         <div class="role">Designer</div>
@@ -287,7 +315,8 @@
                 </article>
 
                 <article class="team-card">
-                    <img src="img/team-karen.jpg" alt="Karen Chad — Administrator" class="team-avatar" width="220" height="220">
+                    <img src="img/team-karen.jpg" alt="Karen Chad — Administrator" class="team-avatar" width="220"
+                        height="220">
                     <div class="team-meta">
                         <strong>Karen Chad</strong>
                         <div class="role">Administrator</div>
@@ -309,13 +338,15 @@
                 </li>
                 <li class="gallery-item">
                     <a href="#">
-                        <img src="img/maldives-sm.jpg" alt="Veligandu Island, Maldives" loading="lazy" width="320" height="200">
+                        <img src="img/maldives-sm.jpg" alt="Veligandu Island, Maldives" loading="lazy" width="320"
+                            height="200">
                         <div class="caption">Veligandu Island, Maldives</div>
                     </a>
                 </li>
                 <li class="gallery-item">
                     <a href="#">
-                        <img src="img/valleyfire-sm.jpg" alt="Valley of Fire State Park, United States" loading="lazy" width="320" height="200">
+                        <img src="img/valleyfire-sm.jpg" alt="Valley of Fire State Park, United States" loading="lazy"
+                            width="320" height="200">
                         <div class="caption">Valley of Fire State Park, United States</div>
                     </a>
                 </li>
@@ -335,3 +366,20 @@
 </body>
 
 </html>
+
+
+<!-- Card 1
+					<div class="card flex-container">
+						<picture>
+							<source srcset="img/lotus-ribs-lg.webp" media="(min-width: 890px)">
+							<source srcset="img/lotus-ribs-md.webp" media="(min-width: 590px)">
+							<img src="img/lotus-ribs-sm.webp" alt="Lotus and Rib Soup">
+						</picture>
+						<div class="card-body">
+							<h2>Lotus &amp; Rib Soup (排骨莲藕汤)</h2>
+							<p>
+								The combination of lotus root and pork ribs is a classic. It seems so simple, yet it creates a rich, flavorful, and satisfying soup. The lotus adds a nice flowery aroma, so the soup feels refreshing and light.
+							</p>
+							<a href="#" class="btn">Get the Recipe &#10095;</a>
+						</div>
+					</div> -->

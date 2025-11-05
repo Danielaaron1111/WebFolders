@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+        <meta name="description" content="This website demonstrates an accessible search bar, including focus states and the screen reader only class. It also repurposes our old JavaScript to demonstrate how it can be used for other applications.">
+
+        <title>20 - Search Bar</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Scripts -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="flex-container inner-container">
+                <h1><a href="index.html">iHack</a></h1>
+
+                <nav>
+                    <ul class="flex-container">
+                        <li>
+                            <a href="#">How-to Guides</a>
+                        </li>
+                        <li>
+                            <a href="#">Resources</a>
+                        </li>
+                        <li>
+                            <a href="#">News</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Search Toggle -->
+                <button class="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <title>Toggle Search Bar</title>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </button>
+
+                <!-- Search Bar -->
+                <form action="index.html" method="GET" role="search" class="collapsed">
+                    <div class="flex-container inner-container">
+                        <label for="search-bar" class="sr-only">Search Term</label>
+                        <input type="search" name="search-bar" id="search-bar" placeholder="Search Term">
+                        <!-- Submit -->
+                        <input type="submit" id="submit" name="submit" value="Search">
+                    </div>
+                </form>
+            </div>
+        </header>
+        <!-- This content is here just to have something for the search bar to come down and top of and to make sure our z-index is correct. -->
+        <main class="flex-container">
+            <section class="inner-container">
+                <h2>Welcome to iHack</h2>
+
+                <p class="lead">Empowering Your Right to Own and Repair</p>
+
+                <p>At iHack, we believe in your right to take control of your technology. Our mission is to provide you with the knowledge and tools to repair, modify, and truly own your devices.</p>
+
+                <p>Explore our comprehensive collection of step-by-step guides designed to help you repair and upgrade your devices. From smartphones and laptops to gaming consoles and home appliances, our guides cover a wide range of products and brands. Each guide is crafted to be easy to follow, with clear instructions and detailed images to ensure your success.</p>
+
+                <a href="#" class="btn">Get Started</a>
+            </section>
+        </main>
+    </body>
+
+</html>
