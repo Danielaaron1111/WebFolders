@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays, Objects, Classes & DOM - Interactive Demo</title>
+    
+    <!-- Tailwind CSS CDN for beautiful, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom animations and styles to enhance the demo */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.4s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Smooth transitions for interactive elements */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
+    
+    <!-- ===== MAIN HEADER ===== -->
+    <header class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-8 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">JavaScript Mastery Lab</h1>
+            <p class="text-purple-100">Arrays, Objects, Classes & DOM Manipulation - Interactive Demonstrations</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- ===== DEMO 1: PRODUCT GALLERY ===== -->
+        <!-- Demonstrates: .map(), .filter(), array of objects, template literals, DOM creation -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    📦 Demo 1: Product Gallery
+                </h2>
+                <p class="text-gray-600">
+                    <strong>Concepts:</strong> Array.map() to render cards, Array.filter() for category filtering, 
+                    object property access, template literals, createElement() and appendChild()
+                </p>
+            </div>
+
+            <!-- Filter buttons for product categories -->
+            <div class="mb-6 flex flex-wrap gap-2">
+                <button onclick="filterProducts('all')" 
+                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                    All Products
+                </button>
+                <button onclick="filterProducts('electronics')" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    Electronics
+                </button>
+                <button onclick="filterProducts('clothing')" 
+                        class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+                    Clothing
+                </button>
+                <button onclick="filterProducts('books')" 
+                        class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">
+                    Books
+                </button>
+            </div>
+
+            <!-- Container where product cards will be dynamically rendered -->
+            <div id="product-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Products will be inserted here dynamically -->
+            </div>
+
+            <!-- Statistics panel showing Array.reduce() in action -->
+            <div class="mt-6 bg-purple-50 rounded-lg p-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">📊 Gallery Statistics</h3>
+                <div id="product-stats" class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <!-- Stats will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEMO 2: TASK MANAGER WITH CLASSES ===== -->
+        <!-- Demonstrates: ES6 classes, constructor, methods, this keyword, classList manipulation -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    ✅ Demo 2: Task Manager (Class-Based)
+                </h2>
+                <p class="text-gray-600">
+                    <strong>Concepts:</strong> ES6 Classes with constructor and methods, 'this' keyword, 
+                    instance creation, DOM manipulation through class methods, classList operations
+                </p>
+            </div>
+
+            <!-- Form to add new tasks -->
+            <form id="task-form" class="mb-6 flex gap-2">
+                <input type="text" 
+                       id="task-input" 
+                       placeholder="Enter a new task..." 
+                       class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                       required>
+                <select id="task-priority" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <button type="submit" 
+                        class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                    Add Task
+                </button>
+            </form>
+
+            <!-- Task lists organized by priority -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-green-600 mb-3">🟢 Low Priority</h3>
+                    <div id="tasks-low" class="space-y-2 min-h-[100px] bg-green-50 rounded-lg p-3">
+                        <!-- Low priority tasks appear here -->
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-yellow-600 mb-3">🟡 Medium Priority</h3>
+                    <div id="tasks-medium" class="space-y-2 min-h-[100px] bg-yellow-50 rounded-lg p-3">
+                        <!-- Medium priority tasks appear here -->
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-red-600 mb-3">🔴 High Priority</h3>
+                    <div id="tasks-high" class="space-y-2 min-h-[100px] bg-red-50 rounded-lg p-3">
+                        <!-- High priority tasks appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task summary using array methods -->
+            <div class="mt-6 bg-blue-50 rounded-lg p-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">📈 Task Summary</h3>
+                <div id="task-summary" class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <!-- Summary stats will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEMO 3: DATA DASHBOARD ===== -->
+        <!-- Demonstrates: .reduce(), object destructuring, computed properties -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    📊 Demo 3: Sales Dashboard
+                </h2>
+                <p class="text-gray-600">
+                    <strong>Concepts:</strong> Array.reduce() for aggregation, object destructuring, 
+                    Object.keys/values/entries, computed properties, data transformation
+                </p>
+            </div>
+
+            <!-- Dashboard controls -->
+            <div class="mb-6 flex flex-wrap gap-2">
+                <button onclick="updateDashboard('daily')" 
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    Daily Sales
+                </button>
+                <button onclick="updateDashboard('weekly')" 
+                        class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                    Weekly Sales
+                </button>
+                <button onclick="updateDashboard('monthly')" 
+                        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                    Monthly Sales
+                </button>
+                <button onclick="addRandomSale()" 
+                        class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition">
+                    ➕ Add Random Sale
+                </button>
+            </div>
+
+            <!-- Dashboard metrics computed with .reduce() -->
+            <div id="dashboard-metrics" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <!-- Metrics cards will be inserted here -->
+            </div>
+
+            <!-- Sales list -->
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Recent Sales</h3>
+                <div id="sales-list" class="space-y-2">
+                    <!-- Sales items will be listed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEMO 4: INTERACTIVE SEARCH & SORT ===== -->
+        <!-- Demonstrates: .sort(), .find(), .some(), .every(), string methods -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    🔍 Demo 4: Interactive User Directory
+                </h2>
+                <p class="text-gray-600">
+                    <strong>Concepts:</strong> Array.sort() with custom comparators, Array.find(), 
+                    Array.some(), Array.every(), real-time filtering, string manipulation
+                </p>
+            </div>
+
+            <!-- Search and sort controls -->
+            <div class="mb-6 space-y-4">
+                <div class="flex flex-wrap gap-2">
+                    <input type="text" 
+                           id="user-search" 
+                           placeholder="Search users by name or email..." 
+                           class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <button onclick="clearSearch()" 
+                            class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">
+                        Clear
+                    </button>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="sortUsers('name', 'asc')" 
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Sort by Name ↑
+                    </button>
+                    <button onclick="sortUsers('name', 'desc')" 
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Sort by Name ↓
+                    </button>
+                    <button onclick="sortUsers('age', 'asc')" 
+                            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                        Sort by Age ↑
+                    </button>
+                    <button onclick="sortUsers('age', 'desc')" 
+                            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                        Sort by Age ↓
+                    </button>
+                </div>
+
+                <!-- Array method demonstrations -->
+                <div class="bg-purple-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 mb-2">🧪 Array Method Tests:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="testFind()" 
+                                class="px-3 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition">
+                            .find() - Find User by ID
+                        </button>
+                        <button onclick="testSome()" 
+                                class="px-3 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition">
+                            .some() - Any User Over 60?
+                        </button>
+                        <button onclick="testEvery()" 
+                                class="px-3 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition">
+                            .every() - All Users Adults?
+                        </button>
+                    </div>
+                    <div id="array-method-result" class="mt-3 p-3 bg-white rounded text-sm">
+                        Click a button to see array method results...
+                    </div>
+                </div>
+            </div>
+
+            <!-- User cards container -->
+            <div id="user-directory" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- User cards will be rendered here -->
+            </div>
+
+            <!-- Directory statistics -->
+            <div class="mt-6 bg-blue-50 rounded-lg p-4">
+                <div id="user-stats" class="text-center text-gray-700">
+                    <!-- Stats will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRACTICE EXERCISES SECTION ===== -->
+        <section class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg shadow-lg p-8 mb-8">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    🎯 Practice Exercises
+                </h2>
+                <p class="text-gray-700 text-lg">
+                    Now that you've explored the demos, try these exercises to reinforce your learning!
+                </p>
+            </div>
+
+            <!-- Exercise 1 -->
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-bold text-purple-600 mb-3">
+                    Exercise 1: Implement .findIndex() and .includes()
+                </h3>
+                <div class="mb-4">
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Difficulty: Beginner
+                    </span>
+                </div>
+                
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Goal:</h4>
+                <p class="text-gray-700 mb-4">
+                    Add a "Wishlist" feature to the Product Gallery
+                </p>
+
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Tasks:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                    <li>Add a heart/bookmark button to each product card</li>
+                    <li>Create a <code class="bg-gray-100 px-2 py-1 rounded">wishlist</code> array to store product IDs</li>
+                    <li>Use <code class="bg-gray-100 px-2 py-1 rounded">.includes()</code> to check if a product is already in the wishlist</li>
+                    <li>Use <code class="bg-gray-100 px-2 py-1 rounded">.findIndex()</code> to locate and remove items from the wishlist</li>
+                    <li>Add a "View Wishlist" button that filters products to show only wishlist items</li>
+                </ul>
+
+                <details class="bg-purple-50 rounded-lg p-4">
+                    <summary class="cursor-pointer font-semibold text-purple-700 hover:text-purple-900">
+                        💡 Click to see starter code
+                    </summary>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg mt-3 overflow-x-auto"><code>// Add to your existing code
+let wishlist = [];
+
+function toggleWishlist(productId) {
+    // Use .includes() to check if product is in wishlist
+    if (wishlist.includes(productId)) {
+        // Use .findIndex() to locate the product
+        const index = wishlist.findIndex(id => id === productId);
+        // Use .splice() to remove it
+        wishlist.splice(index, 1);
+        console.log(`Product ${productId} removed from wishlist`);
+    } else {
+        // Add to wishlist
+        wishlist.push(productId);
+        console.log(`Product ${productId} added to wishlist`);
+    }
+    
+    // Update UI to show wishlist status
+    updateWishlistButtons();
+}
+
+function showWishlist() {
+    // Filter products to show only those in wishlist
+    const wishlistProducts = products.filter(product => 
+        wishlist.includes(product.id)
+    );
+    renderProducts(wishlistProducts);
+}</code></pre>
+                </details>
+            </article>
+
+            <!-- Exercise 2 -->
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-bold text-purple-600 mb-3">
+                    Exercise 2: Create a Student Grade Manager Class
+                </h3>
+                <div class="mb-4">
+                    <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Difficulty: Intermediate
+                    </span>
+                </div>
+                
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Goal:</h4>
+                <p class="text-gray-700 mb-4">
+                    Build a new class that manages student records and updates TWO different DOM sections
+                </p>
+
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Tasks:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                    <li>Create a <code class="bg-gray-100 px-2 py-1 rounded">Student</code> class with properties: name, grades (array), course</li>
+                    <li>Add methods to calculate average grade, determine pass/fail status, add new grades</li>
+                    <li>Add methods to render student card in the main list AND update a summary statistics panel</li>
+                    <li>Create multiple student instances</li>
+                    <li>Display students in a grid AND show class statistics in a separate panel</li>
+                </ul>
+
+                <details class="bg-purple-50 rounded-lg p-4">
+                    <summary class="cursor-pointer font-semibold text-purple-700 hover:text-purple-900">
+                        💡 Click to see complete solution
+                    </summary>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg mt-3 overflow-x-auto text-sm"><code>class Student {
+    static passingGrade = 60;
+    static studentCount = 0;
+    
+    constructor(name, course, grades = []) {
+        this.id = ++Student.studentCount;
+        this.name = name;
+        this.course = course;
+        this.grades = grades;
+        this.element = null;
+    }
+    
+    calculateAverage() {
+        if (this.grades.length === 0) return 0;
+        const sum = this.grades.reduce((total, grade) => total + grade, 0);
+        return (sum / this.grades.length).toFixed(1);
+    }
+    
+    isPassing() {
+        return this.calculateAverage() >= Student.passingGrade;
+    }
+    
+    addGrade(grade) {
+        if (grade >= 0 && grade <= 100) {
+            this.grades.push(grade);
+            this.updateDisplay();
+            updateClassStatistics(); // Updates second DOM section!
+        }
+    }
+    
+    render() {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-4 rounded-lg shadow-md';
+        
+        const avg = this.calculateAverage();
+        const status = this.isPassing() ? '✅ Passing' : '❌ Needs Improvement';
+        
+        card.innerHTML = \`
+            &lt;h3 class="text-xl font-bold"&gt;\${this.name}&lt;/h3&gt;
+            &lt;p&gt;\${this.course}&lt;/p&gt;
+            &lt;div class="text-2xl font-bold text-purple-600"&gt;\${avg}&lt;/div&gt;
+            &lt;p&gt;\${status}&lt;/p&gt;
+            &lt;div&gt;Grades: \${this.grades.join(', ')}&lt;/div&gt;
+        \`;
+        
+        this.element = card;
+        return card;
+    }
+}
+
+// Update class statistics (second DOM section)
+function updateClassStatistics() {
+    const classAverage = students.length > 0
+        ? (students.map(s => parseFloat(s.calculateAverage()))
+                  .reduce((sum, avg) => sum + avg, 0) / students.length).toFixed(1)
+        : 0;
+    
+    const passing = students.filter(s => s.isPassing()).length;
+    
+    // Update stats DOM...
+}</code></pre>
+                </details>
+            </article>
+
+            <!-- Exercise 3 -->
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-2xl font-bold text-purple-600 mb-3">
+                    Exercise 3: Combined Filter and Map Pipeline
+                </h3>
+                <div class="mb-4">
+                    <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Difficulty: Intermediate to Advanced
+                    </span>
+                </div>
+                
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Goal:</h4>
+                <p class="text-gray-700 mb-4">
+                    Create an "Active Deals" feature that filters and transforms product data
+                </p>
+
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Tasks:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                    <li>Add a <code class="bg-gray-100 px-2 py-1 rounded">discount</code> property to each product (0-50%)</li>
+                    <li>Use <code class="bg-gray-100 px-2 py-1 rounded">.filter()</code> to find products with discounts above 20%</li>
+                    <li>Use <code class="bg-gray-100 px-2 py-1 rounded">.map()</code> to transform filtered products into "deal cards" with calculated savings</li>
+                    <li>Use <code class="bg-gray-100 px-2 py-1 rounded">.sort()</code> to show best deals first</li>
+                    <li>Add a "Deal of the Day" badge to the top deal</li>
+                </ul>
+
+                <details class="bg-purple-50 rounded-lg p-4">
+                    <summary class="cursor-pointer font-semibold text-purple-700 hover:text-purple-900">
+                        💡 Click to see complete solution
+                    </summary>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg mt-3 overflow-x-auto text-sm"><code>function showActiveDeals() {
+    // Step 1: Filter products with discount > 20%
+    const activeDeals = productsWithDiscounts.filter(product => 
+        product.discount > 20
+    );
+    
+    // Step 2: Transform each deal with calculations
+    const enrichedDeals = activeDeals.map(product => {
+        const originalPrice = product.price;
+        const discountAmount = originalPrice * (product.discount / 100);
+        const discountedPrice = originalPrice - discountAmount;
+        
+        return {
+            ...product,
+            originalPrice,
+            discountedPrice,
+            discountAmount,
+            savingsPercent: product.discount
+        };
+    });
+    
+    // Step 3: Sort by discount percentage (best deals first)
+    const sortedDeals = enrichedDeals.sort((a, b) => 
+        b.savingsPercent - a.savingsPercent
+    );
+    
+    // Step 4: Render deal cards
+    const dealCards = sortedDeals.map((deal, index) => {
+        const card = document.createElement('article');
+        card.className = 'bg-white rounded-lg shadow-lg p-5';
+        
+        // Add "Deal of the Day" badge to first item
+        if (index === 0) {
+            const badge = document.createElement('div');
+            badge.className = 'bg-gradient-to-br from-yellow-400 to-orange-500 text-white px-4 py-2 rounded';
+            badge.textContent = '🔥 DEAL OF THE DAY';
+            card.appendChild(badge);
+        }
+        
+        // Build card with original price, discounted price, savings...
+        return card;
+    });
+}</code></pre>
+                </details>
+            </article>
+
+            <!-- Bonus Challenges -->
+            <article class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-orange-600 mb-4">
+                    🚀 Bonus Challenges
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Challenge 1: Local Storage Integration</h4>
+                        <p class="text-gray-700 text-sm">
+                            Save tasks to <code class="bg-gray-100 px-2 py-1 rounded">localStorage</code> and load them when the page refreshes
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Challenge 2: Advanced Multi-Criteria Filtering</h4>
+                        <p class="text-gray-700 text-sm">
+                            Filter products by price range, multiple categories, AND minimum rating all at once
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Challenge 3: Pagination</h4>
+                        <p class="text-gray-700 text-sm">
+                            Implement pagination using <code class="bg-gray-100 px-2 py-1 rounded">.slice()</code> to show 6 items per page with navigation buttons
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Key Concepts Summary -->
+            <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">📚 Key Concepts Review</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-purple-600 mb-3">Array Methods</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.map()</code> - Transform elements → new array</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.filter()</code> - Keep elements that pass test</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.reduce()</code> - Accumulate into single value</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.forEach()</code> - Execute function (no return)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.find()</code> - Return first match</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.findIndex()</code> - Return index of match</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.some()</code> - True if ANY passes</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.every()</code> - True if ALL pass</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.sort()</code> - Sort in place (mutates)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.slice()</code> - Extract section (no mutation)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.splice()</code> - Add/remove (mutates)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">.includes()</code> - Check if contains value</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-purple-600 mb-3">DOM Techniques</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">createElement()</code> - Create new elements</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">appendChild()</code> - Add child to parent</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">removeChild()</code> - Remove element</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">replaceChild()</code> - Replace element</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">textContent</code> - Set text (safe)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">innerHTML</code> - Set HTML (caution)</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">classList</code> - Manage CSS classes</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">setAttribute()</code> - Set attributes</li>
+                            <li><code class="bg-gray-100 px-2 py-1 rounded">addEventListener()</code> - Event handlers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-green-50 rounded-lg p-4">
+                    <h4 class="font-bold text-green-800 mb-2">✅ Best Practices</h4>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>✅ Use <code class="bg-gray-100 px-2 py-1 rounded">textContent</code> for user input (security)</li>
+                        <li>✅ Use <code class="bg-gray-100 px-2 py-1 rounded">const</code> for values that don't change</li>
+                        <li>✅ Use arrow functions for callbacks</li>
+                        <li>✅ Use template literals for strings</li>
+                        <li>✅ Use destructuring to extract object properties</li>
+                        <li>✅ Chain array methods for data pipelines</li>
+                        <li>✅ Prefer <code class="bg-gray-100 px-2 py-1 rounded">createElement()</code> over <code class="bg-gray-100 px-2 py-1 rounded">innerHTML</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-300">JavaScript Arrays, Objects, Classes & DOM Demo • Created for Learning</p>
+            <p class="text-gray-400 text-sm mt-2">Demonstrates modern ES6+ patterns and best practices</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT CODE ===== -->
+    <script>
+        // ==========================================
+        // DATA STRUCTURES & INITIALIZATION
+        // ==========================================
+        
+        /**
+         * DEMO 1 DATA: Product Gallery
+         * Array of product objects - demonstrates working with complex data structures
+         * Each object contains multiple properties that we'll access and display
+         */
+        const products = [
+            { id: 1, name: 'Laptop', category: 'electronics', price: 999, rating: 4.5, stock: 15 },
+            { id: 2, name: 'Smartphone', category: 'electronics', price: 699, rating: 4.7, stock: 25 },
+            { id: 3, name: 'Headphones', category: 'electronics', price: 149, rating: 4.3, stock: 50 },
+            { id: 4, name: 'T-Shirt', category: 'clothing', price: 29, rating: 4.1, stock: 100 },
+            { id: 5, name: 'Jeans', category: 'clothing', price: 59, rating: 4.4, stock: 75 },
+            { id: 6, name: 'Jacket', category: 'clothing', price: 129, rating: 4.6, stock: 30 },
+            { id: 7, name: 'JavaScript Book', category: 'books', price: 39, rating: 4.8, stock: 45 },
+            { id: 8, name: 'Python Guide', category: 'books', price: 45, rating: 4.7, stock: 60 },
+            { id: 9, name: 'Web Design Book', category: 'books', price: 35, rating: 4.5, stock: 40 }
+        ];
+
+        /**
+         * DEMO 2: Task Manager Class Definition
+         * Demonstrates ES6 class syntax with constructor, properties, and methods
+         * The 'this' keyword refers to the instance of the class being created
+         */
+        class Task {
+            // Static property to track task IDs (shared across ALL instances)
+            static nextId = 1;
+            
+            /**
+             * Constructor: runs when we create a new Task with 'new Task(...)'
+             * @param {string} description - The task text
+             * @param {string} priority - Priority level: 'low', 'medium', or 'high'
+             */
+            constructor(description, priority = 'medium') {
+                this.id = Task.nextId++;  // Assign unique ID and increment counter
+                this.description = description;
+                this.priority = priority;
+                this.completed = false;
+                this.createdAt = new Date();
+                this.element = null;  // Will store reference to DOM element
+            }
+            
+            /**
+             * Render method: Creates and returns a DOM element for this task
+             * Uses createElement() instead of innerHTML for better performance and security
+             * 'this' refers to the specific Task instance calling this method
+             */
+            render() {
+                // Create the main container element
+                const taskElement = document.createElement('div');
+                taskElement.className = 'bg-white p-3 rounded-lg shadow-sm border-l-4 slide-in';
+                
+                // Set border color based on priority
+                const borderColors = {
+                    low: 'border-green-500',
+                    medium: 'border-yellow-500',
+                    high: 'border-red-500'
+                };
+                taskElement.classList.add(borderColors[this.priority]);
+                
+                // Store reference to this element in the instance
+                this.element = taskElement;
+                
+                // Create task content wrapper
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'flex items-start justify-between';
+                
+                // Create checkbox and label
+                const checkboxLabel = document.createElement('label');
+                checkboxLabel.className = 'flex items-center gap-2 flex-1 cursor-pointer';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'w-5 h-5 text-purple-600';
+                checkbox.checked = this.completed;
+                
+                // Event listener: when checkbox changes, toggle completion
+                // Arrow function preserves 'this' context (refers to Task instance)
+                checkbox.addEventListener('change', () => this.toggleComplete());
+                
+                const descriptionSpan = document.createElement('span');
+                descriptionSpan.className = this.completed ? 'line-through text-gray-500' : 'text-gray-800';
+                descriptionSpan.textContent = this.description;  // textContent is safer than innerHTML
+                
+                checkboxLabel.appendChild(checkbox);
+                checkboxLabel.appendChild(descriptionSpan);
+                
+                // Create delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '🗑️';
+                deleteBtn.className = 'text-red-500 hover:text-red-700 transition px-2';
+                deleteBtn.setAttribute('aria-label', 'Delete task');  // Accessibility
+                
+                // Event listener for delete - calls instance method
+                deleteBtn.addEventListener('click', () => this.remove());
+                
+                contentDiv.appendChild(checkboxLabel);
+                contentDiv.appendChild(deleteBtn);
+                taskElement.appendChild(contentDiv);
+                
+                return taskElement;
+            }
+            
+            /**
+             * Toggle completion status
+             * Demonstrates how class methods can update both data AND the DOM
+             */
+            toggleComplete() {
+                this.completed = !this.completed;  // Toggle the boolean
+                
+                // Update the DOM to reflect the change
+                if (this.element) {
+                    const span = this.element.querySelector('span');
+                    if (this.completed) {
+                        span.classList.add('line-through', 'text-gray-500');
+                        span.classList.remove('text-gray-800');
+                    } else {
+                        span.classList.remove('line-through', 'text-gray-500');
+                        span.classList.add('text-gray-800');
+                    }
+                }
+                
+                updateTaskSummary();  // Refresh statistics
+            }
+            
+            /**
+             * Remove this task from the DOM and the tasks array
+             * Demonstrates DOM manipulation (removeChild) and array mutation
+             */
+            remove() {
+                // Remove from DOM
+                if (this.element && this.element.parentNode) {
+                    this.element.parentNode.removeChild(this.element);
+                }
+                
+                // Remove from tasks array using .filter()
+                // Creates a new array without this task
+                const index = tasks.findIndex(task => task.id === this.id);
+                if (index !== -1) {
+                    tasks.splice(index, 1);  // Remove 1 element at index
+                }
+                
+                updateTaskSummary();  // Refresh statistics
+            }
+            
+            /**
+             * Add this task to the DOM in the appropriate priority column
+             */
+            addToDOM() {
+                const container = document.getElementById(`tasks-${this.priority}`);
+                const element = this.render();
+                container.appendChild(element);
+            }
+        }
+        
+        // Array to store all task instances
+        const tasks = [];
+        
+        /**
+         * DEMO 3 DATA: Sales Dashboard
+         * Demonstrates working with arrays of transaction objects
+         */
+        const salesData = {
+            daily: [
+                { id: 1, product: 'Laptop', amount: 999, quantity: 1, date: '2025-11-05' },
+                { id: 2, product: 'Mouse', amount: 25, quantity: 3, date: '2025-11-05' },
+                { id: 3, product: 'Keyboard', amount: 75, quantity: 2, date: '2025-11-05' },
+                { id: 4, product: 'Monitor', amount: 350, quantity: 1, date: '2025-11-05' }
+            ],
+            weekly: [
+                { id: 5, product: 'Laptop', amount: 999, quantity: 5, date: '2025-11-01' },
+                { id: 6, product: 'Tablet', amount: 499, quantity: 3, date: '2025-11-02' },
+                { id: 7, product: 'Phone', amount: 699, quantity: 4, date: '2025-11-03' },
+                { id: 8, product: 'Headphones', amount: 149, quantity: 8, date: '2025-11-04' }
+            ],
+            monthly: [
+                { id: 9, product: 'Laptop', amount: 999, quantity: 20, date: '2025-10-15' },
+                { id: 10, product: 'Desktop', amount: 1299, quantity: 10, date: '2025-10-18' },
+                { id: 11, product: 'Printer', amount: 199, quantity: 15, date: '2025-10-20' },
+                { id: 12, product: 'Scanner', amount: 149, quantity: 8, date: '2025-10-25' }
+            ]
+        };
+        
+        // Current view state
+        let currentSalesView = 'daily';
+        
+        /**
+         * DEMO 4 DATA: User Directory
+         * Array of user objects for search and sort demonstrations
+         */
+        const users = [
+            { id: 1, name: 'Alice Johnson', email: 'alice@example.com', age: 28, department: 'Engineering' },
+            { id: 2, name: 'Bob Smith', email: 'bob@example.com', age: 35, department: 'Marketing' },
+            { id: 3, name: 'Charlie Brown', email: 'charlie@example.com', age: 42, department: 'Sales' },
+            { id: 4, name: 'Diana Prince', email: 'diana@example.com', age: 31, department: 'Engineering' },
+            { id: 5, name: 'Ethan Hunt', email: 'ethan@example.com', age: 39, department: 'Operations' },
+            { id: 6, name: 'Fiona Green', email: 'fiona@example.com', age: 26, department: 'Design' },
+            { id: 7, name: 'George Wilson', email: 'george@example.com', age: 45, department: 'Finance' },
+            { id: 8, name: 'Hannah Lee', email: 'hannah@example.com', age: 29, department: 'HR' },
+            { id: 9, name: 'Ian Malcolm', email: 'ian@example.com', age: 52, department: 'Research' },
+            { id: 10, name: 'Julia Roberts', email: 'julia@example.com', age: 33, department: 'Marketing' }
+        ];
+        
+        // Current filtered and sorted users
+        let displayedUsers = [...users];  // Spread operator creates a shallow copy
+        
+        
+        // ==========================================
+        // DEMO 1: PRODUCT GALLERY FUNCTIONS
+        // ==========================================
+        
+        /**
+         * Render products using Array.map()
+         * .map() transforms each product object into a DOM element
+         * @param {Array} productsToRender - Array of product objects to display
+         */
+        function renderProducts(productsToRender) {
+            const gallery = document.getElementById('product-gallery');
+            
+            // Clear existing content
+            gallery.innerHTML = '';
+            
+            /**
+             * .map() creates a NEW array by transforming each element
+             * Here, we transform product objects into DOM elements
+             * Arrow function with implicit return (no braces needed for single expression)
+             */
+            const productElements = productsToRender.map(product => {
+                // Destructuring: extract properties from object into variables
+                const { id, name, category, price, rating, stock } = product;
+                
+                // Create card container
+                const card = document.createElement('article');  // Semantic HTML
+                card.className = 'bg-white rounded-lg shadow-md p-5 card-hover fade-in';
+                
+                // Create card header with category badge
+                const header = document.createElement('div');
+                header.className = 'flex justify-between items-start mb-3';
+                
+                const title = document.createElement('h3');
+                title.className = 'text-xl font-semibold text-gray-800';
+                title.textContent = name;
+                
+                const badge = document.createElement('span');
+                badge.className = 'px-3 py-1 text-xs font-semibold rounded-full';
+                // Conditional styling based on category
+                const badgeColors = {
+                    electronics: 'bg-blue-100 text-blue-800',
+                    clothing: 'bg-green-100 text-green-800',
+                    books: 'bg-yellow-100 text-yellow-800'
+                };
+                badge.className += ' ' + badgeColors[category];
+                badge.textContent = category.toUpperCase();
+                
+                header.appendChild(title);
+                header.appendChild(badge);
+                
+                // Create price and rating display
+                const details = document.createElement('div');
+                details.className = 'space-y-2';
+                
+                const priceDiv = document.createElement('div');
+                priceDiv.className = 'text-2xl font-bold text-purple-600';
+                priceDiv.textContent = `$${price.toFixed(2)}`;  // Format to 2 decimal places
+                
+                const ratingDiv = document.createElement('div');
+                ratingDiv.className = 'flex items-center gap-1 text-sm text-gray-600';
+                ratingDiv.innerHTML = `⭐ ${rating} / 5.0`;
+                
+                const stockDiv = document.createElement('div');
+                stockDiv.className = 'text-sm';
+                stockDiv.textContent = `Stock: ${stock} units`;
+                // Conditional text color based on stock level
+                stockDiv.className += stock < 30 ? ' text-red-600 font-semibold' : ' text-gray-600';
+                
+                details.appendChild(priceDiv);
+                details.appendChild(ratingDiv);
+                details.appendChild(stockDiv);
+                
+                // Assemble the card
+                card.appendChild(header);
+                card.appendChild(details);
+                
+                return card;  // Return the complete card element
+            });
+            
+            /**
+             * .forEach() executes a function for each element (no return value)
+             * Used here for side effects (adding elements to DOM)
+             */
+            productElements.forEach(element => {
+                gallery.appendChild(element);
+            });
+            
+            // Update statistics after rendering
+            updateProductStats(productsToRender);
+        }
+        
+        /**
+         * Filter products by category using Array.filter()
+         * .filter() creates a NEW array with elements that pass the test
+         * @param {string} category - Category to filter by, or 'all' for no filter
+         */
+        function filterProducts(category) {
+            let filteredProducts;
+            
+            if (category === 'all') {
+                // Show all products (no filter needed)
+                filteredProducts = products;
+            } else {
+                /**
+                 * .filter() keeps only elements where the callback returns true
+                 * Arrow function checks if product.category matches selected category
+                 */
+                filteredProducts = products.filter(product => product.category === category);
+            }
+            
+            // Re-render gallery with filtered results
+            renderProducts(filteredProducts);
+        }
+        
+        /**
+         * Calculate and display statistics using Array.reduce()
+         * .reduce() transforms an array into a single value (number, object, etc.)
+         * @param {Array} productsArray - Products to calculate stats for
+         */
+        function updateProductStats(productsArray) {
+            const statsContainer = document.getElementById('product-stats');
+            
+            /**
+             * .reduce() accumulates a single result from array elements
+             * Parameters: (accumulator, currentElement) => newAccumulator, initialValue
+             * Here we sum all prices starting from 0
+             */
+            const totalValue = productsArray.reduce((sum, product) => {
+                return sum + (product.price * product.stock);
+            }, 0);  // 0 is the initial value for 'sum'
+            
+            // Calculate total products using .reduce() to sum stock
+            const totalStock = productsArray.reduce((sum, product) => sum + product.stock, 0);
+            
+            // Calculate average rating
+            const avgRating = productsArray.reduce((sum, product) => sum + product.rating, 0) / productsArray.length;
+            
+            // Count products by category using .reduce() to build an object
+            const categoryCount = productsArray.reduce((counts, product) => {
+                // If category doesn't exist in counts, initialize to 0
+                counts[product.category] = (counts[product.category] || 0) + 1;
+                return counts;
+            }, {});  // {} is initial value (empty object)
+            
+            // Create stats display using template literals
+            statsContainer.innerHTML = `
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-purple-600">${productsArray.length}</div>
+                    <div class="text-sm text-gray-600">Products</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-blue-600">$${totalValue.toLocaleString()}</div>
+                    <div class="text-sm text-gray-600">Total Value</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-green-600">${totalStock}</div>
+                    <div class="text-sm text-gray-600">Total Stock</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-yellow-600">${avgRating.toFixed(1)}</div>
+                    <div class="text-sm text-gray-600">Avg Rating</div>
+                </div>
+            `;
+        }
+        
+        
+        // ==========================================
+        // DEMO 2: TASK MANAGER FUNCTIONS
+        // ==========================================
+        
+        /**
+         * Handle task form submission
+         * Demonstrates event handling, form data access, and class instantiation
+         */
+        document.getElementById('task-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent page reload on form submit
+            
+            // Get form values
+            const input = document.getElementById('task-input');
+            const prioritySelect = document.getElementById('task-priority');
+            
+            const description = input.value.trim();  // Remove whitespace
+            const priority = prioritySelect.value;
+            
+            // Validate input
+            if (description === '') {
+                alert('Please enter a task description');
+                return;
+            }
+            
+            // Create new Task instance using the class constructor
+            const newTask = new Task(description, priority);
+            
+            // Add to tasks array
+            tasks.push(newTask);
+            
+            // Add to DOM using the class method
+            newTask.addToDOM();
+            
+            // Clear form
+            input.value = '';
+            prioritySelect.value = 'low';
+            
+            // Update summary statistics
+            updateTaskSummary();
+        });
+        
+        /**
+         * Update task summary statistics
+         * Demonstrates multiple array methods working together
+         */
+        function updateTaskSummary() {
+            const summaryContainer = document.getElementById('task-summary');
+            
+            // Total tasks
+            const total = tasks.length;
+            
+            // Completed tasks using .filter()
+            const completed = tasks.filter(task => task.completed).length;
+            
+            // Remaining (incomplete) tasks
+            const remaining = total - completed;
+            
+            // Count high priority incomplete tasks using .filter() with multiple conditions
+            const urgentTasks = tasks.filter(task => task.priority === 'high' && !task.completed).length;
+            
+            // Update DOM with template literal
+            summaryContainer.innerHTML = `
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-blue-600">${total}</div>
+                    <div class="text-sm text-gray-600">Total Tasks</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-green-600">${completed}</div>
+                    <div class="text-sm text-gray-600">Completed</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-yellow-600">${remaining}</div>
+                    <div class="text-sm text-gray-600">Remaining</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <div class="text-2xl font-bold text-red-600">${urgentTasks}</div>
+                    <div class="text-sm text-gray-600">Urgent</div>
+                </div>
+            `;
+        }
+        
+        
+        // ==========================================
+        // DEMO 3: SALES DASHBOARD FUNCTIONS
+        // ==========================================
+        
+        /**
+         * Update dashboard with sales data
+         * Demonstrates .reduce() for complex aggregations and Object methods
+         * @param {string} view - 'daily', 'weekly', or 'monthly'
+         */
+        function updateDashboard(view) {
+            currentSalesView = view;
+            const sales = salesData[view];  // Access object property using bracket notation
+            
+            const metricsContainer = document.getElementById('dashboard-metrics');
+            const salesListContainer = document.getElementById('sales-list');
+            
+            /**
+             * Calculate metrics using .reduce()
+             * This is the POWER of .reduce() - transforming array into aggregated data
+             */
+            
+            // Total revenue: sum of all (amount * quantity)
+            const totalRevenue = sales.reduce((total, sale) => {
+                return total + (sale.amount * sale.quantity);
+            }, 0);
+            
+            // Total items sold: sum of all quantities
+            const totalItems = sales.reduce((total, sale) => {
+                return total + sale.quantity;
+            }, 0);
+            
+            // Average sale value
+            const avgSaleValue = totalRevenue / sales.length;
+            
+            // Find highest sale using .reduce() to compare values
+            const highestSale = sales.reduce((max, sale) => {
+                const saleTotal = sale.amount * sale.quantity;
+                const maxTotal = max.amount * max.quantity;
+                return saleTotal > maxTotal ? sale : max;
+            });
+            
+            // Create product breakdown object using .reduce()
+            // This groups sales by product and sums their totals
+            const productBreakdown = sales.reduce((breakdown, sale) => {
+                if (!breakdown[sale.product]) {
+                    breakdown[sale.product] = 0;
+                }
+                breakdown[sale.product] += sale.amount * sale.quantity;
+                return breakdown;
+            }, {});
+            
+            // Using Object.entries() to convert object to array of [key, value] pairs
+            // Then .map() to create HTML for each product
+            const productsList = Object.entries(productBreakdown)
+                .map(([product, total]) => `<li>${product}: $${total.toLocaleString()}</li>`)
+                .join('');  // Join array elements into single string
+            
+            // Render metrics cards
+            metricsContainer.innerHTML = `
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold">$${totalRevenue.toLocaleString()}</div>
+                    <div class="text-sm opacity-90">Total Revenue</div>
+                </div>
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold">${totalItems}</div>
+                    <div class="text-sm opacity-90">Items Sold</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-4 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold">$${avgSaleValue.toFixed(2)}</div>
+                    <div class="text-sm opacity-90">Avg Sale</div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-4 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold">$${(highestSale.amount * highestSale.quantity).toLocaleString()}</div>
+                    <div class="text-sm opacity-90">Highest Sale</div>
+                </div>
+            `;
+            
+            // Render sales list using .map()
+            salesListContainer.innerHTML = sales.map(sale => {
+                const total = sale.amount * sale.quantity;
+                return `
+                    <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                        <div>
+                            <div class="font-semibold text-gray-800">${sale.product}</div>
+                            <div class="text-sm text-gray-600">${sale.date} • Qty: ${sale.quantity}</div>
+                        </div>
+                        <div class="text-lg font-bold text-green-600">$${total.toLocaleString()}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        /**
+         * Add a random sale to the current view
+         * Demonstrates array manipulation with .push() and .splice()
+         */
+        function addRandomSale() {
+            const products = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Tablet', 'Phone'];
+            const randomProduct = products[Math.floor(Math.random() * products.length)];
+            const randomAmount = Math.floor(Math.random() * 1000) + 50;
+            const randomQuantity = Math.floor(Math.random() * 5) + 1;
+            
+            const newSale = {
+                id: Date.now(),  // Use timestamp as unique ID
+                product: randomProduct,
+                amount: randomAmount,
+                quantity: randomQuantity,
+                date: new Date().toISOString().split('T')[0]  // Format: YYYY-MM-DD
+            };
+            
+            // Add to current view's data using .push()
+            salesData[currentSalesView].push(newSale);
+            
+            // Keep only last 10 sales using .slice()
+            // .slice(-10) gets last 10 elements (negative index counts from end)
+            if (salesData[currentSalesView].length > 10) {
+                salesData[currentSalesView] = salesData[currentSalesView].slice(-10);
+            }
+            
+            // Refresh dashboard
+            updateDashboard(currentSalesView);
+        }
+        
+        
+        // ==========================================
+        // DEMO 4: USER DIRECTORY FUNCTIONS
+        // ==========================================
+        
+        /**
+         * Render user directory
+         * Demonstrates combining multiple array methods (.filter(), .map())
+         */
+        function renderUsers() {
+            const container = document.getElementById('user-directory');
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Get search term from input
+            const searchTerm = document.getElementById('user-search').value.toLowerCase().trim();
+            
+            /**
+             * Filter users based on search term
+             * .filter() combined with string methods (.includes(), .toLowerCase())
+             */
+            let filteredUsers = displayedUsers;
+            
+            if (searchTerm) {
+                filteredUsers = displayedUsers.filter(user => {
+                    // Check if name or email includes search term
+                    return user.name.toLowerCase().includes(searchTerm) || 
+                           user.email.toLowerCase().includes(searchTerm);
+                });
+            }
+            
+            // If no results, show message
+            if (filteredUsers.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <div class="text-6xl mb-4">🔍</div>
+                        <div class="text-xl">No users found matching "${searchTerm}"</div>
+                    </div>
+                `;
+                updateUserStats(filteredUsers);
+                return;
+            }
+            
+            /**
+             * .map() creates user card elements
+             * Demonstrates object destructuring in function parameter
+             */
+            const userCards = filteredUsers.map(({ id, name, email, age, department }) => {
+                const card = document.createElement('article');
+                card.className = 'bg-white rounded-lg shadow-md p-5 card-hover fade-in';
+                
+                // User avatar (just initials)
+                const avatar = document.createElement('div');
+                avatar.className = 'w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-3';
+                const initials = name.split(' ').map(n => n[0]).join('');  // Get first letter of each word
+                avatar.textContent = initials;
+                
+                // User name
+                const nameEl = document.createElement('h3');
+                nameEl.className = 'text-xl font-semibold text-gray-800 mb-1';
+                nameEl.textContent = name;
+                
+                // User email
+                const emailEl = document.createElement('div');
+                emailEl.className = 'text-sm text-gray-600 mb-2';
+                emailEl.textContent = email;
+                
+                // User details
+                const details = document.createElement('div');
+                details.className = 'flex justify-between text-sm text-gray-700 mt-3 pt-3 border-t';
+                details.innerHTML = `
+                    <span><strong>Age:</strong> ${age}</span>
+                    <span><strong>Dept:</strong> ${department}</span>
+                `;
+                
+                // Assemble card
+                card.appendChild(avatar);
+                card.appendChild(nameEl);
+                card.appendChild(emailEl);
+                card.appendChild(details);
+                
+                return card;
+            });
+            
+            // Add all cards to DOM using .forEach()
+            userCards.forEach(card => container.appendChild(card));
+            
+            // Update statistics
+            updateUserStats(filteredUsers);
+        }
+        
+        /**
+         * Sort users by field and direction
+         * Demonstrates Array.sort() with custom comparator function
+         * @param {string} field - Property to sort by ('name' or 'age')
+         * @param {string} direction - 'asc' or 'desc'
+         */
+        function sortUsers(field, direction) {
+            /**
+             * .sort() mutates the original array
+             * Comparator function returns:
+             *   negative number if a should come before b
+             *   positive number if b should come before a
+             *   zero if they're equal
+             */
+            displayedUsers.sort((a, b) => {
+                let compareResult;
+                
+                if (field === 'name') {
+                    // String comparison using localeCompare()
+                    compareResult = a.name.localeCompare(b.name);
+                } else if (field === 'age') {
+                    // Numeric comparison
+                    compareResult = a.age - b.age;
+                }
+                
+                // Reverse if descending
+                return direction === 'desc' ? -compareResult : compareResult;
+            });
+            
+            // Re-render with sorted data
+            renderUsers();
+        }
+        
+        /**
+         * Clear search and reset display
+         */
+        function clearSearch() {
+            document.getElementById('user-search').value = '';
+            displayedUsers = [...users];  // Reset to original array
+            renderUsers();
+        }
+        
+        /**
+         * Update user statistics display
+         */
+        function updateUserStats(userList) {
+            const statsContainer = document.getElementById('user-stats');
+            
+            // Calculate average age using .reduce()
+            const avgAge = userList.length > 0 
+                ? (userList.reduce((sum, user) => sum + user.age, 0) / userList.length).toFixed(1)
+                : 0;
+            
+            // Count by department using .reduce()
+            const deptCounts = userList.reduce((counts, user) => {
+                counts[user.department] = (counts[user.department] || 0) + 1;
+                return counts;
+            }, {});
+            
+            // Find most common department using Object.entries()
+            const topDept = Object.entries(deptCounts)
+                .sort((a, b) => b[1] - a[1])[0];  // Sort by count descending, take first
+            
+            statsContainer.innerHTML = `
+                <div class="text-lg">
+                    <strong>Showing:</strong> ${userList.length} of ${users.length} users
+                    <strong class="ml-4">Average Age:</strong> ${avgAge} years
+                    ${topDept ? `<strong class="ml-4">Top Department:</strong> ${topDept[0]} (${topDept[1]} users)` : ''}
+                </div>
+            `;
+        }
+        
+        /**
+         * Array.find() demonstration
+         * .find() returns the FIRST element that matches the condition (or undefined)
+         */
+        function testFind() {
+            const resultDiv = document.getElementById('array-method-result');
+            
+            // Find user with ID 5
+            const foundUser = users.find(user => user.id === 5);
+            
+            if (foundUser) {
+                resultDiv.innerHTML = `
+                    <strong>.find() Result:</strong> Found user with ID 5:<br>
+                    <code class="text-purple-600">${JSON.stringify(foundUser, null, 2)}</code>
+                `;
+            } else {
+                resultDiv.innerHTML = '<strong>.find() Result:</strong> No user found with ID 5';
+            }
+        }
+        
+        /**
+         * Array.some() demonstration
+         * .some() returns true if AT LEAST ONE element passes the test
+         */
+        function testSome() {
+            const resultDiv = document.getElementById('array-method-result');
+            
+            // Check if any user is over 60
+            const hasOver60 = users.some(user => user.age > 60);
+            
+            resultDiv.innerHTML = `
+                <strong>.some() Result:</strong> Is there any user over 60 years old?<br>
+                <code class="text-purple-600 text-lg">${hasOver60 ? '✅ YES' : '❌ NO'}</code><br>
+                <small class="text-gray-600">.some() checks if at least one element passes the test</small>
+            `;
+        }
+        
+        /**
+         * Array.every() demonstration
+         * .every() returns true if ALL elements pass the test
+         */
+        function testEvery() {
+            const resultDiv = document.getElementById('array-method-result');
+            
+            // Check if all users are adults (18+)
+            const allAdults = users.every(user => user.age >= 18);
+            
+            resultDiv.innerHTML = `
+                <strong>.every() Result:</strong> Are all users adults (18+)?<br>
+                <code class="text-purple-600 text-lg">${allAdults ? '✅ YES' : '❌ NO'}</code><br>
+                <small class="text-gray-600">.every() checks if ALL elements pass the test</small>
+            `;
+        }
+        
+        /**
+         * Add real-time search listener
+         * Demonstrates event listeners on input fields
+         */
+        document.getElementById('user-search').addEventListener('input', function() {
+            renderUsers();  // Re-render on every keystroke
+        });
+        
+        
+        // ==========================================
+        // INITIALIZATION - Run when page loads
+        // ==========================================
+        
+        /**
+         * Initialize all demos when DOM is fully loaded
+         * This ensures all HTML elements exist before we try to manipulate them
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 JavaScript DOM Demo Initialized!');
+            
+            // DEMO 1: Render initial products
+            renderProducts(products);
+            
+            // DEMO 2: Initialize with empty task summary
+            updateTaskSummary();
+            
+            // DEMO 3: Show daily sales by default
+            updateDashboard('daily');
+            
+            // DEMO 4: Render initial user directory
+            renderUsers();
+            
+            console.log('✅ All demos loaded successfully!');
+            console.log('📚 Explore the code comments to learn about each array method and DOM technique!');
+        });
+    </script>
+
+</body>
+</html>

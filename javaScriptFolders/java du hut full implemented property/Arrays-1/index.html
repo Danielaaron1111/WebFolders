@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and DOM Manipulation</title>
+    <!-- Pico CSS Framework - Minimal, semantic CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        /* Custom overrides and additions to Pico CSS */
+        body {
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+        }
+
+        /* Section cards with light border */
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: var(--pico-border-radius);
+            background: var(--pico-card-background-color);
+        }
+
+        /* Description callout boxes */
+        .section-description {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--pico-code-background-color);
+            border-left: 3px solid var(--pico-primary);
+            border-radius: var(--pico-border-radius);
+            font-size: 0.9rem;
+        }
+
+        /* List items for fruits */
+        .fruit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fruit-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: var(--pico-border-radius);
+            transition: box-shadow 0.2s;
+        }
+
+        .fruit-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Code output display */
+        .code-output {
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            background: var(--pico-code-background-color);
+            border-radius: var(--pico-border-radius);
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+        }
+
+        /* Empty state message */
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--pico-muted-color);
+            font-style: italic;
+        }
+
+        /* Input group for inline forms */
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Small button variant */
+        .btn-small {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1>JavaScript Arrays + DOM Manipulation</h1>
+        <p class="subtitle">Interactive examples covering elements 1-4 from the lesson</p>
+
+        <!-- Section 1: Basic Array Rendering -->
+        <section class="section">
+            <h2>1. Rendering an Array to the DOM</h2>
+            <div class="section-description">
+                <strong>Concept:</strong> We have an array of fruits. Using <code>.forEach()</code>, we create an <code>&lt;li&gt;</code> element for each fruit and add it to the DOM.
+            </div>
+            
+            <ul id="fruit-list-basic" class="fruit-list"></ul>
+            
+            <div class="code-output" id="array-output-1">Array: ["Apple", "Banana", "Cherry"]</div>
+        </section>
+
+        <!-- Section 2: Adding Items (Push) -->
+        <section class="section">
+            <h2>2. Adding Items to Array and DOM</h2>
+            <div class="section-description">
+                <strong>Concept:</strong> Type a new fruit name and click "Add Fruit". The item is added to the array using <code>.push()</code>, then the DOM is re-rendered.
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="fruit-input" placeholder="Enter a fruit name (e.g., Mango)">
+                <button class="btn btn-primary" id="add-fruit">Add Fruit</button>
+            </div>
+            
+            <ul id="fruit-list-interactive" class="fruit-list"></ul>
+            
+            <div class="code-output" id="array-output-2"></div>
+        </section>
+
+        <!-- Section 3: Removing Items (Filter) -->
+        <section class="section">
+            <h2>3. Removing Items with .filter()</h2>
+            <div class="section-description">
+                <strong>Concept:</strong> Each fruit has a "Remove" button. Clicking it uses <code>.filter()</code> to create a new array without that fruit, then updates the DOM.
+            </div>
+            
+            <ul id="fruit-list-removable" class="fruit-list"></ul>
+            
+            <div class="code-output" id="array-output-3"></div>
+        </section>
+
+        <!-- Section 4: Clear All -->
+        <section class="section">
+            <h2>4. Clear All Items</h2>
+            <div class="section-description">
+                <strong>Concept:</strong> Practice setting an array to empty <code>[]</code> and updating the DOM to reflect that change.
+            </div>
+            
+            <button class="btn btn-danger mt-16" id="clear-all">Clear All Fruits</button>
+            
+            <ul id="fruit-list-clearable" class="fruit-list"></ul>
+            
+            <div class="code-output" id="array-output-4"></div>
+        </section>
+    </div>
+
+    <script>
+        // ========================================
+        // SECTION 1: Basic Array Rendering
+        // ========================================
+        
+        // Step 1: Get reference to the UL element in the DOM
+        const fruitListBasic = document.getElementById("fruit-list-basic");
+        const arrayOutput1 = document.getElementById("array-output-1");
+        
+        // Step 2: Our initial array of fruits
+        const fruitsBasic = ["Apple", "Banana", "Cherry"];
+        
+        // Step 3: Function to render the array as list items
+        function renderBasicList() {
+            // Clear any existing content first
+            fruitListBasic.innerHTML = "";
+            
+            // Loop through each fruit in the array
+            fruitsBasic.forEach((fruit) => {
+                // Create a new <li> element for each fruit
+                const li = document.createElement("li");
+                li.className = "fruit-item"; // Add CSS class for styling
+                
+                // Create a span to hold the fruit name
+                const span = document.createElement("span");
+                span.className = "fruit-name";
+                span.textContent = fruit; // Set the text to the fruit name
+                
+                // Add the span to the list item
+                li.appendChild(span);
+                
+                // Add the list item to the UL element
+                fruitListBasic.appendChild(li);
+            });
+        }
+        
+        // Call the function to display the list when page loads
+        renderBasicList();
+
+        // ========================================
+        // SECTION 2: Adding Items to Array
+        // ========================================
+        
+        // Get DOM references for input, button, and list
+        const fruitInput = document.getElementById("fruit-input");
+        const addFruitBtn = document.getElementById("add-fruit");
+        const fruitListInteractive = document.getElementById("fruit-list-interactive");
+        const arrayOutput2 = document.getElementById("array-output-2");
+        
+        // Our working array (let because we'll modify it)
+        let fruitsInteractive = ["Apple", "Banana", "Cherry"];
+        
+        // Function to render the interactive list
+        function renderInteractiveList() {
+            // Clear the list
+            fruitListInteractive.innerHTML = "";
+            
+            // Loop through and create list items
+            fruitsInteractive.forEach((fruit) => {
+                const li = document.createElement("li");
+                li.className = "fruit-item";
+                
+                const span = document.createElement("span");
+                span.className = "fruit-name";
+                span.textContent = fruit;
+                
+                li.appendChild(span);
+                fruitListInteractive.appendChild(li);
+            });
+            
+            // Update the code output to show current array
+            arrayOutput2.textContent = `Array: ${JSON.stringify(fruitsInteractive)}`;
+        }
+        
+        // Add event listener to the "Add Fruit" button
+        addFruitBtn.addEventListener("click", () => {
+            // Get the value from the input field and remove extra spaces
+            const newFruit = fruitInput.value.trim();
+            
+            // Only add if the input is not empty
+            if (newFruit) {
+                // Add the new fruit to the array using .push()
+                fruitsInteractive.push(newFruit);
+                
+                // Re-render the list to show the new fruit
+                renderInteractiveList();
+                
+                // Clear the input field for the next entry
+                fruitInput.value = "";
+            }
+        });
+        
+        // Allow pressing "Enter" to add fruit
+        fruitInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                addFruitBtn.click();
+            }
+        });
+        
+        // Initial render
+        renderInteractiveList();
+
+        // ========================================
+        // SECTION 3: Removing Items with Filter
+        // ========================================
+        
+        // Get DOM references
+        const fruitListRemovable = document.getElementById("fruit-list-removable");
+        const arrayOutput3 = document.getElementById("array-output-3");
+        
+        // Our array for this section
+        let fruitsRemovable = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+        
+        // Function to render list with remove buttons
+        function renderRemovableList() {
+            // Clear the list
+            fruitListRemovable.innerHTML = "";
+            
+            // Loop through each fruit
+            fruitsRemovable.forEach((fruit) => {
+                const li = document.createElement("li");
+                li.className = "fruit-item";
+                
+                // Create fruit name span
+                const span = document.createElement("span");
+                span.className = "fruit-name";
+                span.textContent = fruit;
+                
+                // Create a "Remove" button for this fruit
+                const removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.className = "btn btn-small btn-danger";
+                
+                // Add click event to remove button
+                removeBtn.addEventListener("click", () => {
+                    // Use .filter() to create a new array WITHOUT this fruit
+                    // .filter() keeps only items where the condition is true
+                    // Here we keep fruits that DON'T match the current fruit
+                    fruitsRemovable = fruitsRemovable.filter((f) => f !== fruit);
+                    
+                    // Re-render the list to show the updated array
+                    renderRemovableList();
+                });
+                
+                // Add name and button to the list item
+                li.appendChild(span);
+                li.appendChild(removeBtn);
+                
+                // Add list item to the UL
+                fruitListRemovable.appendChild(li);
+            });
+            
+            // Update code output
+            arrayOutput3.textContent = `Array: ${JSON.stringify(fruitsRemovable)}`;
+        }
+        
+        // Initial render
+        renderRemovableList();
+
+        // ========================================
+        // SECTION 4: Clear All
+        // ========================================
+        
+        // Get DOM references
+        const clearAllBtn = document.getElementById("clear-all");
+        const fruitListClearable = document.getElementById("fruit-list-clearable");
+        const arrayOutput4 = document.getElementById("array-output-4");
+        
+        // Our array for this section
+        let fruitsClearable = ["Apple", "Banana", "Cherry", "Mango"];
+        
+        // Function to render the clearable list
+        function renderClearableList() {
+            // Clear the list
+            fruitListClearable.innerHTML = "";
+            
+            // Check if array is empty
+            if (fruitsClearable.length === 0) {
+                // Show empty state message
+                const emptyDiv = document.createElement("div");
+                emptyDiv.className = "empty-state";
+                emptyDiv.textContent = "No fruits in the list. The array is empty!";
+                fruitListClearable.appendChild(emptyDiv);
+            } else {
+                // Render fruits normally
+                fruitsClearable.forEach((fruit) => {
+                    const li = document.createElement("li");
+                    li.className = "fruit-item";
+                    
+                    const span = document.createElement("span");
+                    span.className = "fruit-name";
+                    span.textContent = fruit;
+                    
+                    li.appendChild(span);
+                    fruitListClearable.appendChild(li);
+                });
+            }
+            
+            // Update code output
+            arrayOutput4.textContent = `Array: ${JSON.stringify(fruitsClearable)}`;
+        }
+        
+        // Add event listener to "Clear All" button
+        clearAllBtn.addEventListener("click", () => {
+            // Set the array to empty
+            fruitsClearable = [];
+            
+            // Re-render to show empty state
+            renderClearableList();
+        });
+        
+        // Initial render
+        renderClearableList();
+    </script>
+</body>
+</html>
