@@ -68,8 +68,8 @@ body {
 }
 
 .card-image {
-    width: 100%;
-    height: 200px;
+    width: auto;
+    height: 400px;
     overflow: hidden;
     background-color: #1a1a1a;
 }
@@ -79,6 +79,25 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    object-position: center top;
+    /* using object fit cover and object position help
+    card to focus depending on the picture.
+    Also: we can use center top 
+    Current options:
+center top - keeps the top of the image visible, crops from bottom
+center bottom - keeps the bottom of the image visible, crops from top
+center center (default) - centers the image, crops equally from top/bottom
+center 30% - shows image starting at 30% from the top
+left top, right bottom, etc. - for horizontal positioning too
+Example: If your image is taller than the 400px container:
+center top → shows the head/top portion
+center bottom → shows the feet/bottom portion
+center 20% → shows a bit below the top
+Try changing the value and refresh your browser to see different parts of your images! For pushing images "down" (showing more of the bottom), use center bottom or percentages like center 70%.
+    */
+
 }
 
 .character-card:hover .card-image img {
