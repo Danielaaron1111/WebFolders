@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="Daniel">
+        <meta name="description" content="Professional painting services form - get a quote for your home painting project.">
+
+        <title>Painting Services Quote Form</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body>
+        <main>
+            <section>
+                <!-- Introduction -->
+                <div class="introduction">
+                    <h1>Professional Painting Services</h1>
+
+                    <p>Transform your space with our expert painting services. Whether you're looking to refresh a single room or update your entire home, our experienced team is here to bring your vision to life.</p>
+
+                    <p>Fill out the form to get started on your painting project. We'll review your requirements and get back to you with a personalized quote!</p>
+                </div>
+
+                <form action="index.html" method="POST">
+                    <!-- Personal Information -->
+                    <fieldset>
+                        <legend>Personal Information</legend>
+
+                        <!-- Full Name -->
+                        <div>
+                            <label for="fullname">Full Name</label>
+                            <input type="text" name="fullname" id="fullname" placeholder="John Doe" maxlength="50" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="hello@example.com" aria-describedby="email-help" required>
+                            <p class="help" id="email-help">
+                                We'll use this to send you your quote and updates.
+                            </p>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="\d{3}-\d{3}-\d{4}" aria-describedby="phone-help" required>
+                            <p class="help" id="phone-help">
+                                Please use the following format: 123-456-7890
+                            </p>
+                        </div>
+                    </fieldset>
+
+                    <!-- Address Information -->
+                    <fieldset>
+                        <legend>Address Information</legend>
+
+                        <!-- Street Address -->
+                        <div>
+                            <label for="street">Street Address</label>
+                            <input type="text" name="street" id="street" placeholder="123 Main Street" required>
+                        </div>
+
+                        <!-- City and Postal Code Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" name="city" id="city" placeholder="Edmonton" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postal">Postal Code</label>
+                                <input type="text" name="postal" id="postal" placeholder="A1A 1A1" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" aria-describedby="postal-help" required>
+                                <p class="help" id="postal-help">
+                                    Please use the following format: A1A 1A1
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Province -->
+                        <div>
+                            <label for="province">Province or Territory</label>
+                            <select name="province" id="province" required>
+                                <option value="">-- Please choose an option --</option>
+                                <option value="AB">Alberta</option>
+                                <option value="BC">British Columbia</option>
+                                <option value="MB">Manitoba</option>
+                                <option value="NB">New Brunswick</option>
+                                <option value="NL">Newfoundland and Labrador</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="ON">Ontario</option>
+                                <option value="PE">Prince Edward Island</option>
+                                <option value="QC">Quebec</option>
+                                <option value="SK">Saskatchewan</option>
+                                <option value="NT">Northwest Territories</option>
+                                <option value="NU">Nunavut</option>
+                                <option value="YT">Yukon</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- Rooms to Paint -->
+                    <fieldset>
+                        <legend>Which Rooms to Paint</legend>
+
+                        <!-- Kitchen -->
+                        <div class="room-section">
+                            <h3>Kitchen</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="kitchen-width">Width (feet)</label>
+                                        <input type="number" name="kitchen-width" id="kitchen-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="kitchen-length">Length (feet)</label>
+                                        <input type="number" name="kitchen-length" id="kitchen-length" placeholder="15" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="kitchen-ceiling">Include Ceiling</label>
+                                        <select name="kitchen-ceiling" id="kitchen-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="kitchen-baseboards">Include Baseboards</label>
+                                        <select name="kitchen-baseboards" id="kitchen-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Living Room -->
+                        <div class="room-section">
+                            <h3>Living Room</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="living-width">Width (feet)</label>
+                                        <input type="number" name="living-width" id="living-width" placeholder="16" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="living-length">Length (feet)</label>
+                                        <input type="number" name="living-length" id="living-length" placeholder="20" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="living-ceiling">Include Ceiling</label>
+                                        <select name="living-ceiling" id="living-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="living-baseboards">Include Baseboards</label>
+                                        <select name="living-baseboards" id="living-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dining Room -->
+                        <div class="room-section">
+                            <h3>Dining Room</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="dining-width">Width (feet)</label>
+                                        <input type="number" name="dining-width" id="dining-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="dining-length">Length (feet)</label>
+                                        <input type="number" name="dining-length" id="dining-length" placeholder="14" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="dining-ceiling">Include Ceiling</label>
+                                        <select name="dining-ceiling" id="dining-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="dining-baseboards">Include Baseboards</label>
+                                        <select name="dining-baseboards" id="dining-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bathroom 1 -->
+                        <div class="room-section">
+                            <h3>Bathroom 1</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="bathroom1-width">Width (feet)</label>
+                                        <input type="number" name="bathroom1-width" id="bathroom1-width" placeholder="8" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="bathroom1-length">Length (feet)</label>
+                                        <input type="number" name="bathroom1-length" id="bathroom1-length" placeholder="10" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="bathroom1-ceiling">Include Ceiling</label>
+                                        <select name="bathroom1-ceiling" id="bathroom1-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="bathroom1-baseboards">Include Baseboards</label>
+                                        <select name="bathroom1-baseboards" id="bathroom1-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bathroom 2 -->
+                        <div class="room-section">
+                            <h3>Bathroom 2</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="bathroom2-width">Width (feet)</label>
+                                        <input type="number" name="bathroom2-width" id="bathroom2-width" placeholder="8" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="bathroom2-length">Length (feet)</label>
+                                        <input type="number" name="bathroom2-length" id="bathroom2-length" placeholder="10" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="bathroom2-ceiling">Include Ceiling</label>
+                                        <select name="bathroom2-ceiling" id="bathroom2-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="bathroom2-baseboards">Include Baseboards</label>
+                                        <select name="bathroom2-baseboards" id="bathroom2-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bedroom 1 -->
+                        <div class="room-section">
+                            <h3>Bedroom 1</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="bedroom1-width">Width (feet)</label>
+                                        <input type="number" name="bedroom1-width" id="bedroom1-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="bedroom1-length">Length (feet)</label>
+                                        <input type="number" name="bedroom1-length" id="bedroom1-length" placeholder="14" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="bedroom1-ceiling">Include Ceiling</label>
+                                        <select name="bedroom1-ceiling" id="bedroom1-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="bedroom1-baseboards">Include Baseboards</label>
+                                        <select name="bedroom1-baseboards" id="bedroom1-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bedroom 2 -->
+                        <div class="room-section">
+                            <h3>Bedroom 2</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="bedroom2-width">Width (feet)</label>
+                                        <input type="number" name="bedroom2-width" id="bedroom2-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="bedroom2-length">Length (feet)</label>
+                                        <input type="number" name="bedroom2-length" id="bedroom2-length" placeholder="14" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="bedroom2-ceiling">Include Ceiling</label>
+                                        <select name="bedroom2-ceiling" id="bedroom2-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="bedroom2-baseboards">Include Baseboards</label>
+                                        <select name="bedroom2-baseboards" id="bedroom2-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bedroom 3 -->
+                        <div class="room-section">
+                            <h3>Bedroom 3</h3>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="bedroom3-width">Width (feet)</label>
+                                        <input type="number" name="bedroom3-width" id="bedroom3-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="bedroom3-length">Length (feet)</label>
+                                        <input type="number" name="bedroom3-length" id="bedroom3-length" placeholder="14" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="bedroom3-ceiling">Include Ceiling</label>
+                                        <select name="bedroom3-ceiling" id="bedroom3-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="bedroom3-baseboards">Include Baseboards</label>
+                                        <select name="bedroom3-baseboards" id="bedroom3-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Room -->
+                        <div class="room-section">
+                            <h3>Other Room</h3>
+                            <div>
+                                <label for="other-room">Room Type</label>
+                                <input type="text" name="other-room" id="other-room" placeholder="e.g., Office, Basement, Hallway">
+                            </div>
+                            <div class="room-details">
+                                <div class="room-measurements">
+                                    <div class="measurement-group">
+                                        <label for="other-width">Width (feet)</label>
+                                        <input type="number" name="other-width" id="other-width" placeholder="12" min="1" max="100">
+                                    </div>
+                                    <div class="measurement-group">
+                                        <label for="other-length">Length (feet)</label>
+                                        <input type="number" name="other-length" id="other-length" placeholder="14" min="1" max="100">
+                                    </div>
+                                </div>
+                                <div class="room-options">
+                                    <div class="option-group">
+                                        <label for="other-ceiling">Include Ceiling</label>
+                                        <select name="other-ceiling" id="other-ceiling">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-group">
+                                        <label for="other-baseboards">Include Baseboards</label>
+                                        <select name="other-baseboards" id="other-baseboards">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Project Details -->
+                    <fieldset>
+                        <legend>Project Details</legend>
+
+                        <!-- Preferred Week -->
+                        <div>
+                            <label for="preferred-week">Preferred Week to Have Work Done</label>
+                            <input type="week" name="preferred-week" id="preferred-week" required>
+                        </div>
+
+                        <!-- Preferred Contact Method -->
+                        <div>
+                            <label for="contact-method">Preferred Method of Contact</label>
+                            <select name="contact-method" id="contact-method" required>
+                                <option value="">-- Please choose an option --</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                                <option value="text">Text Message</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message">Additional Message or Special Requests</label>
+                            <textarea name="message" id="message" rows="6" placeholder="Tell us about any color preferences, special requirements, or questions you have..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Terms and Agreement -->
+                    <fieldset class="checkbox-field">
+                        <div class="checkbox-container">
+                            <input type="checkbox" name="agree" id="agree" required>
+                            <label for="agree">I agree to be contacted (CASL compliance)</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Submit -->
+                    <input type="submit" id="submit" name="submit" value="Get Your Quote">
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
+
+

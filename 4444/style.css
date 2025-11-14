@@ -1,0 +1,317 @@
+:root {
+    --background: #f9fafb;
+    --border: #cbd5e1;
+    --accent: #2563eb;
+    --hover: #1d4ed8;
+    --body: #1e293b;
+    --label: #334155;
+    --help: #6c757d;
+    --shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
+    --white: #fff;
+    --light-gray: #f1f5f9;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--body);
+    font-family: "Roboto", sans-serif;
+}
+
+/* Typography */
+h1 {
+    color: var(--white);
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Layout */
+/* We're using flexbox here to centre the form. */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* The section is our de-facto inner-container. */
+section {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.introduction,
+form {
+    padding: 2rem;
+}
+
+.introduction {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.introduction p {
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+legend {
+    color: var(--accent);
+    font-size: 1.75rem;
+    font-weight: 500;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+fieldset div {
+    margin-top: 1.5rem;
+}
+
+fieldset div:first-of-type {
+    margin-top: 0;
+}
+
+label {
+    color: var(--label);
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+/* Text Inputs and Select */
+fieldset input[type="text"],
+fieldset input[type="email"],
+fieldset input[type="tel"],
+fieldset input[type="number"],
+fieldset input[type="week"],
+fieldset select,
+fieldset textarea {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 0.5rem 0 0.25rem 0;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+fieldset textarea {
+    resize: vertical;
+}
+
+/* Focus States */
+fieldset input:focus,
+fieldset select:focus,
+fieldset textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Validation styles */
+fieldset input:valid:not([type="checkbox"]):not([type="week"]) {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2310b981" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') right 0.75rem center no-repeat;
+    background-size: 20px;
+    padding-right: 2.5rem;
+}
+
+fieldset input:invalid:not(:focus):not(:placeholder-shown):not([type="checkbox"]):not([type="week"]) {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ef4444" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>') right 0.75rem center no-repeat;
+    background-size: 20px;
+    padding-right: 2.5rem;
+    border-color: #ef4444;
+}
+
+p.help {
+    color: var(--help);
+    font-size: 0.875rem;
+    margin-left: 0.25rem;
+    margin-top: 0.25rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+fieldset input:focus ~ p.help {
+    max-height: unset;
+    overflow: visible;
+}
+
+/* Form Row for Side-by-Side Inputs */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-top: 0;
+}
+
+/* Room Sections */
+.room-section {
+    background-color: var(--light-gray);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.room-section h3 {
+    margin-top: 0;
+}
+
+.room-section > div:first-of-type {
+    margin-top: 0;
+}
+
+.room-details {
+    margin-top: 1rem;
+}
+
+.room-measurements {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.measurement-group {
+    flex: 1;
+}
+
+.measurement-group label {
+    font-size: 0.875rem;
+}
+
+.measurement-group input {
+    margin-top: 0.25rem;
+}
+
+.room-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.option-group {
+    flex: 1;
+}
+
+.option-group label {
+    font-size: 0.875rem;
+}
+
+.option-group select {
+    margin-top: 0.25rem;
+}
+
+/* Checkbox Styling */
+.checkbox-field {
+    margin-bottom: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-container label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--white);
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 2rem auto 0 auto;
+    padding: 0.875rem 2rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 20rem;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: var(--hover);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .introduction {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    form {
+        padding: 2.5rem;
+    }
+
+    .room-section {
+        padding: 2rem;
+    }
+
+    input[type="submit"] {
+        max-width: 16rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .introduction {
+        padding: 3rem;
+    }
+
+    form {
+        padding: 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    legend {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        max-width: 1400px;
+    }
+}

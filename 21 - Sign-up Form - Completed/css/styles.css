@@ -1,0 +1,178 @@
+:root {
+    --background: #f9fafb;
+    --border: #cbd5e1;
+    --accent: #563d7c;
+    --hover: #7A43B6;
+    --body: #1e293b;
+    --label: #334155;
+    --help: #6c757d;
+    --shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
+    --white: #fff;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--body);
+    font-family: "Roboto", sans-serif;
+}
+
+/* Typography */
+h1 {
+    color: var(--white);
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Layout */
+/* We're using flexbox here to centre the form. */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* The section is our de-facto inner-container. */
+section {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin: auto;
+    max-width: 960px;
+}
+
+.introduction,
+form {
+    padding: 2rem;
+}
+
+.introduction {
+    background: url('../img/cosmic-bg.webp') center / cover no-repeat;
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: rgba(225, 225, 225, 0.85);
+}
+
+.introduction p {
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    color: var(--accent);
+    font-size: 2.125rem;
+    padding: 0;
+}
+
+fieldset div {
+    margin-top: 2rem;
+}
+
+label {
+    color: var(--label);
+    display: block;
+    font-size: 1.125rem;
+    /* Because of the rounded corners of the input, things appear to be misaligned. */
+    margin-left: 0.25rem;
+}
+
+fieldset input {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 0.75rem 0 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+/* Let's do some validation styles */
+fieldset input:valid {
+    background: url('../img/check-circle-fill.svg') right 0.5rem center no-repeat;
+}
+
+/* fieldset input:invalid {
+    background: url('../img/exclamation-circle-fill.svg') right 0.5rem center no-repeat;
+} */
+
+/* Well, :valid is easy enough. But one of the big problems with :invalid is that it triggers the moment the user loads the page (and before they have a chance to interact with the form). We want to make sure that the invalid state only triggers after the user has interacted with the form field AND has left it (i.e we assume they've finished typing).
+
+To do this, we're going to do a bit of wizardry with negation statements and the :placeholder-shown pseudo-class selector. */
+
+/* This selector says: when the input is...
+
+    1. NOT empty
+    2. AND NOT in focus
+    3. AND NOT valid
+
+    ... show the exclamation mark. */
+
+fieldset input:invalid:not(:focus):not(:placeholder-shown) {
+    background: url('../img/exclamation-circle-fill.svg') right 0.5rem center no-repeat;
+}
+
+p.help {
+    color: var(--help);
+    font-size: 0.875rem;
+    margin-left: 0.25rem;
+    /* If we really wanted to be fancy, we could show and hide the helper text only when the user is focused on the input it belongs to. */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+/* This reveals the helper text. Unfortunately, most browsers' autocomplete menus will cover it up. We can turn off autocomplete with an input attribute, but it's a nuisance for the user. */
+fieldset input:focus ~ p.help {
+    max-height: unset;
+    overflow: visible;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 1rem;
+    color: var(--white);
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin: 2rem auto 0 auto;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    width: 12rem;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: var(--hover);
+}
+
+@media (min-width: 768px) {
+    section {
+        display: flex;
+    }
+
+    .introduction {
+        border-radius: 0.5rem 0 0 0.5rem;
+        width: 40%;
+    }
+
+    form {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .introduction {
+        width: 30%;
+    }
+
+    form {
+        width: 70%;
+    }
+}
