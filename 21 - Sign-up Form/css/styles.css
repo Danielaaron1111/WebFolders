@@ -1,0 +1,160 @@
+:root {
+    --background: #f9fafb;
+    --border: #cbd5e1;
+    --accent: #563d7c;
+    --hover: #7A43B6;
+    --body: #1e293b;
+    --label: #334155;
+    --help: #6c757d;
+    --shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--body);
+    font-family: "Roboto", sans-serif;
+}
+
+/* typography */
+h1 { 
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* layout */
+main {
+    align-items: center;
+    display: flex;
+    justify-self: center; 
+    /* only the element */
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    min-height: 100vh;
+    
+}
+
+section {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin: auto;
+    max-width: 960px;
+
+
+}
+.introduction, form {
+   padding: 3rem;
+
+}
+
+.introduction {
+    background: url('../img/cosmic-bg.webp') center / cover no-repeat;
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: rgba(225, 225, 225, 0.85);
+}
+.introduction p {
+    margin-bottom: 1rem;
+
+}
+
+/* form style */
+fieldset {
+    border: none;
+    padding: 0;
+    ;
+}
+legend {
+    color: var(--accent);
+    font-size: 3.125rem;
+    padding: 0;
+}
+fieldset div {
+    margin-top: 2rem;
+}
+label {
+    color: var(--label);
+    display: block;
+    font-size: 1.125rem;
+
+}
+fieldset input {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 0.75rem 0 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+  
+    
+}
+/* Validation Style */
+
+fieldset input:valid {
+    background: url('../img/check-circle-fill.svg') right 0.5rem center no-repeat;
+}
+
+/* fieldset input:invalid {
+    background: url('../img/exclamation-circle-fill.svg') right 0.5rem center no-repeat
+    no-repeat;
+} */
+
+fieldset input:invalid:not(:focus):not(:placeholder-shown) {
+    background: url('../img/exclamation-circle-fill.svg') right 0.5rem center no-repeat;
+}
+p.help {
+    color: var(--help);
+    font-size: 0.85rem;
+    margin-left: 0.25rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+fieldset input:focus ~ p.help {
+    max-height: unset;
+    overflow: visible;
+}
+
+input[type="submit"] {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 1rem;
+    color: var(--white);
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin: 2rem auto 0 auto;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    width: 12rem;
+
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: var(--hover);
+}   
+
+@media (min-width: 768px) {
+    section {
+        display: flex;
+    }
+    .introduction {
+        border-radius: 0.5rem 0 0 0.5rem;
+        width: 40%;
+    }
+    form {
+        width: 60%;
+    }
+}
+
+@media (mid-width: 1024px) {
+    .introduction {
+        width: 30%
+    }
+
+    form {
+        width: 70%;
+    }
+}

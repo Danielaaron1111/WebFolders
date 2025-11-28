@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Additional Information -->
+    <meta name="author" content="">
+    <meta name="description" content="">
+
+    <title>21 - Sign-up Form</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <!-- introduction -->
+            <div class="introduction">
+                <h1>Welcome to GameMates!</h1>
+
+                <p>Join the ultimate community of gamers where you can find your perfect gaming companions. Whether
+                    you're gearing up for intense battles in Call of Duty or looking for friendly farmers to join you in
+                    Stardew Valley, GameMates connects you with players who share your passion and playstyle.</p>
+
+                <p>Sign up now to create your profile, connect with fellow gamers, and never play alone again. With
+                    GameMates, the perfect gaming buddy is just a click away!</p>
+
+
+            </div>
+            <form action="index.html" method="POST">
+                <fieldset>
+                    <legend>Create your Account</legend>
+                    <!-- username -->
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="your username"
+                        maxlength="24" aria-describedby="Username-help" required>
+                        <p class="help" id="username-help">
+                            Your username can be a maximum of 24 characters.
+                        </p>
+                    </div>
+                    <!-- email -->
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="hello@example.com" required>
+                        <p class="help">
+                            We will only use your email address for account-related notifications.
+                        </p>
+                    </div>
+                    <!-- password -->
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" aria-describedby="password help" required>
+                        <p> Your password must contain one uppercase letter, one lowercase letter, a number     
+                            or special character, and be at least 8 characters long.
+                        </p>
+                    </div>
+                </fieldset>
+
+                <input type="submit" id="submit" name="submit" value="Sign Up">
+        </section>
+    </main>
+    </body>
+
+</html>

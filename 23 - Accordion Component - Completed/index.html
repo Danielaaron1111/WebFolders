@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>23 - The Accordion Component</title>
+
+        <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+		<meta name="description" content="This website demonstrates the accordion component and includes notes on some of the rules surrounding them.">
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/modern-reset.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<!-- Scripts -->
+		<script src="js/main.js" defer></script>
+	</head>
+	<body>
+		<section>
+			<h1>The Accordion Component</h1>
+			<p class="lead">An accordion component is a user interface (UI) element that you've likely come across before. It's named after the musical instrument because segments of it will expand and collapse just like the bellows of a real accordion.</p>
+
+			<div class="accordion">
+				<!--  Item Number 1  -->
+				<div class="accordion-item">
+					<h2 class="accordion-header toggle-btn">
+						<button type="button">
+							What is an accordion component?
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+								<title>Toggle Item Visibility</title>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+							</svg>
+						</button>
+					</h2>
+					<div class="accordion-content collapsed">
+						<p>An accordion component has multiple sections or panels that can expand or collapse when clicked or tapped by the user.</p>
+						<p>With most accordion components, only one section can be expanded or collapsed at a time. This requires a little more JavaScript than we currently know, but the logic would go something like this: when the clicks on a closed section, the script checks to see if anything else is open; if there is, it closes it, then opens the selected section.</p>
+					</div> <!-- end of .accordion-content -->
+				</div> <!-- end of .accordion-item -->
+
+				<!--  Item Number 2  -->
+				<div class="accordion-item">
+					<h2 class="accordion-header toggle-btn">
+						<button type="button">
+							Why use an accordion component?
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+								<title>Toggle Item Visibility</title>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+							</svg>
+						</button>
+					</h2>
+					<div class="accordion-content collapsed">
+						<p>Accordion components can be a great use of space. By reducing the visual 'clutter', we can keep our users from being overwhelmed by looking at too many things at once. This is a technique called 'progressive disclosure', where information is gradually revealed as needed.</p>
+						<p>Also, remember that most users will want to skim your content, not read every word. This lets them skip over things that they may not need to read without having to endlessly scroll for the things that they're looking for.</p>
+					</div> <!-- end of .accordion-content -->
+				</div> <!-- end of .accordion-item -->
+
+				<!--  Item Number 3  -->
+				<div class="accordion-item">
+					<h2 class="accordion-header toggle-btn">
+						<button type="button">
+							What rules are there about accordion components?
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+								<title>Toggle Item Visibility</title>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+							</svg>
+						</button>
+					</h2>
+					<div class="accordion-content collapsed">
+						<ul>
+							<li>We always need to make sure that anything within an accordion is <strong>accessible</strong> to all users. We can do this by using semantic elements like buttons and headings, with ARIA attributes as needed.</li>
+							<li>We also need to make sure that accordions behave appropriately on <strong>mobile devices</strong>. This means we need to avoid hover states and instead rely on click (or tap) events for the main functionality of the component.</li>
+							<li>Finally, we should always make sure that our code and animations are optimised for <strong>smooth performance</strong>. This means that we should keep our document structure as simple as possible and make sure that our users do not have to wait too long for our animations to finish before they're able to engage with the content.</li>
+						</ul>
+					</div> <!-- end of .accordion-content -->
+				</div> <!-- end of .accordion-item -->
+			</div> <!-- end of .accordion component -->
+		</section>
+	</body>
+</html>

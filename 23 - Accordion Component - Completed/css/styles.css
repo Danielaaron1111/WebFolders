@@ -1,0 +1,106 @@
+:root {
+    --body-text: #020617;
+    --indigo: #312e81;
+    --btn-text: #f0f9ff;
+    --heading-sm: 2.9375rem;
+    --heading-lg: 3.625rem;
+    --h2-text: 1.4375rem;
+}
+
+body {
+    color: var(--body-text);
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+}
+
+section {
+    margin: auto;
+    max-width: 960px;
+    padding: 2rem;
+}
+
+/* Typography */
+h1 {
+    font-weight: 300;
+    font-size: var(--heading-sm);
+    line-height: 1.125;
+    margin-top: 5rem;
+}
+
+h1,
+.lead {
+    text-align: center;
+}
+
+p, 
+li {
+    margin: 1rem 0.5rem;
+}
+
+li {
+    list-style-type: disc;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* Accordion Component */
+.accordion {
+    margin: 3rem 0;
+}
+
+.accordion-header {
+    font-weight: 300;
+    font-size: var(--h2-text);
+}
+
+button {
+    align-items: center;
+    background-color: var(--indigo);
+    border: none;
+    border-radius: 4px;
+    color: var(--btn-text);
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    width: 100%;
+}
+
+svg {
+    height: 1.4375rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    transition: opacity 200ms linear, max-height 200ms linear;
+}
+
+/* These two classes control the state of anything that we want to show or hide.
+By default, we will assign the .collapsed class to anything that can either expand or collapse.
+The .expanded class will get dynamically added or removed by JavaScript, not us. */
+.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+.expanded {
+    max-height: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* This little animation turns our plus (+) into a cross (x). */
+.toggle-btn:has(+ .expanded) svg {
+    transform: rotate(45deg);
+}
+
+@media screen and (min-width: 960px) {
+    h1 {
+        font-size: 3.625rem;
+    }
+}

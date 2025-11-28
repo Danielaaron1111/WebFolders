@@ -1,0 +1,132 @@
+:root {
+    --body: #222;
+    --bg-color: #333;
+    --white: #fff;
+    --black: #000;
+    --card-boder: #ddd;
+    --webkit-sb: #eee;
+    --webkit-sb-thumb: #444;
+}
+
+body {
+    color: var(--body);
+}
+
+/* Utility Class */
+.inner-container {
+    margin: auto;
+    max-width: 64rem;
+    padding: 2rem 1rem;
+}
+
+/* Typographic */
+h1,
+h2,
+h3,
+/* a */
+.btn {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1,
+h2 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    letter-spacing: 1px;
+    margin-top: 2rem;
+}
+
+p {
+    font-family: 'Roboto Flex', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+/* a */
+.btn {
+    background-color: var(--bg-color);
+    border-radius: 3px;
+    color: var(--white);
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    width: 8.5rem;
+}
+
+.btn:hover {
+    background-color: var(--black);
+    letter-spacing: 2px;
+}
+
+/* Notes Section */
+section:first-of-type {
+    background-color: var(--bg-color);
+    color: var(--white);
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+section:first-of-type p:first-of-type {
+    margin-bottom: 0;
+}
+
+/* Horizontal Scroll Widget */
+.body-copy p {
+    font-size: 1.25em;
+    line-height: 1.3;
+    opacity: 0.85;
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 5rem;
+    overflow-x: scroll;
+}
+
+.card {
+    border: 1px solid var(--card-boder);
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 3px var(--webkit-sb);
+    flex: 0 0 24rem;
+    margin: 2rem 1rem;
+}
+
+.card img {
+    border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.card-body {
+    text-align: center;
+}
+
+/* This is for webkit browsers only */
+.scroll-wrapper::-webkit-scrollbar {
+    background-color: var(--webkit-sb);
+    width: 0.5rem;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--webkit-sb-thumb);
+}
+
+.scroll-wrapper {
+    scrollbar-color: var(--webkit-sb-thumb) var(--webkit-sb);
+    scrollbar-width: thin;
+}
