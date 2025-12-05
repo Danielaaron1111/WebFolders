@@ -1,0 +1,17 @@
+{
+  "name": "short-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.0",
+  "dependencies": {
+    "vite": "^7.2.4"
+  }
+}
