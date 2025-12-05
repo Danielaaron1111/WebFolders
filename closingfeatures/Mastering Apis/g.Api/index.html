@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Fetcher | Master Class</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        <header>
+            <h1>Anime <span class="accent">Navigator</span></h1>
+            <p>Jikan API Integration Demo</p>
+        </header>
+
+        <section class="controls">
+            <div class="control-card">
+                <h3>Discover</h3>
+                <p>Get a random character from the database.</p>
+                <button id="btn-random" class="action-btn">🎲 Random Character</button>
+            </div>
+
+            <div class="control-card">
+                <h3>Search</h3>
+                <p>Find a specific character by name.</p>
+                <div class="input-group">
+                    <input type="text" id="search-input" placeholder="e.g. Naruto Uzumaki">
+                    <button id="btn-search" class="action-btn">🔍 Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-container" class="result-area">
+            <div class="placeholder-text">Select an option above to begin.</div>
+        </section>
+    </main>
+
+    <script src="mains.js"></script>
+</body>
+</html>

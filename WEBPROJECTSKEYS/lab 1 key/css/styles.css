@@ -1,0 +1,146 @@
+/* 
+    COLOUR PALETTE
+    night:            #182222;
+    dark-slate-gray:  #405B5B;
+    french-gray:      #e2dfe7;
+
+    FONT FAMILIES
+    headings and button: 'Fjalla One', sans-serif;
+    body copy: 'Open Sans', sans-serif;
+*/
+:root {
+    --night: #182222;
+    --dark-slate-gray: #405B5B;
+    --french-gray: #e2dfe7;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #fff;
+    color: var(--night);
+    min-width: 360px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container,
+.intro,
+.visiting section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #DDB950;
+    margin-bottom: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: 1rem 0;
+    font-family: 'Lato', sans-serif;
+}
+
+h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+p {
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #DDB950;
+    color: var(--night);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+header div img {
+    max-width: 450px;
+}
+
+header img {
+    max-width: 100%;
+}
+
+.warning {
+    background-color: var(--french-gray);
+    padding: 1rem;
+    display: flex;
+}
+
+.warning p {
+    font-size: calc(20 / 16 * 1rem);
+}
+
+.warning img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.features {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.features section {
+    width: 50%;
+}
+
+.features section img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.visiting {
+    margin-top: 5rem;
+    background-color: var(--french-gray);
+    /* padding: 3rem 0; */
+}
+
+.visiting-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.visiting-content section {
+    width: 50%;
+}
+
+.visiting-content section a {
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: #182222;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+}
+
+footer div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+ 

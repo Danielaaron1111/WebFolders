@@ -1,0 +1,172 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* HEADER FLEX */
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #ddd;
+            /* Flex container for horizontal alignment */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .flag {
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to right, red 33%, white 33%, white 66%, red 66%);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300"><rect fill="%234a90e2" width="800" height="300"/><polygon fill="%23white" points="0,300 200,100 400,150 600,80 800,120 800,300"/></svg>');
+            background-size: cover;
+            /* Flex container to center title */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 2rem;
+            /* Flex container for warning icon and text */
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .warning-icon {
+            color: #e17055;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        /* MAIN CONTENT FLEX GRID */
+        .main-content {
+            padding: 2rem;
+            /* Flex container for the main grid */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* IMAGE ROW - 2 images side by side */
+        .image-row {
+            /* Flex container for horizontal layout */
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-card {
+            /* Flex item that grows equally */
+            flex: 1;
+            position: relative;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CONTENT GRID - 2 columns, 3 rows each */
+        .content-grid {
+            /* Flex container for 2-column layout */
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            /* Each column takes equal space */
+            flex: 1;
+            /* Each column is also a flex container for vertical stacking */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .content-section {
+            background: white;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            background: #f39c12;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            align-self: flex-start; /* Don't stretch full width */
+        }
+
+        .btn:hover {
+            background: #e67e22;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            /* Stack columns vertically on mobile */
+            .content-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            /* Stack images vertically on mobile */
+            .image-row {
+                flex-direction: column;
+            }
+            
+            /* Smaller hero text */
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }

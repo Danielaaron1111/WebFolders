@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Character Fetch Demo</title>
+
+  <!-- Link to external CSS: all styling lives in style.css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="page-title">Anime Character Fetch Demo</h1>
+    <p class="page-subtitle">
+      Learn how to fetch JSON, inspect it, validate input, and render HTML cards.
+    </p>
+  </header>
+
+  <main class="page">
+    <!-- Controls section: buttons and input -->
+    <section class="controls">
+      <div class="controls-group">
+        <button id="randomBtn" class="btn btn-primary">
+          Get Random Character
+        </button>
+      </div>
+
+      <div class="controls-group">
+        <input
+          id="nameInput"
+          type="text"
+          class="input-text"
+          placeholder="Type character name (e.g. Naruto)"
+        />
+        <button id="searchBtn" class="btn btn-secondary">
+          Search by Name
+        </button>
+      </div>
+
+      <!-- Area to display error messages to the user -->
+      <p id="errorMessage" class="error-message"></p>
+    </section>
+
+    <!-- Cards container: holds the two character cards -->
+    <section class="cards">
+      <!-- Card for random character -->
+      <article id="randomCard" class="card">
+        <div class="card-inner">
+          <div class="card-image-wrapper">
+            <img
+              id="randomImage"
+              class="card-image"
+              src=""
+              alt="Random anime character"
+            />
+          </div>
+          <div class="card-body">
+            <h2 id="randomName" class="card-title">Random Character</h2>
+            <p id="randomDescription" class="card-text">
+              Click "Get Random Character" to load data from the API.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card for search-by-name character -->
+      <article id="searchCard" class="card">
+        <div class="card-inner">
+          <div class="card-image-wrapper">
+            <img
+              id="searchImage"
+              class="card-image"
+              src=""
+              alt="Searched anime character"
+            />
+          </div>
+          <div class="card-body">
+            <h2 id="searchName" class="card-title">Search Result</h2>
+            <p id="searchDescription" class="card-text">
+              Type a name and click "Search by Name" to see the result here.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Link to external JS: all logic lives in app.js -->
+  <script src="main.js"></script>
+</body>
+</html>

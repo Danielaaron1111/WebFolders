@@ -1,0 +1,105 @@
+:root {
+    --heading: #1f2937;
+    --body: #4b5563;
+    --border: 1px solid #e5e7eb;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+    color: var(--body);
+    font-family: "Inter", sans-serif;
+}
+
+/* Utility Classes  */
+
+.flex-container {
+    display: flex;
+    /* everything will be in one row with this flex */
+    flex-direction: column;
+    gap: 1rem;
+
+
+}
+
+.inner-container {
+    margin: auto;
+    /* max-width: (1280px /  16 * 1rem); */
+    max-width: 1280px;
+    padding: 3rem 1rem;
+
+    /* the maximum width should be assignm in the container not in the body  */
+}
+
+/* Cards */
+
+.card {
+    border: var(--border);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    /* flex-wrap: nowrap;
+    flex-direction: column; */
+    /* flexflow flexbox direction and then flexwrap is a combination of both */
+
+}
+
+img {
+    border-radius: 4px;
+
+}
+
+h1,
+h2 {
+    color: var(--heading);
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    order: -1;
+    text-align: center;
+    /* place one item in the grouping to be shown first we use order  */
+}
+
+p {
+    margin-bottom: 1rem;
+
+}
+
+/* Media Queries */
+
+@media (min-width: 640px) {
+    .flex-container {
+        flex-flow: row wrap;
+
+    }
+
+    .card {
+        width: calc((100% / 2) (1rem / 2));
+    }
+
+    h2 {
+        margin-top: 1rem;
+        order: 0;
+        text-align: left;
+        /* how do you want to align it in differentes screen sizes */
+
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        width: ((100% / 3) - (2rem / 3));
+    }
+
+}
