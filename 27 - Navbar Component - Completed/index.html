@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Additional Information -->
+    <meta name="author" content="Bryan Mendoza | bmendoza@nait.ca | BMendoza on GitHub">
+    <meta name="description" content="This website demonstrates the Bootstrap navbar component and the new dark and light modes.">
+
+    <title>27 - Navbar Component</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+
+    <!-- Custom JS -->
+    <!-- This is a custom script that will let us toggle between light and dark modes. It should load after the main BS JS library. -->
+     <script src="js/toggle.js" defer></script>
+  </head>
+  <!-- We are using flexbox here to make sure the website fills the viewport. -->
+  <body class="text-center min-vh-100 d-flex flex-column justify-content-between">
+    <header>
+      <!-- We're going to straight up copy and paste a template from a Bootstrap example and modify it to make it our own.-->
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <div class="container">
+          <!-- Brand / Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="img/paw-outline.svg" alt="Dog Days Cabins Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Dog Days Cabins
+          </a>
+
+          <!-- Hamburger Button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Book Now
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Banff</a></li>
+                  <li><a class="dropdown-item" href="#">Jasper</a></li>
+                  <li><a class="dropdown-item" href="#">Lake Louise</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">View All</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Our Packages</a>
+              </li>
+            </ul>
+
+            <!-- Forms -->
+            <div class="d-xl-flex align-items-center justify-content-center">
+              
+              <!-- Theme Toggle -->
+              <form class="form-check form-switch d-flex justify-content-center mb-3 mb-xl-0">
+                <input class="form-check-input bg-warning me-2" type="checkbox" id="darkModeSwitch" checked>
+                <label class="form-check-label text-white-50" for="darkModeSwitch">Dark Mode</label>
+              </form>
+
+              <!-- Search Bar -->
+              <form class="d-flex" role="search">
+                <label class="sr-only invisible">Search</label>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit">Search</button>
+              </form>
+
+            </div> <!-- end of forms -->
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="row justify-content-center">
+        <div class="col-md-10 col-lg-9 col-xxl-7">
+          <h1 class="display-3 mb-4">These are the dog days.</h1>
+          <p class="lead">The dog days of summer are known to be the hottest and most uncomfortable part of the year – but they don’t have to be.</p>
+          <p>Get away from it all by booking one of our luxury cabin packages today. Cool off under the cover of ancient boreal forests while taking in the majestic views of the Rocky Mountains and its glacial-fed rivers.</p>
+          <a href="#" class="btn btn-lg btn-warning mt-4">Book Now</a>
+        </div>
+      </section>
+    </main>
+    <footer class="container w-50 mx-auto">
+      <p class="mb-1">This website was created for academic purposes only.</p>
+      <p class="mb-3">&copy; <script>document.write(new Date().getFullYear())</script></p>
+    </footer>
+  </body>
+</html>

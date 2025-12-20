@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Additional Information -->
+        <meta name="author" content="">
+        <meta name="description" content="This website demonstrates how to create simple timed and dismissable modal windows.">
+
+        <title>24 - Modal Windows</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Scripts -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+        <section class="flex-container">
+            <h1>Hello, friend.</h1>
+        </section>
+        <aside class="overlay">
+            <div class="wide-flex modal">
+                <div class="modal-bg"></div>
+                <div class="modal-body">
+                    <button id="close" class="close flex-container">
+                        Close
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <title>Close Modal Window</title>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </button>
+
+                    <h2>Enjoying the read?</h2>
+                    <p>
+                        Join our monthly newsletter for even more helpful tips and tricks, delivered right to your inbox.
+                    </p>
+
+                    <form action="index.html" method="POST" class="flex-container">
+                        <!-- Email Input -->
+                        <label for="email" class="sr-only">Your Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Your Email Address" required>
+
+                        <!-- Submit button -->
+                        <input type="submit" id="subscribe" name="subscribe" value="Subscribe" class="btn">
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </body>
+
+</html>
